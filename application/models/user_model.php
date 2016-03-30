@@ -10,14 +10,26 @@ class User_Model extends CI_Model {
     public $username;
     public $password;
   
+    function set_session() {
+        $this->session->set_userdata(array(
+            'id_user'           => $this->details->id_user,
+            'nama_user'           => $this->details->nama_user,
+            'kategori_user'         => $this->details->kategori_user,
+            'username'          => $this->details->username,
+            'is_logged_in'  => TRUE
+            ));
+
+    }
+
     function validate_user($username, $password) {
         $this->db->from($this->table);
         $this->db->where('username', $username);
         $this->db->where('password', $password);
         $result = $this->db->get()->result(); 
+        
         if (is_array($result) && count($result) == 1) {
             $this->details = $result[0];
-            //$this->set_session();
+            $this->set_session();
             return TRUE;
         }
         return FALSE;

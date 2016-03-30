@@ -4,12 +4,10 @@ class Login extends CI_Controller {
 
   public function __construct() {
         parent::__construct();
+        if($this->session->userdata('is_logged_in')) {
+          redirect('manage/index');
+        }
         $this->load->model('user_model');
-        $this->load->model('regis_model');
-        $this->load->model('kota_model');
-        
-        $model = $this->regis_model;
-
   }
 
   public function index() {
@@ -22,6 +20,7 @@ class Login extends CI_Controller {
 
       if($username && $password) {
         if($this->user_model->validate_user($username, $password)){
+           // $this->user_model->set_session();
             redirect('manage/index');
         } else {
             $this->show_login_page("
@@ -39,8 +38,6 @@ class Login extends CI_Controller {
     }
 
   function show_login_page($show_error) {
-      //$data['daftar_kat_user'] = $this->regis_model->get_data_kategori();
-      $data['daftar_kota'] = $this->kota_model->get_data_kota();
       $data['page'] = 'login';
       $data['error'] = $show_error;
       $this->load->view('flogin', $data);
