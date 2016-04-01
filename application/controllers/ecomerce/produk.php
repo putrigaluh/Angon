@@ -12,5 +12,6 @@ public function index()
  $data['daftar_produk']= $this->produk_model->show_produk();
   $this->load->view('ecomerce/lihat_produk', $data);
  }
+ 
 }
 ?>

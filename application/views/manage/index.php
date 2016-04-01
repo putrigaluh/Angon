@@ -196,7 +196,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 					<img alt="" class="img-circle" src="<?php echo base_url(''); ?>/assets/admin/layout/img/avatar3_small.jpg"/>
 					<span class="username username-hide-on-mobile">
-					Nick </span>
+					<?php echo $this->session->userdata('username'); ?> </span>
 					<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-default">
@@ -227,7 +227,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							<i class="icon-lock"></i> Lock Screen </a>
 						</li>
 						<li>
-							<a href="<?php echo base_url(''); ?>login">
+							<a href="<?php echo base_url(''); ?>logout">
 							<i class="icon-key"></i> Log Out </a>
 						</li>
 					</ul>
@@ -322,21 +322,17 @@ License: You must have a valid license purchased only from themeforest(the above
 							Lihat Produk</a>
 						</li>
 						<li>
-							<a href="<?php echo base_url(); ?>manage/produk/lihat_pesanan">
+							<a href="<?php echo base_url(); ?>manage/pesanan">
 							<i class="icon-basket"></i>
 							Lihat Pesanan</a>
 						</li>
-						<li>
-							<a href="<?php echo base_url(); ?>manage/produk/detail_pesanan">
-							<i class="icon-tag"></i>
-							Detail Pesanan</a>
-						</li>
+						
 						
 						
 					</ul>
 				</li>
 				<li>
-					<a href="tes.html">
+					<a href="<?php echo base_url(); ?>ecomerce/produk">
 					<i class="icon-basket"></i>
 					<span class="title">Beli Produk</span>
 					<span class="arrow "></span>

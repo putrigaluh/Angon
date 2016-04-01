@@ -15,24 +15,26 @@ public function __construct() {
  public function check(){
  	if($this->input->post('submit')){
  		$coba=$this->transaksi_model->insert();
+ 		//$id_trans = "select id_transaksi from transaksi order by tgl_transaksi DESC";
+ 		$id_trans = $this->db->insert_id();
  		foreach($this->cart->contents() as $items){
-		$this->transaksi_model->insertdetail();
-		$this->transaksi_model->update_dibeli($items['id'],$items['qty'])
+		$this->transaksi_model->simpan_pesanan("insert into detail_transaksi (id_transaksi,id_produk,jumlah,total_harga) values('".$id_trans."','".$items['id']."','".$items['qty']."','".$items['subtotal']."')");
+		
 		}
 		$this->cart->destroy();
+
  		if($coba){	
  		redirect('ecomerce/produk');
  		}
  		else{
  			echo "error123";
  		}
+	}
 
-
+	echo "error";
  }
  // $this->load->view('ecomerce/deliveryinformation');
- echo "error";
 
-}
 }
 
 ?>
