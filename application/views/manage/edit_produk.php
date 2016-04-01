@@ -18,7 +18,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN HEAD -->
 <head>
 <meta charset="utf-8"/>
-<title>Metronic | eCommerce - Products</title>
+<title>Metronic | eCommerce - Product Edit</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -36,6 +36,8 @@ License: You must have a valid license purchased only from themeforest(the above
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(''); ?>/assets/global/plugins/select2/select2.css"/>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(''); ?>/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css"/>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css"/>
+<link href="<?php echo base_url(''); ?>/assets/global/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet" type="text/css"/>
 <!-- END PAGE LEVEL STYLES -->
 <!-- BEGIN THEME STYLES -->
 <link href="<?php echo base_url(''); ?>/assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
@@ -189,7 +191,6 @@ License: You must have a valid license purchased only from themeforest(the above
 					</ul>
 				</li>
 				<!-- END NOTIFICATION DROPDOWN -->
-				
 				<!-- BEGIN USER LOGIN DROPDOWN -->
 				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
 				<li class="dropdown dropdown-user">
@@ -302,7 +303,7 @@ License: You must have a valid license purchased only from themeforest(the above
 				<li>
 					<a href="javascript:;">
 					<i class="icon-basket"></i>
-					<span class="title">Manage Penjualan</span>
+					<span class="title">Manage Penjualan</span> 
 					<span class="arrow "></span>
 					</a>
 					<ul class="sub-menu">
@@ -471,7 +472,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			<!-- END STYLE CUSTOMIZER -->
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			Products <small>product listing</small>
+			Manage Penjualan <small>Edit Produk</small>
 			</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
@@ -481,203 +482,126 @@ License: You must have a valid license purchased only from themeforest(the above
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">eCommerce</a>
+						<a href="#">Manage Penjualan</a>
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">Products</a>
+						<a href="#">Edit Produk</a>
+						<i class="fa fa-angle-right"></i>
 					</li>
 				</ul>
-				<div class="page-toolbar">
-					<div class="btn-group pull-right">
-						<button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
-						Actions <i class="fa fa-angle-down"></i>
-						</button>
-						<ul class="dropdown-menu pull-right" role="menu">
-							<li>
-								<a href="#">Action</a>
-							</li>
-							<li>
-								<a href="#">Another action</a>
-							</li>
-							<li>
-								<a href="#">Something else here</a>
-							</li>
-							<li class="divider">
-							</li>
-							<li>
-								<a href="#">Separated link</a>
-							</li>
-						</ul>
-					</div>
-				</div>
+				
 			</div>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->
+
 			<div class="row">
 				<div class="col-md-12">
-					<div class="note note-danger">
-						<p>
-							 NOTE: The below datatable is not connected to a real database so the filter and sorting is just simulated for demo purposes only.
-						</p>
-					</div>
-					<!-- Begin: life time stats -->
-					<div class="portlet">
-						<div class="portlet-title">
-							<div class="caption">
-								<i class="fa fa-gift"></i>Products
+					<form  class="form-horizontal form-row-seperated" role="form" action="<?= $this->config->base_url(); ?>manage/produk/prosesedit" method="post" enctype="multipart/form-data">     
+						<div class="portlet">
+							<div class="portlet-title">
+								<div class="caption">
+									<i class="fa fa-shopping-cart"></i>Manage Penjualan
+								</div>
+								<div class="actions btn-set">
+									<button type="button" name="back" class="btn default"><i class="fa fa-angle-left"></i> Back</button>
+									</div>
 							</div>
-							<div class="actions">
-								<div class="btn-group">
-									<a class="btn default yellow-stripe dropdown-toggle" href="javascript:;" data-toggle="dropdown">
-									<i class="fa fa-share"></i> Tools <i class="fa fa-angle-down"></i>
-									</a>
-									<ul class="dropdown-menu pull-right">
-										<li>
-											<a href="javascript:;">
-											Export to Excel </a>
-										</li>
-										<li>
-											<a href="javascript:;">
-											Export to CSV </a>
-										</li>
-										<li>
-											<a href="javascript:;">
-											Export to XML </a>
-										</li>
-										<li class="divider">
-										</li>
-										<li>
-											<a href="javascript:;">
-											Print Invoices </a>
+							<div class="portlet-body">
+								<div class="tabbable">
+									<ul class="nav nav-tabs">
+										<li class="active">
+											<a href="#tab_general" data-toggle="tab">
+											Edit Produk </a>	
 										</li>
 									</ul>
+										
+									<div class="tab-content no-space">
+										<div class="tab-pane active" id="tab_general">
+											<div class="form-body">
+											<div class="form-group"> 
+												  <input type="hidden" name="id_produk" value="<?php print $p->row('id_produk');?>">
+													</div>
+												</div>
+												<div class="form-group"> 
+													<label class="col-md-2 control-label">Id Kategori Jenis: <span class="required">
+													* </span>
+													</label>
+													<div class="col-md-10">
+														 <input type="text"  class="form-control" name="id_kategori_jenis" value="<?php print $p->row('id_kategori_jenis');?>">
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-md-2 control-label">Nama Produk: <span class="required">
+													* </span>
+													</label>
+													<div class="col-md-10">
+													<input type="text"  class="form-control" name="nama_produk" value="<?php print $p->row('nama_produk');?>">
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-md-2 control-label">Harga Produk: <span class="required">
+													* </span>
+													</label>
+													<div class="col-md-10">
+														<input type="text"  class="form-control" name="harga_produk" value="<?php print $p->row('harga_produk');?>">
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-md-2 control-label">Stok: <span class="required">
+													* </span>
+													</label>
+													<div class="col-md-10">
+														<input type="text"  class="form-control" name="stok" value="<?php print $p->row('stok');?>">
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-md-2 control-label">Deskripsi: <span class="required">
+													* </span>
+													</label>
+													<div class="col-md-10">
+														<textarea class="form-control" name="deskripsi"><?php print $p->row('deskripsi');?></textarea>  
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-md-2 control-label">Id User: <span class="required">
+													* </span>
+													</label>
+													<div class="col-md-10">
+														<input type="text" class="form-control" name="id_user"  value="<?php print $p->row('id_user');?>">
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-md-2 control-label">Tampilan Gambar:
+													</label>
+													<div class="col-md-10">
+														<img src="<?php echo base_url(''); ?>./uploads/<?php  
+														 print $p->row('userfile');?>" alt="logo" class="logo-default"/>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-md-2 control-label">Upload Gambar: <span class="required">
+													* </span>
+													</label>
+													<div class="col-md-10">
+														<?php echo form_open_multipart('manage/prosesadd/do_upload');?>
+													<input type="file" name="userfile" size="20" />
+													<br /><br />
+													<input type="submit" value="upload" />
+													</form>
+													</div>
+												</div>
+												<button class="btn green"><i class="fa fa-check" ></i>Simpan</button>
+												
+											</div>
+										</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
-						<div class="portlet-body">
-							<div class="table-container">
-								<div class="table-actions-wrapper">
-									<span>
-									</span>
-									<select class="table-group-action-input form-control input-inline input-small input-sm">
-										<option value="">Select...</option>
-										<option value="publish">Publish</option>
-										<option value="unpublished">Un-publish</option>
-										<option value="delete">Delete</option>
-									</select>
-									<button class="btn btn-sm yellow table-group-action-submit"><i class="fa fa-check"></i> Submit</button>
-								</div>
-								<table class="table table-striped table-bordered table-hover" id="datatable_products">
-								<thead>
-								<tr role="row" class="heading">
-									<th width="1%">
-										<input type="checkbox" class="group-checkable">
-									</th>
-									<th width="10%">
-										 ID
-									</th>
-									<th width="15%">
-										 Product&nbsp;Name
-									</th>
-									<th width="15%">
-										 Category
-									</th>
-									<th width="10%">
-										 Price
-									</th>
-									<th width="10%">
-										 Quantity
-									</th>
-									<th width="15%">
-										 Date&nbsp;Created
-									</th>
-									<th width="10%">
-										 Status
-									</th>
-									<th width="10%">
-										 Actions
-									</th>
-								</tr>
-								<tr role="row" class="filter">
-									<td>
-									</td>
-									<td>
-										<input type="text" class="form-control form-filter input-sm" name="product_id">
-									</td>
-									<td>
-										<input type="text" class="form-control form-filter input-sm" name="product_name">
-									</td>
-									<td>
-										<select name="product_category" class="form-control form-filter input-sm">
-											<option value="">Select...</option>
-											<option value="1">Mens</option>
-											<option value="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Footwear</option>
-											<option value="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clothing</option>
-											<option value="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Accessories</option>
-											<option value="5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fashion Outlet</option>
-											<option value="6">Football Shirts</option>
-											<option value="7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Premier League</option>
-											<option value="8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Football League</option>
-											<option value="9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Serie A</option>
-											<option value="10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bundesliga</option>
-											<option value="11">Brands</option>
-											<option value="12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adidas</option>
-											<option value="13">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nike</option>
-											<option value="14">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Airwalk</option>
-											<option value="15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;USA Pro</option>
-											<option value="16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kangol</option>
-										</select>
-									</td>
-									<td>
-										<div class="margin-bottom-5">
-											<input type="text" class="form-control form-filter input-sm" name="product_price_from" placeholder="From"/>
-										</div>
-										<input type="text" class="form-control form-filter input-sm" name="product_price_to" placeholder="To"/>
-									</td>
-									<td>
-										<div class="margin-bottom-5">
-											<input type="text" class="form-control form-filter input-sm" name="product_quantity_from" placeholder="From"/>
-										</div>
-										<input type="text" class="form-control form-filter input-sm" name="product_quantity_to" placeholder="To"/>
-									</td>
-									<td>
-										<div class="input-group date date-picker margin-bottom-5" data-date-format="dd/mm/yyyy">
-											<input type="text" class="form-control form-filter input-sm" readonly name="product_created_from" placeholder="From">
-											<span class="input-group-btn">
-											<button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
-											</span>
-										</div>
-										<div class="input-group date date-picker" data-date-format="dd/mm/yyyy">
-											<input type="text" class="form-control form-filter input-sm" readonly name="product_created_to " placeholder="To">
-											<span class="input-group-btn">
-											<button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
-											</span>
-										</div>
-									</td>
-									<td>
-										<select name="product_status" class="form-control form-filter input-sm">
-											<option value="">Select...</option>
-											<option value="published">Published</option>
-											<option value="notpublished">Not Published</option>
-											<option value="deleted">Deleted</option>
-										</select>
-									</td>
-									<td>
-										<div class="margin-bottom-5">
-											<button class="btn btn-sm yellow filter-submit margin-bottom"><i class="fa fa-search"></i> Search</button>
-										</div>
-										<button class="btn btn-sm red filter-cancel"><i class="fa fa-times"></i> Reset</button>
-									</td>
-								</tr>
-								</thead>
-								<tbody>
-								</tbody>
-								</table>
-							</div>
-						</div>
-					</div>
-					<!-- End: life time stats -->
+					</form>
 				</div>
 			</div>
 			<!-- END PAGE CONTENT-->
@@ -1370,6 +1294,11 @@ License: You must have a valid license purchased only from themeforest(the above
 <script type="text/javascript" src="<?php echo base_url(''); ?>/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(''); ?>/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
 <script type="text/javascript" src="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap-touchspin/bootstrap.touchspin.js" type="text/javascript"></script>
+<script type="text/javascript" src="<?php echo base_url(''); ?>/assets/global/plugins/fancybox/source/jquery.fancybox.pack.js"></script>
+<script src="<?php echo base_url(''); ?>/assets/global/plugins/plupload/js/plupload.full.min.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="<?php echo base_url(''); ?>/assets/global/scripts/metronic.js" type="text/javascript"></script>
@@ -1377,7 +1306,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="<?php echo base_url(''); ?>/assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
 <script src="<?php echo base_url(''); ?>/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
 <script src="<?php echo base_url(''); ?>/assets/global/scripts/datatable.js"></script>
-<script src="<?php echo base_url(''); ?>/assets/admin/pages/scripts/ecommerce-products.js"></script>
+<script src="<?php echo base_url(''); ?>/assets/admin/pages/scripts/ecommerce-products-edit.js"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
         jQuery(document).ready(function() {    
@@ -1385,7 +1314,7 @@ License: You must have a valid license purchased only from themeforest(the above
 Layout.init(); // init current layout
 QuickSidebar.init(); // init quick sidebar
 Demo.init(); // init demo features
-           EcommerceProducts.init();
+           EcommerceProductsEdit.init();
         });
     </script>
 <!-- END JAVASCRIPTS -->
