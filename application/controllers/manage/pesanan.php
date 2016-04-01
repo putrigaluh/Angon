@@ -23,6 +23,9 @@ public function __construct() {
         	$status = $this->input->post('order_status');
             $this->transaksi_model->update($id, $status);
             redirect('manage/pesanan');
-    }
+ }
+  public function detail_pesanan(){
+  $this->load->view('manage/detail_pesanan');
+ }
 }
  ?>
