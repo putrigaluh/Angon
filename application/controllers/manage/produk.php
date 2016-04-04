@@ -25,9 +25,9 @@ public function index()
  }
 
  public function prosesedit() {
-        $link = $this->do_upload();
+        $url = $this->do_upload();
     $this->load->model('m_produk');
-        $this->m_produk->prosesedit($link);
+        $this->m_produk->prosesedit($url);
         redirect('manage/produk/lihat_produk');
     }
 
