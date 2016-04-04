@@ -196,7 +196,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 					<img alt="" class="img-circle" src="<?php echo base_url(''); ?>/assets/admin/layout/img/avatar3_small.jpg"/>
 					<span class="username username-hide-on-mobile">
-					<?php echo $this->session->userdata('username'); ?></span>
+					Nick </span>
 					<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-default">
@@ -227,7 +227,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							<i class="icon-lock"></i> Lock Screen </a>
 						</li>
 						<li>
-							<a href="<?php echo base_url(''); ?>logout">
+							<a href="<?php echo base_url(''); ?>login">
 							<i class="icon-key"></i> Log Out </a>
 						</li>
 					</ul>
@@ -312,7 +312,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							Dashboard</a>
 						</li>
 						<li>
-							<a href="<?php echo base_url(); ?>manage/produk/input_produk">
+							<a href="<?php echo base_url(); ?>manage/produk/">
 							<i class="icon-pencil"></i>
 							Input Produk</a>
 						</li>
@@ -322,17 +322,21 @@ License: You must have a valid license purchased only from themeforest(the above
 							Lihat Produk</a>
 						</li>
 						<li>
-							<a href="<?php echo base_url(); ?>manage/pesanan">
+							<a href="<?php echo base_url(); ?>manage/produk/lihat_pesanan">
 							<i class="icon-basket"></i>
 							Lihat Pesanan</a>
 						</li>
-						
+						<li>
+							<a href="<?php echo base_url(); ?>manage/produk/detail_pesanan">
+							<i class="icon-tag"></i>
+							Detail Pesanan</a>
+						</li>
 						
 						
 					</ul>
 				</li>
 				<li>
-					<a href="<?php echo base_url(); ?>ecomerce/produk">
+					<a href="tes.html">
 					<i class="icon-basket"></i>
 					<span class="title">Beli Produk</span>
 					<span class="arrow "></span>
@@ -571,105 +575,74 @@ License: You must have a valid license purchased only from themeforest(the above
 								<table class="table table-striped table-bordered table-hover" id="datatable_products">
 								<thead>
 								<tr role="row" class="heading">
-									<th width="1%">
-										<input type="checkbox" class="group-checkable">
-									</th>
 									<th width="10%">
-										 ID
+										 ID Kategori Jenis
 									</th>
 									<th width="15%">
-										 Product&nbsp;Name
+										 Nama&nbsp;Produk
 									</th>
 									<th width="15%">
-										 Category
-									</th>
-									<th width="10%">
-										 Price
-									</th>
-									<th width="10%">
-										 Quantity
+										 Harga&nbsp;Produk
 									</th>
 									<th width="15%">
-										 Date&nbsp;Created
+										 Stok
+									</th>
+									<th width="15%">
+										 Deskripsi
+									</th>
+									<th width="15%">
+										 ID&nbsp;User
 									</th>
 									<th width="10%">
-										 Status
-									</th>
-									<th width="10%">
-										 Actions
+										 Aksi
 									</th>
 								</tr>
+								<?php
+									foreach ($p as $produk) {
+									?>
 								<tr role="row" class="filter">
 									<td>
+										<input type="text" class="form-control form-filter input-sm" 
+										value="<?php print $produk->id_kategori_jenis; ?>" 
+										name="id_kategori_jenis" readonly >
 									</td>
 									<td>
-										<input type="text" class="form-control form-filter input-sm" name="product_id">
+										<input type="text" class="form-control form-filter input-sm" 
+										value="<?php print $produk->nama_produk; ?>" 
+										name="nama_produk" readonly >
 									</td>
 									<td>
-										<input type="text" class="form-control form-filter input-sm" name="product_name">
+										<input type="text" class="form-control form-filter input-sm" 
+										value="<?php print $produk->harga_produk; ?>" 
+										name="harga_produk" readonly >
 									</td>
 									<td>
-										<select name="product_category" class="form-control form-filter input-sm">
-											<option value="">Select...</option>
-											<option value="1">Mens</option>
-											<option value="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Footwear</option>
-											<option value="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clothing</option>
-											<option value="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Accessories</option>
-											<option value="5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fashion Outlet</option>
-											<option value="6">Football Shirts</option>
-											<option value="7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Premier League</option>
-											<option value="8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Football League</option>
-											<option value="9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Serie A</option>
-											<option value="10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bundesliga</option>
-											<option value="11">Brands</option>
-											<option value="12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adidas</option>
-											<option value="13">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nike</option>
-											<option value="14">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Airwalk</option>
-											<option value="15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;USA Pro</option>
-											<option value="16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kangol</option>
-										</select>
+										<input type="text" class="form-control form-filter input-sm" 
+										value="<?php print $produk->stok; ?>" 
+										name="stok" readonly >
 									</td>
 									<td>
-										<div class="margin-bottom-5">
-											<input type="text" class="form-control form-filter input-sm" name="product_price_from" placeholder="From"/>
-										</div>
-										<input type="text" class="form-control form-filter input-sm" name="product_price_to" placeholder="To"/>
+										<input type="text" class="form-control form-filter input-sm" 
+										value="<?php print $produk->deskripsi; ?>" 
+										name="deskripsi" readonly >
+									</td>
+									<td>
+										<input type="text" class="form-control form-filter input-sm" 
+										value="<?php print $produk->id_user; ?>" 
+										name="id_user" readonly >
 									</td>
 									<td>
 										<div class="margin-bottom-5">
-											<input type="text" class="form-control form-filter input-sm" name="product_quantity_from" placeholder="From"/>
+											<?php print "<a href=" . $this->config->base_url() . 'manage/produk/edit/' . 
+											$produk->id_produk . ">edit</a>" ?>
 										</div>
-										<input type="text" class="form-control form-filter input-sm" name="product_quantity_to" placeholder="To"/>
-									</td>
-									<td>
-										<div class="input-group date date-picker margin-bottom-5" data-date-format="dd/mm/yyyy">
-											<input type="text" class="form-control form-filter input-sm" readonly name="product_created_from" placeholder="From">
-											<span class="input-group-btn">
-											<button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
-											</span>
-										</div>
-										<div class="input-group date date-picker" data-date-format="dd/mm/yyyy">
-											<input type="text" class="form-control form-filter input-sm" readonly name="product_created_to " placeholder="To">
-											<span class="input-group-btn">
-											<button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
-											</span>
-										</div>
-									</td>
-									<td>
-										<select name="product_status" class="form-control form-filter input-sm">
-											<option value="">Select...</option>
-											<option value="published">Published</option>
-											<option value="notpublished">Not Published</option>
-											<option value="deleted">Deleted</option>
-										</select>
-									</td>
-									<td>
 										<div class="margin-bottom-5">
-											<button class="btn btn-sm yellow filter-submit margin-bottom"><i class="fa fa-search"></i> Search</button>
+											<?php print "<a href=" . $this->config->base_url() . 'manage/produk/delete/' . 
+											$produk->id_produk . ">hapus</a>" ?>
 										</div>
-										<button class="btn btn-sm red filter-cancel"><i class="fa fa-times"></i> Reset</button>
 									</td>
 								</tr>
+								<?php } ?>
 								</thead>
 								<tbody>
 								</tbody>
