@@ -665,7 +665,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										foreach($daftar_transaksi as $order){
 											?>
 											<tr>
-												<td><a href="<?php echo base_url(); ?>manage/pesanan/detail_pesanan"><?php echo $order->id_transaksi; ?></a></td>
+												<td><a href="<?php echo base_url(); ?>manage/pesanan/detail_pesanan/<?php echo $order->id_transaksi; ?>"><?php echo $order->id_transaksi; ?></a></td>
 		           						 		<td><?php echo $order->tgl_transaksi; ?></td>
 		            							<td><?php echo $order->nama_user; ?></td>
 		          						  		<td><?php echo $order->alamat_pengiriman; ?></td>

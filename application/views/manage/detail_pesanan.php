@@ -18,7 +18,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN HEAD -->
 <head>
 <meta charset="utf-8"/>
-<title>Metronic | eCommerce - Order View</title>
+<title>Metronic | eCommerce - Detail pemesanan</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -489,7 +489,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			<!-- END STYLE CUSTOMIZER -->
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			Order View <small>view order details</small>
+			Detail Pemesanan <small></small>
 			</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
@@ -538,7 +538,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<div class="portlet">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-shopping-cart"></i>Order #12313232 <span class="hidden-480">
+								<i class="fa fa-shopping-cart"></i>Order <span class="hidden-480">
 								| Dec 27, 2013 7:16:25 </span>
 							</div>
 							<div class="actions">
@@ -590,20 +590,14 @@ License: You must have a valid license purchased only from themeforest(the above
 										4 </span>
 										</a>
 									</li>
-									<li>
-										<a href="#tab_3" data-toggle="tab">
-										Credit Memos </a>
-									</li>
+									
 									<li>
 										<a href="#tab_4" data-toggle="tab">
 										Shipments <span class="badge badge-danger">
 										2 </span>
 										</a>
 									</li>
-									<li>
-										<a href="#tab_5" data-toggle="tab">
-										History </a>
-									</li>
+									
 								</ul>
 								<div class="tab-content">
 									<div class="tab-pane active" id="tab_1">
@@ -614,19 +608,20 @@ License: You must have a valid license purchased only from themeforest(the above
 														<div class="caption">
 															<i class="fa fa-cogs"></i>Order Details
 														</div>
-														<div class="actions">
+														<!--<div class="actions">
 															<a href="javascript:;" class="btn btn-default btn-sm">
 															<i class="fa fa-pencil"></i> Edit </a>
-														</div>
+														</div>-->
 													</div>
 													<div class="portlet-body">
 														<div class="row static-info">
 															<div class="col-md-5 name">
 																 Order #:
 															</div>
+															<?php if (is_array($p) || is_object($p)) { ?>
 															<div class="col-md-7 value">
-																 12313232 <span class="label label-info label-sm">
-																Email confirmation was sent </span>
+																 <?php 
+																echo $p->row_array()['id_transaksi']; ?> 
 															</div>
 														</div>
 														<div class="row static-info">
@@ -634,7 +629,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																 Order Date & Time:
 															</div>
 															<div class="col-md-7 value">
-																 Dec 27, 2013 7:16:25 PM
+																 <?php echo $p->row('tgl_transaksi'); ?> 
 															</div>
 														</div>
 														<div class="row static-info">
@@ -643,7 +638,7 @@ License: You must have a valid license purchased only from themeforest(the above
 															</div>
 															<div class="col-md-7 value">
 																<span class="label label-success">
-																Closed </span>
+																<?php echo $p->row('status'); ?>  </span>
 															</div>
 														</div>
 														<div class="row static-info">
@@ -651,7 +646,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																 Grand Total:
 															</div>
 															<div class="col-md-7 value">
-																 $175.25
+																 <?php echo $p->row('total_harga'); ?> 
 															</div>
 														</div>
 														<div class="row static-info">
@@ -661,6 +656,7 @@ License: You must have a valid license purchased only from themeforest(the above
 															<div class="col-md-7 value">
 																 Credit Card
 															</div>
+															<?php } ?>
 														</div>
 													</div>
 												</div>
@@ -671,10 +667,10 @@ License: You must have a valid license purchased only from themeforest(the above
 														<div class="caption">
 															<i class="fa fa-cogs"></i>Customer Information
 														</div>
-														<div class="actions">
+														<!--<div class="actions">
 															<a href="javascript:;" class="btn btn-default btn-sm">
 															<i class="fa fa-pencil"></i> Edit </a>
-														</div>
+														</div>-->
 													</div>
 													<div class="portlet-body">
 														<div class="row static-info">
@@ -682,15 +678,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																 Customer Name:
 															</div>
 															<div class="col-md-7 value">
-																 Jhon Doe
-															</div>
-														</div>
-														<div class="row static-info">
-															<div class="col-md-5 name">
-																 Email:
-															</div>
-															<div class="col-md-7 value">
-																 jhon@doe.com
+																 <?php echo $p->row('nama_user'); ?> 
 															</div>
 														</div>
 														<div class="row static-info">
@@ -706,10 +694,11 @@ License: You must have a valid license purchased only from themeforest(the above
 																 Phone Number:
 															</div>
 															<div class="col-md-7 value">
-																 12234389
+																 <?php echo $p->row('no_telp'); ?> 
 															</div>
 														</div>
 													</div>
+													
 												</div>
 											</div>
 										</div>
@@ -720,10 +709,10 @@ License: You must have a valid license purchased only from themeforest(the above
 														<div class="caption">
 															<i class="fa fa-cogs"></i>Billing Address
 														</div>
-														<div class="actions">
+														<!--<div class="actions">
 															<a href="javascript:;" class="btn btn-default btn-sm">
 															<i class="fa fa-pencil"></i> Edit </a>
-														</div>
+														</div>-->
 													</div>
 													<div class="portlet-body">
 														<div class="row static-info">
@@ -746,10 +735,10 @@ License: You must have a valid license purchased only from themeforest(the above
 														<div class="caption">
 															<i class="fa fa-cogs"></i>Shipping Address
 														</div>
-														<div class="actions">
+														<!--<div class="actions">
 															<a href="javascript:;" class="btn btn-default btn-sm">
 															<i class="fa fa-pencil"></i> Edit </a>
-														</div>
+														</div>-->
 													</div>
 													<div class="portlet-body">
 														<div class="row static-info">
@@ -774,10 +763,10 @@ License: You must have a valid license purchased only from themeforest(the above
 														<div class="caption">
 															<i class="fa fa-cogs"></i>Shopping Cart
 														</div>
-														<div class="actions">
+														<!--<div class="actions">
 															<a href="javascript:;" class="btn btn-default btn-sm">
 															<i class="fa fa-pencil"></i> Edit </a>
-														</div>
+														</div>-->
 													</div>
 													<div class="portlet-body">
 														<div class="table-responsive">
@@ -1090,33 +1079,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</table>
 										</div>
 									</div>
-									<div class="tab-pane" id="tab_3">
-										<div class="table-container">
-											<table class="table table-striped table-bordered table-hover" id="datatable_credit_memos">
-											<thead>
-											<tr role="row" class="heading">
-												<th width="5%">
-													 Credit&nbsp;Memo&nbsp;#
-												</th>
-												<th width="15%">
-													 Bill To
-												</th>
-												<th width="15%">
-													 Created&nbsp;Date
-												</th>
-												<th width="10%">
-													 Status
-												</th>
-												<th width="10%">
-													 Actions
-												</th>
-											</tr>
-											</thead>
-											<tbody>
-											</tbody>
-											</table>
-										</div>
-									</div>
+									
 									<div class="tab-pane" id="tab_4">
 										<div class="table-container">
 											<table class="table table-striped table-bordered table-hover" id="datatable_shipment">
@@ -1178,63 +1141,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</table>
 										</div>
 									</div>
-									<div class="tab-pane" id="tab_5">
-										<div class="table-container">
-											<table class="table table-striped table-bordered table-hover" id="datatable_history">
-											<thead>
-											<tr role="row" class="heading">
-												<th width="25%">
-													 Datetime
-												</th>
-												<th width="55%">
-													 Description
-												</th>
-												<th width="10%">
-													 Notification
-												</th>
-												<th width="10%">
-													 Actions
-												</th>
-											</tr>
-											<tr role="row" class="filter">
-												<td>
-													<div class="input-group date datetime-picker margin-bottom-5" data-date-format="dd/mm/yyyy hh:ii">
-														<input type="text" class="form-control form-filter input-sm" readonly name="order_history_date_from" placeholder="From">
-														<span class="input-group-btn">
-														<button class="btn btn-sm default date-set" type="button"><i class="fa fa-calendar"></i></button>
-														</span>
-													</div>
-													<div class="input-group date datetime-picker" data-date-format="dd/mm/yyyy hh:ii">
-														<input type="text" class="form-control form-filter input-sm" readonly name="order_history_date_to" placeholder="To">
-														<span class="input-group-btn">
-														<button class="btn btn-sm default date-set" type="button"><i class="fa fa-calendar"></i></button>
-														</span>
-													</div>
-												</td>
-												<td>
-													<input type="text" class="form-control form-filter input-sm" name="order_history_desc" placeholder="To"/>
-												</td>
-												<td>
-													<select name="order_history_notification" class="form-control form-filter input-sm">
-														<option value="">Select...</option>
-														<option value="pending">Pending</option>
-														<option value="notified">Notified</option>
-														<option value="failed">Failed</option>
-													</select>
-												</td>
-												<td>
-													<div class="margin-bottom-5">
-														<button class="btn btn-sm yellow filter-submit margin-bottom"><i class="fa fa-search"></i> Search</button>
-													</div>
-													<button class="btn btn-sm red filter-cancel"><i class="fa fa-times"></i> Reset</button>
-												</td>
-											</tr>
-											</thead>
-											<tbody>
-											</tbody>
-											</table>
-										</div>
-									</div>
+									
 								</div>
 							</div>
 						</div>
