@@ -83,10 +83,9 @@ License: You must have a valid license purchased only from themeforest(the above
 				<!-- BEGIN NOTIFICATION DROPDOWN -->
 				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
 				<li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
-					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<i class="icon-bell"></i>
-					<span class="badge badge-default">
-					7 </span>
+					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-close-others="true" id="pesan">
+						<i class="icon-bell"></i>
+						<span class="badge badge-default" id="jumlah_notif"></span>
 					</a>
 					<ul class="dropdown-menu">
 						<li class="external">
@@ -97,92 +96,13 @@ License: You must have a valid license purchased only from themeforest(the above
 							<ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
 								<li>
 									<a href="javascript:;">
-									<span class="time">just now</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-success">
-									<i class="fa fa-plus"></i>
-									</span>
-									New user registered. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">3 mins</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-danger">
-									<i class="fa fa-bolt"></i>
-									</span>
-									Server #12 overloaded. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">10 mins</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-warning">
-									<i class="fa fa-bell-o"></i>
-									</span>
-									Server #2 not responding. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">14 hrs</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-info">
-									<i class="fa fa-bullhorn"></i>
-									</span>
-									Application error. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">2 days</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-danger">
-									<i class="fa fa-bolt"></i>
-									</span>
-									Database overloaded 68%. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">3 days</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-danger">
-									<i class="fa fa-bolt"></i>
-									</span>
-									A user IP blocked. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">4 days</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-warning">
-									<i class="fa fa-bell-o"></i>
-									</span>
-									Storage Server #4 not responding dfdfdfd. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">5 days</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-info">
-									<i class="fa fa-bullhorn"></i>
-									</span>
-									System Error. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">9 days</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-danger">
-									<i class="fa fa-bolt"></i>
-									</span>
-									Storage server failed. </span>
+										<span class="time">just now</span>
+										<span class="details">
+											<span class="label label-sm label-icon label-success">
+												<i class="fa fa-plus"></i>
+											</span>
+											<!-- <p id="notifikasi"></p>  -->
+										</span>
 									</a>
 								</li>
 							</ul>
@@ -2510,6 +2430,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="<?php echo base_url('');?>/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
 <script src="<?php echo base_url('');?>/assets/admin/pages/scripts/index.js" type="text/javascript"></script>
 <script src="<?php echo base_url('');?>/assets/admin/pages/scripts/tasks.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/js/notifikasi.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
 jQuery(document).ready(function() {    
