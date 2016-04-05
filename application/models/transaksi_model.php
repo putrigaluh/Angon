@@ -1,5 +1,4 @@
 <?php
-
 class Transaksi_Model extends CI_Model {
     var $table = 'transaksi';
     var $field = 'status';
@@ -66,5 +65,4 @@ class Transaksi_Model extends CI_Model {
         $q = $this->db->query($datainput);
     }
 }
-
 ?>

@@ -540,10 +540,9 @@ License: You must have a valid license purchased only from themeforest(the above
 													</label>
 													<div class="col-md-10">
 													<select  class="form-control" name="kategori_user">
-													
-													<option value="peternak" <?php if ($u[0]->kategori_user == 'Peternak') echo "selected"; ?>>Peternak</option>
-													<option value="industri ternak" <?php if ($u[0]->kategori_user == 'Industri Ternak') echo "selected"; ?>>Industri Ternak</option>
-													<option value="pengguna hasil ternak" <?php if ($u[0]->kategori_user == 'Pengguna Hasil Ternak') echo "selected"; ?>>Pengguna Hasil Ternak</option>
+														<option value="peternak" <?php if ($u[0]->kategori_user == 'Peternak') echo "selected"; ?>>Peternak</option>
+														<option value="industri ternak" <?php if ($u[0]->kategori_user == 'Industri Ternak') echo "selected"; ?>>Industri Ternak</option>
+														<option value="pengguna hasil ternak" <?php if ($u[0]->kategori_user == 'Pengguna Hasil Ternak') echo "selected"; ?>>Pengguna Hasil Ternak</option>
 													</select>
 													</div>
 												</div>

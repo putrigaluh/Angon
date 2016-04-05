@@ -11,7 +11,7 @@ class m_produk extends CI_Model {
     public $stok;
     public $deskripsi;
     public $id_user;
-    public $nama_gbr_produk;
+    public $gbr_produk;
     public $userfile;
 
 
@@ -23,7 +23,7 @@ class m_produk extends CI_Model {
     }
 
     //fungsi untuk menambah data karyawan
-    function insert() {
+    function insert($url) {
         $insert_produk = array(
             'id_produk' => $this->input->post('id_produk'),
             'id_kategori_jenis' => $this->input->post('id_kategori_jenis'),
@@ -32,8 +32,8 @@ class m_produk extends CI_Model {
             'stok' => $this->input->post('stok'),
             'deskripsi' => $this->input->post('deskripsi'),
             'id_user' => $this->input->post('id_user'),
-            'gbr_produk' => $this->input->post('userfile'),
         );
+        $this->db->set('gbr_produk',$url);
         $insert = $this->db->insert('produk', $insert_produk);
         return $insert;
     }
@@ -46,7 +46,7 @@ class m_produk extends CI_Model {
     }
 
     //fungsi yang digunakan untuk query update
-    function prosesedit() {
+    function prosesedit($url) {
         $update_produk = array(
             'id_produk' => $this->input->post('id_produk'),
             'id_kategori_jenis' => $this->input->post('id_kategori_jenis'),
@@ -55,12 +55,11 @@ class m_produk extends CI_Model {
             'stok' => $this->input->post('stok'),
             'deskripsi' => $this->input->post('deskripsi'),
             'id_user' => $this->input->post('id_user'),
-            'gbr_produk' => $this->input->post('gbr_produk'),
         );
+        $this->db->set('gbr_produk',$url);
         $id = $this->input->post('id_produk');
         $this->db->where('id_produk', $id);
-        $this->db->update('produk', $update_produk);
-    }
+        $this->db->update('produk', $update_produk);    }
 
     //fungsi yang digunakan untuk query delete
     function delete($id) {

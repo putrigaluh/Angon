@@ -83,10 +83,9 @@ License: You must have a valid license purchased only from themeforest(the above
 				<!-- BEGIN NOTIFICATION DROPDOWN -->
 				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
 				<li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
-					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<i class="icon-bell"></i>
-					<span class="badge badge-default">
-					7 </span>
+					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-close-others="true" id="pesan">
+						<i class="icon-bell"></i>
+						<span class="badge badge-default" id="jumlah_notif"></span>
 					</a>
 					<ul class="dropdown-menu">
 						<li class="external">
@@ -97,92 +96,13 @@ License: You must have a valid license purchased only from themeforest(the above
 							<ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
 								<li>
 									<a href="javascript:;">
-									<span class="time">just now</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-success">
-									<i class="fa fa-plus"></i>
-									</span>
-									New user registered. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">3 mins</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-danger">
-									<i class="fa fa-bolt"></i>
-									</span>
-									Server #12 overloaded. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">10 mins</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-warning">
-									<i class="fa fa-bell-o"></i>
-									</span>
-									Server #2 not responding. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">14 hrs</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-info">
-									<i class="fa fa-bullhorn"></i>
-									</span>
-									Application error. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">2 days</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-danger">
-									<i class="fa fa-bolt"></i>
-									</span>
-									Database overloaded 68%. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">3 days</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-danger">
-									<i class="fa fa-bolt"></i>
-									</span>
-									A user IP blocked. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">4 days</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-warning">
-									<i class="fa fa-bell-o"></i>
-									</span>
-									Storage Server #4 not responding dfdfdfd. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">5 days</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-info">
-									<i class="fa fa-bullhorn"></i>
-									</span>
-									System Error. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">9 days</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-danger">
-									<i class="fa fa-bolt"></i>
-									</span>
-									Storage server failed. </span>
+										<span class="time">just now</span>
+										<span class="details">
+											<span class="label label-sm label-icon label-success">
+												<i class="fa fa-plus"></i>
+											</span>
+											<!-- <p id="notifikasi"></p>  -->
+										</span>
 									</a>
 								</li>
 							</ul>
@@ -196,7 +116,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 					<img alt="" class="img-circle" src="<?php echo base_url(''); ?>/assets/admin/layout/img/avatar3_small.jpg"/>
 					<span class="username username-hide-on-mobile">
-					<?php echo $this->session->userdata('username'); ?> </span>
+					<?php echo $this->session->userdata('username');?></span>
 					<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-default">
@@ -227,7 +147,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							<i class="icon-lock"></i> Lock Screen </a>
 						</li>
 						<li>
-							<a href="<?php echo base_url(''); ?>logout">
+							<a href="<?php echo base_url(''); ?>login">
 							<i class="icon-key"></i> Log Out </a>
 						</li>
 					</ul>
@@ -312,7 +232,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							Dashboard</a>
 						</li>
 						<li>
-							<a href="<?php echo base_url(); ?>manage/produk/input_produk">
+							<a href="<?php echo base_url(); ?>manage/produk/">
 							<i class="icon-pencil"></i>
 							Input Produk</a>
 						</li>
@@ -322,15 +242,20 @@ License: You must have a valid license purchased only from themeforest(the above
 							Lihat Produk</a>
 						</li>
 						<li>
-							<a href="<?php echo base_url(); ?>manage/pesanan">
+							<a href="<?php echo base_url(); ?>manage/produk/lihat_pesanan">
 							<i class="icon-basket"></i>
 							Lihat Pesanan</a>
 						</li>
-						
+						<li>
+							<a href="<?php echo base_url(); ?>manage/produk/detail_pesanan">
+							<i class="icon-tag"></i>
+							Detail Pesanan</a>
+						</li>
 						
 						
 					</ul>
 				</li>
+
 				<?php if($this->session->userdata('kategori_user')=='Peternak') {
 				echo "<li>";
 					echo "<a href= ". base_url() ."ecomerce/produk>";
@@ -339,6 +264,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					echo "<span class='arrow' ></span>";
 					echo "</a>";
 				echo "</li>";
+
 				
 				}
 				?>
@@ -594,7 +520,9 @@ License: You must have a valid license purchased only from themeforest(the above
 						</div>
 						<div class="portlet-body">
 							<div id="site_statistics_loading">
-								<img src="<?php echo base_url(); ?>assets/admin/layout/img/loading.gif" alt="loading"/>
+
+								<img src="<?php echo base_url('');?>/assets/admin/layout/img/loading.gif" alt="loading"/>
+
 							</div>
 							<div id="site_statistics_content" class="display-none">
 								<div id="site_statistics" class="chart">
@@ -650,7 +578,9 @@ License: You must have a valid license purchased only from themeforest(the above
 						</div>
 						<div class="portlet-body">
 							<div id="site_activities_loading">
-								<img src="<?php echo base_url(); ?>/assets/admin/layout/img/loading.gif" alt="loading"/>
+
+								<img src="<?php echo base_url('');?>/assets/admin/layout/img/loading.gif" alt="loading"/>
+
 							</div>
 							<div id="site_activities_content" class="display-none">
 								<div id="site_activities" style="height: 228px;">
@@ -1542,7 +1472,9 @@ License: You must have a valid license purchased only from themeforest(the above
 						</div>
 						<div class="portlet-body">
 							<div id="region_statistics_loading">
-								<img src="<?php echo base_url(); ?>/assets/admin/layout/img/loading.gif" alt="loading"/>
+
+								<img src="<?php echo base_url('');?>/assets/admin/layout/img/loading.gif" alt="loading"/>
+
 							</div>
 							<div id="region_statistics_content" class="display-none">
 								<div class="btn-toolbar margin-bottom-10">
@@ -1676,7 +1608,8 @@ License: You must have a valid license purchased only from themeforest(the above
 							<div class="scroller" style="height: 341px;" data-always-visible="1" data-rail-visible1="1">
 								<ul class="chats">
 									<li class="in">
-										<img class="avatar" alt="" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar1.jpg"/>
+
+										<img class="avatar" alt="" src="<?php echo base_url('');?>/assets/admin/layout/img/avatar1.jpg"/>
 										<div class="message">
 											<span class="arrow">
 											</span>
@@ -1689,7 +1622,8 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</li>
 									<li class="out">
-										<img class="avatar" alt="" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar2.jpg"/>
+
+										<img class="avatar" alt="" src="<?php echo base_url('');?>/assets/admin/layout/img/avatar2.jpg"/>
 										<div class="message">
 											<span class="arrow">
 											</span>
@@ -1702,7 +1636,8 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</li>
 									<li class="in">
-										<img class="avatar" alt="" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar1.jpg"/>
+
+										<img class="avatar" alt="" src="<?php echo base_url('');?>/assets/admin/layout/img/avatar1.jpg"/>
 										<div class="message">
 											<span class="arrow">
 											</span>
@@ -1715,7 +1650,8 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</li>
 									<li class="out">
-										<img class="avatar" alt="" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar3.jpg"/>
+
+										<img class="avatar" alt="" src="<?php echo base_url('');?>/assets/admin/layout/img/avatar3.jpg"/>
 										<div class="message">
 											<span class="arrow">
 											</span>
@@ -1728,7 +1664,8 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</li>
 									<li class="in">
-										<img class="avatar" alt="" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar3.jpg"/>
+
+										<img class="avatar" alt="" src="<?php echo base_url('');?>/assets/admin/layout/img/avatar3.jpg"/>
 										<div class="message">
 											<span class="arrow">
 											</span>
@@ -1741,7 +1678,8 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</li>
 									<li class="out">
-										<img class="avatar" alt="" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar1.jpg"/>
+
+										<img class="avatar" alt="" src="<?php echo base_url('');?>/assets/admin/layout/img/avatar1.jpg"/>
 										<div class="message">
 											<span class="arrow">
 											</span>
@@ -1754,7 +1692,8 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</li>
 									<li class="in">
-										<img class="avatar" alt="" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar3.jpg"/>
+
+										<img class="avatar" alt="" src="<?php echo base_url('');?>/assets/admin/layout/img/avatar3.jpg"/>
 										<div class="message">
 											<span class="arrow">
 											</span>
@@ -1767,7 +1706,8 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</li>
 									<li class="out">
-										<img class="avatar" alt="" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar1.jpg"/>
+
+										<img class="avatar" alt="" src="<?php echo base_url('');?>/assets/admin/layout/img/avatar1.jpg"/>
 										<div class="message">
 											<span class="arrow">
 											</span>
@@ -1852,7 +1792,8 @@ License: You must have a valid license purchased only from themeforest(the above
 									<div class="media-status">
 										<span class="badge badge-success">8</span>
 									</div>
-									<img class="media-object" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar3.jpg" alt="...">
+
+									<img class="media-object" src="<?php echo base_url('');?>/assets/admin/layout/img/avatar3.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Bob Nilson</h4>
 										<div class="media-heading-sub">
@@ -1861,7 +1802,8 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</li>
 								<li class="media">
-									<img class="media-object" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar1.jpg" alt="...">
+
+									<img class="media-object" src="<?php echo base_url('');?>/assets/admin/layout/img/avatar1.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Nick Larson</h4>
 										<div class="media-heading-sub">
@@ -1873,7 +1815,8 @@ License: You must have a valid license purchased only from themeforest(the above
 									<div class="media-status">
 										<span class="badge badge-danger">3</span>
 									</div>
-									<img class="media-object" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar4.jpg" alt="...">
+
+									<img class="media-object" src="<?php echo base_url('');?>/assets/admin/layout/img/avatar4.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Deon Hubert</h4>
 										<div class="media-heading-sub">
@@ -1882,7 +1825,8 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</li>
 								<li class="media">
-									<img class="media-object" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar2.jpg" alt="...">
+
+									<img class="media-object" src="<?php echo base_url('');?>/assets/admin/layout/img/avatar2.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Ella Wong</h4>
 										<div class="media-heading-sub">
@@ -1897,7 +1841,8 @@ License: You must have a valid license purchased only from themeforest(the above
 									<div class="media-status">
 										<span class="badge badge-warning">2</span>
 									</div>
-									<img class="media-object" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar6.jpg" alt="...">
+
+									<img class="media-object" src="<?php echo base_url('');?>/assets/admin/layout/img/avatar6.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Lara Kunis</h4>
 										<div class="media-heading-sub">
@@ -1912,7 +1857,8 @@ License: You must have a valid license purchased only from themeforest(the above
 									<div class="media-status">
 										<span class="label label-sm label-success">new</span>
 									</div>
-									<img class="media-object" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar7.jpg" alt="...">
+
+									<img class="media-object" src="<?php echo base_url('');?>/assets/admin/layout/img/avatar7.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Ernie Kyllonen</h4>
 										<div class="media-heading-sub">
@@ -1922,7 +1868,8 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</li>
 								<li class="media">
-									<img class="media-object" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar8.jpg" alt="...">
+
+									<img class="media-object" src="<?php echo base_url('');?>/assets/admin/layout/img/avatar8.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Lisa Stone</h4>
 										<div class="media-heading-sub">
@@ -1937,7 +1884,8 @@ License: You must have a valid license purchased only from themeforest(the above
 									<div class="media-status">
 										<span class="badge badge-success">7</span>
 									</div>
-									<img class="media-object" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar9.jpg" alt="...">
+
+									<img class="media-object" src="<?php echo base_url('');?>/assets/admin/layout/img/avatar9.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Deon Portalatin</h4>
 										<div class="media-heading-sub">
@@ -1946,7 +1894,8 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</li>
 								<li class="media">
-									<img class="media-object" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar10.jpg" alt="...">
+
+									<img class="media-object" src="<?php echo base_url('');?>/assets/admin/layout/img/avatar10.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Irina Savikova</h4>
 										<div class="media-heading-sub">
@@ -1958,7 +1907,8 @@ License: You must have a valid license purchased only from themeforest(the above
 									<div class="media-status">
 										<span class="badge badge-danger">4</span>
 									</div>
-									<img class="media-object" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar11.jpg" alt="...">
+
+									<img class="media-object" src="<?php echo base_url('');?>/assets/admin/layout/img/avatar11.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Maria Gomez</h4>
 										<div class="media-heading-sub">
@@ -1978,7 +1928,8 @@ License: You must have a valid license purchased only from themeforest(the above
 								</div>
 								<div class="page-quick-sidebar-chat-user-messages">
 									<div class="post out">
-										<img class="avatar" alt="" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar3.jpg"/>
+
+										<img class="avatar" alt="" src="<?php echo base_url('');?>/assets/admin/layout/img/avatar3.jpg"/>
 										<div class="message">
 											<span class="arrow"></span>
 											<a href="javascript:;" class="name">Bob Nilson</a>
@@ -1988,7 +1939,8 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</div>
 									<div class="post in">
-										<img class="avatar" alt="" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar2.jpg"/>
+
+										<img class="avatar" alt="" src="<?php echo base_url('');?>/assets/admin/layout/img/avatar2.jpg"/>
 										<div class="message">
 											<span class="arrow"></span>
 											<a href="javascript:;" class="name">Ella Wong</a>
@@ -1998,7 +1950,8 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</div>
 									<div class="post out">
-										<img class="avatar" alt="" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar3.jpg"/>
+
+										<img class="avatar" alt="" src="<?php echo base_url('');?>/assets/admin/layout/img/avatar3.jpg"/>
 										<div class="message">
 											<span class="arrow"></span>
 											<a href="javascript:;" class="name">Bob Nilson</a>
@@ -2008,7 +1961,8 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</div>
 									<div class="post in">
-										<img class="avatar" alt="" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar2.jpg"/>
+
+										<img class="avatar" alt="" src="<?php echo base_url('');?>/assets/admin/layout/img/avatar2.jpg"/>
 										<div class="message">
 											<span class="arrow"></span>
 											<a href="javascript:;" class="name">Ella Wong</a>
@@ -2018,7 +1972,8 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</div>
 									<div class="post out">
-										<img class="avatar" alt="" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar3.jpg"/>
+
+										<img class="avatar" alt="" src="<?php echo base_url('');?>/assets/admin/layout/img/avatar3.jpg"/>
 										<div class="message">
 											<span class="arrow"></span>
 											<a href="javascript:;" class="name">Bob Nilson</a>
@@ -2028,7 +1983,8 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</div>
 									<div class="post in">
-										<img class="avatar" alt="" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar2.jpg"/>
+
+										<img class="avatar" alt="" src="<?php echo base_url('');?>/assets/admin/layout/img/avatar2.jpg"/>
 										<div class="message">
 											<span class="arrow"></span>
 											<a href="javascript:;" class="name">Ella Wong</a>
@@ -2038,7 +1994,8 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</div>
 									<div class="post out">
-										<img class="avatar" alt="" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar3.jpg"/>
+
+										<img class="avatar" alt="" src="<?php echo base_url('');?>/assets/admin/layout/img/avatar3.jpg"/>
 										<div class="message">
 											<span class="arrow"></span>
 											<a href="javascript:;" class="name">Bob Nilson</a>
@@ -2048,7 +2005,8 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</div>
 									<div class="post in">
-										<img class="avatar" alt="" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar2.jpg"/>
+
+										<img class="avatar" alt="" src="<?php echo base_url('');?>/assets/admin/layout/img/avatar2.jpg"/>
 										<div class="message">
 											<span class="arrow"></span>
 											<a href="javascript:;" class="name">Ella Wong</a>
@@ -2058,7 +2016,8 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</div>
 									<div class="post out">
-										<img class="avatar" alt="" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar3.jpg"/>
+
+										<img class="avatar" alt="" src="<?php echo base_url('');?>/assets/admin/layout/img/avatar3.jpg"/>
 										<div class="message">
 											<span class="arrow"></span>
 											<a href="javascript:;" class="name">Bob Nilson</a>
@@ -2467,6 +2426,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
 <!-- BEGIN CORE PLUGINS -->
 <!--[if lt IE 9]>
+<<<<<<< HEAD
 <script src="<?php echo base_url(); ?>/assets/global/plugins/respond.min.js"></script>
 <script src="<?php echo base_url(); ?>/assets/global/plugins/excanvas.min.js"></script> 
 <![endif]-->
@@ -2508,6 +2468,50 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="<?php echo base_url(); ?>/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>/assets/admin/pages/scripts/index.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>/assets/admin/pages/scripts/tasks.js" type="text/javascript"></script>
+=======
+<script src="<?php echo base_url('');?>/assets/global/plugins/respond.min.js"></script>
+<script src="<?php echo base_url('');?>/assets/global/plugins/excanvas.min.js"></script> 
+<![endif]-->
+<script src="<?php echo base_url('');?>/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+<script src="<?php echo base_url('');?>/assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script src="<?php echo base_url('');?>/assets/global/plugins/jqvmap/jqvmap/jquery.vmap.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/assets/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/assets/global/plugins/flot/jquery.flot.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/assets/global/plugins/flot/jquery.flot.resize.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/assets/global/plugins/flot/jquery.flot.categories.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/assets/global/plugins/jquery.pulsate.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/assets/global/plugins/bootstrap-daterangepicker/moment.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript"></script>
+<!-- IMPORTANT! fullcalendar depends on jquery-ui.min.js for drag & drop support -->
+<script src="<?php echo base_url('');?>/assets/global/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/assets/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/assets/global/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="<?php echo base_url('');?>/assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/assets/admin/pages/scripts/index.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/assets/admin/pages/scripts/tasks.js" type="text/javascript"></script>
+<script src="<?php echo base_url('');?>/js/notifikasi.js" type="text/javascript"></script>
+>>>>>>> refs/remotes/paramanisa/master
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
 jQuery(document).ready(function() {    

@@ -197,7 +197,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 					<img alt="" class="img-circle" src="<?php echo base_url(''); ?>/assets/admin/layout/img/avatar3_small.jpg"/>
 					<span class="username username-hide-on-mobile">
-					<?php echo $this->session->userdata('username'); ?></span>
+					Nick </span>
 					<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-default">
@@ -228,7 +228,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							<i class="icon-lock"></i> Lock Screen </a>
 						</li>
 						<li>
-							<a href="<?php echo base_url(''); ?>logout">
+							<a href="<?php echo base_url(''); ?>login">
 							<i class="icon-key"></i> Log Out </a>
 						</li>
 					</ul>
@@ -313,7 +313,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							Dashboard</a>
 						</li>
 						<li>
-							<a href="<?php echo base_url(); ?>manage/produk/input_produk">
+							<a href="<?php echo base_url(); ?>manage/produk/">
 							<i class="icon-pencil"></i>
 							Input Produk</a>
 						</li>
@@ -323,17 +323,21 @@ License: You must have a valid license purchased only from themeforest(the above
 							Lihat Produk</a>
 						</li>
 						<li>
-							<a href="<?php echo base_url(); ?>manage/pesanan">
+							<a href="<?php echo base_url(); ?>manage/produk/lihat_pesanan">
 							<i class="icon-basket"></i>
 							Lihat Pesanan</a>
 						</li>
-						
+						<li>
+							<a href="<?php echo base_url(); ?>manage/produk/detail_pesanan">
+							<i class="icon-tag"></i>
+							Detail Pesanan</a>
+						</li>
 						
 						
 					</ul>
 				</li>
 				<li>
-					<a href="<?php echo base_url(); ?>ecomerce/produk">
+					<a href="tes.html">
 					<i class="icon-basket"></i>
 					<span class="title">Beli Produk</span>
 					<span class="arrow "></span>
@@ -561,24 +565,18 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 												<div class="form-group">
-													<label class="col-md-2 control-label">Id User: <span class="required">
-													* </span>
-													</label>
 													<div class="col-md-10">
-														<input type="text" class="form-control" name="id_user"></textarea>
+														<input type="hidden" class="form-control" name="id_user" readonly="" value='<?php echo $this->session->userdata('id_user');?>'>
 													</div>
 												</div>
 												
 												<div class="form-group">
-													<?php echo form_open_multipart('manage/prosesadd/do_upload');?>
-													<input type="file" name="userfile" size="20" />
-													<br /><br />
-													<input type="submit" value="upload" />
-													</form>
+													<?php echo form_upload('pic');?>
 													</div>
 												</div>
-												<button class="btn green"><i class="fa fa-check" ></i>Simpan</button>
-												
+												<?php echo
+												form_submit('submit', 'Save', 'class="btn green"')
+												?>
 											</div>
 										</div>
 											</div>

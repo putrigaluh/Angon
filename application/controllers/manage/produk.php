@@ -11,42 +11,44 @@ public function index()
   $this->load->view('manage/input_produk');
  }
 
-public function prosesadd() {
-$config['upload_path'] = './uploads/';
-$config['allowed_types'] = 'gif|jpg|png';
-$config['max_size']    = '1000000';
-$config['max_width']  = '10240000';
-$config['max_height']  = '76800000';
-$this->load->library('upload', $config);
-$this->upload->initialize($config);
-if ( ! $this->upload->do_upload())
-{
-$error = array('error' => $this->upload->display_errors());
-$this->load->view('manage/input_produk', $error);
-}
-else
-{
-$data = array('upload_data' => $this->upload->data());
-   $this->load->model('m_produk');
-    $this->m_produk->insert();
+ public function prosesadd(){
+    
+    $url = $this->do_upload();
+    if($url){
+    $this->load->model('m_produk');
+    $this->m_produk->insert($url);
     redirect('manage/produk/lihat_produk');
-}
+    }
+    else{
+        echo"Ada yang salah!";
+    }
+ }
+
+ public function prosesedit() {
+        $url = $this->do_upload();
+    $this->load->model('m_produk');
+        $this->m_produk->prosesedit($url);
+        redirect('manage/produk/lihat_produk');
+    }
 
  
-    }
-    
+private function do_upload(){
+   $type = explode('.', $_FILES["pic"]["name"]);
+   $type = $type[count($type)-1];
+   $url = "./uploads/".uniqid(rand()).'.'.$type;
+   if(in_array($type, array("jpg","jpeg","gif","png")))
+    if(is_uploaded_file($_FILES["pic"]["tmp_name"]))
+        if(move_uploaded_file($_FILES["pic"]["tmp_name"],$url))
+            return $url;
+        return "";
+}
+
 
 public function edit($id) {
     $this->load->model('m_produk');
     $produk = $this->m_produk->edit($id);
     $this->load->vars('p', $produk);
     $this->load->view('manage/edit_produk');
-    }
-
-public function prosesedit() {
-    $this->load->model('m_produk');
-        $this->m_produk->prosesedit();
-        redirect('manage/produk/lihat_produk');
     }
 
  public function lihat_produk()

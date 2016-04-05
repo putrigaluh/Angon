@@ -1,7 +1,7 @@
 <?php
 class User_Model extends CI_Model {
     var $table = 'user';
-  
+
     public $id_user;
     public $nama_user;
     public $kategori_user;
@@ -9,24 +9,22 @@ class User_Model extends CI_Model {
     public $id_kota;
     public $username;
     public $password;
-  
-    function set_session() {
+
+  function set_session(){
         $this->session->set_userdata(array(
-            'id_user'           => $this->details->id_user,
-            'nama_user'           => $this->details->nama_user,
-            'kategori_user'         => $this->details->kategori_user,
-            'username'          => $this->details->username,
-            'is_logged_in'  => TRUE
+            'id_user' => $this->details->id_user,
+            'nama_user' => $this->details->nama_user,
+            'kategori_user' => $this->details->kategori_user,
+            'username' => $this->details->username,
+            'is_logged_in' => TRUE
             ));
-
     }
-
+  
     function validate_user($username, $password) {
         $this->db->from($this->table);
         $this->db->where('username', $username);
         $this->db->where('password', $password);
         $result = $this->db->get()->result(); 
-        
         if (is_array($result) && count($result) == 1) {
             $this->details = $result[0];
             $this->set_session();
@@ -34,12 +32,8 @@ class User_Model extends CI_Model {
         }
         return FALSE;
     }
-   // public function showUser(){
-         
-      //  $sql="SELECT id_user, nama_user, kategori, alamat_user, nama_kota, username, password FROM user u, kategori_user ku, kota k
-       // WHERE u.id_kategori_user=ku.id_kategori_user AND u.id_kota=k.id_kota ORDER BY id_user ASC ";
-       // return $this->db->query($sql)->result();
-    //}
+
+ 
 
     //fungsi untuk menampilkan semua data user
     function index() {
