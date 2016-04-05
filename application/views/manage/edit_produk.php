@@ -336,13 +336,17 @@ License: You must have a valid license purchased only from themeforest(the above
 						
 					</ul>
 				</li>
-				<li>
-					<a href="tes.html">
-					<i class="icon-basket"></i>
-					<span class="title">Beli Produk</span>
-					<span class="arrow "></span>
-					</a>
-				</li>
+				<?php if($this->session->userdata('kategori_user')=='Peternak') {
+				echo "<li>";
+					echo "<a href= ". base_url() ."ecomerce/produk>";
+					echo "<i class='icon-basket'></i>";
+					echo "<span class='title'>Beli Produk</span>";
+					echo "<span class='arrow' ></span>";
+					echo "</a>";
+				echo "</li>";
+				
+				}
+				?>
 				
 			</ul>
 			<!-- END SIDEBAR MENU -->
