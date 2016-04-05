@@ -17,8 +17,12 @@ class m_produk extends CI_Model {
 
     //fungsi untuk menampilkan semua data karyawan
     function index() {
-
-        $query = $this->db->get('produk');
+        
+        $id_user = $this->session->userdata('id_user');
+        $this->db->select('*');
+        $this->db->from('produk');
+        $this->db->where('id_user',$id_user);
+        $query = $this->db->get();
         return $query->result();
     }
 

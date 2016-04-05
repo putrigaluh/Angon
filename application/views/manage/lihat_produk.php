@@ -586,9 +586,6 @@ License: You must have a valid license purchased only from themeforest(the above
 									<th width="15%">
 										 Deskripsi
 									</th>
-									<th width="15%">
-										 ID&nbsp;User
-									</th>
 									<th width="10%">
 										 Aksi
 									</th>
@@ -621,11 +618,6 @@ License: You must have a valid license purchased only from themeforest(the above
 										<input type="text" class="form-control form-filter input-sm" 
 										value="<?php print $produk->deskripsi; ?>" 
 										name="deskripsi" readonly >
-									</td>
-									<td>
-										<input type="text" class="form-control form-filter input-sm" 
-										value="<?php print $produk->id_user; ?>" 
-										name="id_user" readonly >
 									</td>
 									<td>
 										<div class="margin-bottom-5">
