@@ -628,14 +628,14 @@ License: You must have a valid license purchased only from themeforest(the above
 										name="id_user" readonly >
 									</td>
 									<td>
-										<button class="btn btn-sm green table-group-action-submit">Edit
+										
 											<?php print "<a href=" . $this->config->base_url() . 'manage/produk/edit/' . 
 											$produk->id_produk . ">Edit</a>" ?>
-										</button>
-										<button class="btn btn-sm red table-group-action-submit" action="<?php echo base_url();?>">Hapus
+										
+										
 											<?php print "<a href=" . $this->config->base_url() . 'manage/produk/delete/' . 
 											$produk->id_produk . ">Hapus</a>" ?>
-										</button>
+										
 									</td>
 								</tr>
 								<?php } ?>

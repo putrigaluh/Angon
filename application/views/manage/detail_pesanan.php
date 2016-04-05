@@ -711,7 +711,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<div class="portlet green-meadow box">
 													<div class="portlet-title">
 														<div class="caption">
-															<i class="fa fa-cogs"></i>Billing Address
+															<i class="fa fa-cogs"></i>Produk Yang Dipesan
 														</div>
 														<!--<div class="actions">
 															<a href="javascript:;" class="btn btn-default btn-sm">
@@ -721,13 +721,10 @@ License: You must have a valid license purchased only from themeforest(the above
 													<div class="portlet-body">
 														<div class="row static-info">
 															<div class="col-md-12 value">
-																 Jhon Done<br>
-																 #24 Park Avenue Str<br>
-																 New York<br>
-																 Connecticut, 23456 New York<br>
-																 United States<br>
-																 T: 123123232<br>
-																 F: 231231232<br>
+																 <?php foreach ($p as $d){
+																 echo print_r($d);
+																	}
+																	?>
 															</div>
 														</div>
 													</div>

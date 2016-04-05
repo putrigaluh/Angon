@@ -290,7 +290,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					</form>
 					<!-- END RESPONSIVE QUICK SEARCH FORM -->
 				</li>
-				<li class="start active open">
+				<li >
 					<a href="javascript:;">
 					<i class="icon-home"></i>
 					<span class="title">Dashboard</span>
@@ -321,7 +321,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							<i class="icon-handbag"></i>
 							Lihat Produk</a>
 						</li>
-						<li>
+						<li class="start active open">
 							<a href="<?php echo base_url(); ?>manage/pesanan">
 							<i class="icon-basket"></i>
 							Lihat Pesanan</a>
@@ -475,7 +475,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			<!-- END STYLE CUSTOMIZER -->
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			Orders <small>orders listing</small>
+			Pesanan<small>Daftar Pesanan</small>
 			</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
@@ -485,36 +485,14 @@ License: You must have a valid license purchased only from themeforest(the above
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">eCommerce</a>
+						<a href="#">Manage Penjualan</a>
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">Orders</a>
+						<a href="#">Pesanan</a>
 					</li>
 				</ul>
-				<div class="page-toolbar">
-					<div class="btn-group pull-right">
-						<button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
-						Actions <i class="fa fa-angle-down"></i>
-						</button>
-						<ul class="dropdown-menu pull-right" role="menu">
-							<li>
-								<a href="#">Action</a>
-							</li>
-							<li>
-								<a href="#">Another action</a>
-							</li>
-							<li>
-								<a href="#">Something else here</a>
-							</li>
-							<li class="divider">
-							</li>
-							<li>
-								<a href="#">Separated link</a>
-							</li>
-						</ul>
-					</div>
-				</div>
+				
 			</div>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->
@@ -527,41 +505,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							<div class="caption">
 								<i class="fa fa-shopping-cart"></i>Order Listing
 							</div>
-							<div class="actions">
-								<a href="javascript:;" class="btn default yellow-stripe">
-								<i class="fa fa-plus"></i>
-								<span class="hidden-480">
-								New Order </span>
-								</a>
-								<div class="btn-group">
-									<a class="btn default yellow-stripe dropdown-toggle" href="javascript:;" data-toggle="dropdown">
-									<i class="fa fa-share"></i>
-									<span class="hidden-480">
-									Tools </span>
-									<i class="fa fa-angle-down"></i>
-									</a>
-									<ul class="dropdown-menu pull-right">
-										<li>
-											<a href="javascript:;">
-											Export to Excel </a>
-										</li>
-										<li>
-											<a href="javascript:;">
-											Export to CSV </a>
-										</li>
-										<li>
-											<a href="javascript:;">
-											Export to XML </a>
-										</li>
-										<li class="divider">
-										</li>
-										<li>
-											<a href="javascript:;">
-											Print Invoices </a>
-										</li>
-									</ul>
-								</div>
-							</div>
+							
 						</div>
 						<div class="portlet-body">
 							<div class="table-container">
