@@ -24,8 +24,15 @@ public function __construct() {
             $this->transaksi_model->update($id, $status);
             redirect('manage/pesanan');
  }
-  public function detail_pesanan(){
+
+  public function detail_pesanan($id){
+  //$this->load->view('header');
+  //$this->load->view('sidebar');  
+  $details = $this->transaksi_model->details($id);
+  
+  $this->load->vars('p', $details);
   $this->load->view('manage/detail_pesanan');
  }
+
 }
  ?>
