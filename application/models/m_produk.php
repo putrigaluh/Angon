@@ -67,23 +67,5 @@ class m_produk extends CI_Model {
         $this->db->delete('produk');
     }
 
-
-/*    function tampil_upload($k){
-    $query = $this->db->query("SELECT * FROM angon where id_produk='$k'");
-    foreach($query->result_array() as $ok){
-    //header('Content-type: image');
-    $gbr_produk = $ok['gbr_produk']; 
-    }
-    //header("Content-type: image/*");
-    echo $image;
-    }
-
-
-    function simpan($nama_gbr_produk,$gbr_produk){
-    $query = $this->db->query("INSERT INTO angon (nama_gbr_produk,gbr_produk) VALUES ('$nama_gbr_produk','$gbr_produk')");
-    return $query;
- }
-*/
-
 }
 ?>
