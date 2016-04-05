@@ -116,7 +116,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 					<img alt="" class="img-circle" src="<?php echo base_url(''); ?>/assets/admin/layout/img/avatar3_small.jpg"/>
 					<span class="username username-hide-on-mobile">
-					<?php echo $this->session->userdata('username');?></span>
+					<?php echo $this->session->userdata('kategori_user');?></span>
 					<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-default">
