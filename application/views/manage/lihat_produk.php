@@ -586,9 +586,6 @@ License: You must have a valid license purchased only from themeforest(the above
 									<th width="15%">
 										 Deskripsi
 									</th>
-									<th width="15%">
-										 ID&nbsp;User
-									</th>
 									<th width="10%">
 										 Aksi
 									</th>
@@ -623,19 +620,14 @@ License: You must have a valid license purchased only from themeforest(the above
 										name="deskripsi" readonly >
 									</td>
 									<td>
-										<input type="text" class="form-control form-filter input-sm" 
-										value="<?php print $produk->id_user; ?>" 
-										name="id_user" readonly >
-									</td>
-									<td>
-										<button class="btn btn-sm green table-group-action-submit">Edit
+										<div class="margin-bottom-5">
 											<?php print "<a href=" . $this->config->base_url() . 'manage/produk/edit/' . 
-											$produk->id_produk . ">Edit</a>" ?>
-										</button>
-										<button class="btn btn-sm red table-group-action-submit" action="<?php echo base_url();?>">Hapus
+											$produk->id_produk . ">edit</a>" ?>
+										</div>
+										<div class="margin-bottom-5">
 											<?php print "<a href=" . $this->config->base_url() . 'manage/produk/delete/' . 
-											$produk->id_produk . ">Hapus</a>" ?>
-										</button>
+											$produk->id_produk . ">hapus</a>" ?>
+										</div>
 									</td>
 								</tr>
 								<?php } ?>
