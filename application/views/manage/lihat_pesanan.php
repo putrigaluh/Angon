@@ -196,7 +196,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 					<img alt="" class="img-circle" src="<?php echo base_url(''); ?>/assets/admin/layout/img/avatar3_small.jpg"/>
 					<span class="username username-hide-on-mobile">
-					Nick </span>
+					<?php echo $this->session->userdata('username'); ?> </span>
 					<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-default">
@@ -227,7 +227,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							<i class="icon-lock"></i> Lock Screen </a>
 						</li>
 						<li>
-							<a href="<?php echo base_url(''); ?>login">
+							<a href="<?php echo base_url(''); ?>logout">
 							<i class="icon-key"></i> Log Out </a>
 						</li>
 					</ul>
@@ -322,26 +322,26 @@ License: You must have a valid license purchased only from themeforest(the above
 							Lihat Produk</a>
 						</li>
 						<li>
-							<a href="<?php echo base_url(); ?>manage/produk/lihat_pesanan">
+							<a href="<?php echo base_url(); ?>manage/pesanan">
 							<i class="icon-basket"></i>
 							Lihat Pesanan</a>
 						</li>
-						<li>
-							<a href="<?php echo base_url(); ?>manage/produk/detail_pesanan">
-							<i class="icon-tag"></i>
-							Detail Pesanan</a>
-						</li>
+						
 						
 						
 					</ul>
 				</li>
-				<li>
-					<a href="tes.html">
-					<i class="icon-basket"></i>
-					<span class="title">Beli Produk</span>
-					<span class="arrow "></span>
-					</a>
-				</li>
+				<?php if($this->session->userdata('kategori_user')=='Peternak') {
+				echo "<li>";
+					echo "<a href= ". base_url() ."ecomerce/produk>";
+					echo "<i class='icon-basket'></i>";
+					echo "<span class='title'>Beli Produk</span>";
+					echo "<span class='arrow' ></span>";
+					echo "</a>";
+				echo "</li>";
+				
+				}
+				?>
 				
 			</ul>
 			<!-- END SIDEBAR MENU -->
@@ -520,11 +520,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			<!-- BEGIN PAGE CONTENT-->
 			<div class="row">
 				<div class="col-md-12">
-					<div class="note note-danger">
-						<p>
-							 NOTE: The below datatable is not connected to a real database so the filter and sorting is just simulated for demo purposes only.
-						</p>
-					</div>
+					
 					<!-- Begin: life time stats -->
 					<div class="portlet">
 						<div class="portlet-title">
@@ -582,29 +578,25 @@ License: You must have a valid license purchased only from themeforest(the above
 									<button class="btn btn-sm yellow table-group-action-submit"><i class="fa fa-check"></i> Submit</button>
 								</div>
 								<table class="table table-striped table-bordered table-hover" id="datatable_orders">
-								<thead>
-								<tr role="row" class="heading">
+									<thead>
+										<tr role="row" class="heading">
 									
-									<th width="5%">
-										 Pesanan
-									</th>
-									<th width="15%">
-										 Tanggal Transaksi
-									</th>
-									<th width="15%">
-										 Nama Pelanggan
-									</th>
-									<th width="10%">
-										 Alamat Pengiriman
-									</th>
-									<th width="10%">
-										 Status
-									</th>
-									<th width="10%">
-										 Actions
-									</th>
-								</tr>
-								<tr role="row" class="filter">
+										<th width="5%">
+											 Nomor Pesanan
+										</th>
+										<th width="15%">
+											 Tanggal Transaksi
+										</th>
+										
+										<th width="10%">
+											 Status
+										</th>
+										<th width="10%">
+											 Actions
+										</th>
+										</tr>
+									</thead>
+									<tr role="row" class="filter">
 									
 									<td>
 										<input type="text" class="form-control form-filter input-sm" name="order_id">
@@ -623,21 +615,19 @@ License: You must have a valid license purchased only from themeforest(the above
 											</span>
 										</div>
 									</td>
-									<td>
-										<input type="text" class="form-control form-filter input-sm" name="order_customer_name">
-									</td>
-									<td>
-										<input type="text" class="form-control form-filter input-sm" name="order_ship_to">
-									</td>
+									
+									
 									
 									
 									<td>
 										<select name="order_status" class="form-control form-filter input-sm">
-											<option value="">Select...</option>
-											<option value="pending">Pending</option>
-											<option value="closed">Closed</option>
-											<option value="hold">On Hold</option>
-											<option value="fraud">Fraud</option>
+											<?php  
+									        //Re-Index
+													$array = array_values($enm);
+													foreach ($array as $v1) {
+														echo "<option>" .$v1."</option>";
+													}
+													?>
 										</select>
 									</td>
 									<td>
@@ -647,10 +637,34 @@ License: You must have a valid license purchased only from themeforest(the above
 										<button class="btn btn-sm red filter-cancel"><i class="fa fa-times"></i> Reset</button>
 									</td>
 								</tr>
+								
+								</table>
+
+								<table class="table table-striped table-bordered table-hover" id="datatable_orders">
+								<thead>
+								<tr role="row" class="heading">
+									
+									<th width="5%">
+										 Pesanan
+									</th>
+									<th width="15%">
+										 Tanggal Transaksi
+									</th>
+									<th width="15%">
+										 Nama Pembeli
+									</th>
+									<th width="10%">
+										 Alamat Pengiriman
+									</th>
+									<th width="10%">
+										 Status
+									</th>
+									
+								</tr>
+								
 								</thead>
 								<tbody>
 									<?php
-
 									if (is_array($daftar_transaksi) || is_object($daftar_transaksi)) {
 										foreach($daftar_transaksi as $order){
 											?>
@@ -681,7 +695,6 @@ License: You must have a valid license purchased only from themeforest(the above
 		       							}
 		       						} 
 		       						?>
-
 									   
 								</tbody>
 								</table>
