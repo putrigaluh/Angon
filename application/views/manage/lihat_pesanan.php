@@ -650,22 +650,38 @@ License: You must have a valid license purchased only from themeforest(the above
 								</thead>
 								<tbody>
 									<?php
-          						      foreach($daftar_transaksi as $order){
-        							?>
-									<tr>
-										<td><?php echo $order->id_transaksi; ?></td>
-           						 		<td><?php echo $order->tgl_transaksi; ?></td>
-            							<td><?php echo $order->nama_user; ?></td>
-          						  		<td><?php echo $order->alamat_pengiriman; ?></td>
-           						 		<td><?php echo $order->status; ?></td>
-										<td>
-											<div class="margin-bottom-5">
-												<button class="btn btn-sm yellow filter-submit margin-bottom"><i class=""></i> Edit</button>
-											</div>
-												<button class="btn btn-sm red filter-cancel"><i class="fa fa-times"></i>Delete</button>
-										</td>
-       							 	</tr>
-           							<?php } ?>
+
+									if (is_array($daftar_transaksi) || is_object($daftar_transaksi)) {
+										foreach($daftar_transaksi as $order){
+											?>
+											<tr>
+												<td><a href="<?php echo base_url(); ?>manage/pesanan/detail_pesanan/<?php echo $order->id_transaksi; ?>"><?php echo $order->id_transaksi; ?></a></td>
+		           						 		<td><?php echo $order->tgl_transaksi; ?></td>
+		            							<td><?php echo $order->nama_user; ?></td>
+		          						  		<td><?php echo $order->alamat_pengiriman; ?></td>
+		           						 		<td>
+		           						 			<form action="<?php echo base_url(); ?>manage/pesanan/update_data/<?php echo $order->id_transaksi; ?>" method="post">
+
+			           						 			<select name="order_status" class="form-control form-filter input-sm" onchange="this.form.submit()">
+															<!-- <option value="<?php echo $order->status; ?>"><?php echo $order->status; ?></option> -->
+															<option value="Pending" <?php if($order->status == "Pending") echo "selected"; ?>>Pending</option>
+															<option value="Terbayar" <?php if($order->status == "Terbayar") echo "selected"; ?>>Terbayar</option>
+															<option value="Terkirim" <?php if($order->status == "Terkirim") echo "selected"; ?>>Terkirim</option>
+														</select>
+													</form>
+		           						 		</td>
+												<!-- <td>
+													<div class="margin-bottom-5">
+														<button class="btn btn-sm yellow filter-submit margin-bottom"><i class=""></i> Edit</button>
+													</div>
+														<button class="btn btn-sm red filter-cancel"><i class="fa fa-times"></i>Delete</button>
+												</td> -->
+		       							 	</tr>
+		       							 	<?php 
+		       							}
+		       						} 
+		       						?>
+
 									   
 								</tbody>
 								</table>

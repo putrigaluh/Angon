@@ -520,11 +520,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			<!-- BEGIN PAGE CONTENT-->
 			<div class="row">
 				<div class="col-md-12">
-					<div class="note note-danger">
-						<p>
-							 NOTE: The below datatable is not connected to a real database so the filter and sorting is just simulated for demo purposes only.
-						</p>
-					</div>
+					
 					<!-- Begin: life time stats -->
 					<div class="portlet">
 						<div class="portlet-title">
@@ -632,14 +628,14 @@ License: You must have a valid license purchased only from themeforest(the above
 										name="id_user" readonly >
 									</td>
 									<td>
-										<div class="margin-bottom-5">
+										<button class="btn btn-sm green table-group-action-submit">Edit
 											<?php print "<a href=" . $this->config->base_url() . 'manage/produk/edit/' . 
-											$produk->id_produk . ">edit</a>" ?>
-										</div>
-										<div class="margin-bottom-5">
+											$produk->id_produk . ">Edit</a>" ?>
+										</button>
+										<button class="btn btn-sm red table-group-action-submit" action="<?php echo base_url();?>">Hapus
 											<?php print "<a href=" . $this->config->base_url() . 'manage/produk/delete/' . 
-											$produk->id_produk . ">hapus</a>" ?>
-										</div>
+											$produk->id_produk . ">Hapus</a>" ?>
+										</button>
 									</td>
 								</tr>
 								<?php } ?>
