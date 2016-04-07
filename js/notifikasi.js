@@ -1,43 +1,28 @@
-var x = 1;
+$(document).ready(function(){
+    cek();
+    $("#tombol-notifikasi").click(function(){
+        tampilkan();
+    });
+});
 
 function cek(){
     $.ajax({
-        url: "index/cek",
+        url: "../notifikasi/hitung",
         cache: false,
         success: function(msg){
-            $("#jumlah_notif").html(msg);
+            $("#jumlah-notifikasi").html(msg);
         }
     });
-    // var waktu = setTimeout("cek()",3000);
+    var waktu = setTimeout("cek()",3000);
 }
 
-$(document).ready(function(){
-    cek();
-    $("#pesan").click(function(){
-        $("#loading").show();
-        if(x==1){
-            $("#pesan").css("background-color","#efefef");
-            x = 0;
-        }else{
-            $("#pesan").css("background-color","#4B59a9");
-            x = 1;
+function tampilkan(){
+    $.ajax({
+        url: "../notifikasi/get",
+        cache: false,
+        success: function(msg){
+            // $("#loading").hide();
+            $("#konten-notifikasi").html(msg);
         }
-        $("#info").toggle();
-   
-    //     //ajax untuk menampilkan pesan yang belum terbaca
-    //     $.ajax({
-    //         url: "lihatpesan.php",
-    //         cache: false,
-    //         success: function(msg){
-    //             $("#loading").hide();
-    //             $("#konten-info").html(msg);
-    //         }
-    //     });
-
-    // });
-    // $("#content").click(function(){
-    //     $("#info").hide();
-    //     $("#pesan").css("background-color","#4B59a9");
-    //     x = 1;
-    // });
-});
+    });
+}
