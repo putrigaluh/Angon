@@ -28,13 +28,28 @@ class Notifikasi extends CI_Controller {
         echo $this->notifikasi_model->hitung_notif_admin();
     }
 
-    // public function beli(){
-    //     $this->load->model('notifikasi_model');
-    //     //aksjdhfkasjdhfkjsaf
-    //     //asdfsadfasdfsdf
+//notif untuk penjual
+     public function get_penjual() {
+        $notifikasi = $this->notifikasi_model->select_notif_penjual();
+        foreach ($notifikasi as $n) {
+            echo '<li>
+            <a href="javascript:;">
+                <span class="time">'.$n->waktu.'</span>
+                <span class="details">
+                    <span class="label label-sm label-icon label-success">
+                        <i class="fa fa-plus"></i>
+                    </span>
+                    '.$n->isi_pesan.' 
+                </span>
+            </a>
+            </li>';
+        }
+    }
 
-    //     //manggil codingan insert ke notif
-    // }
+    public function hitung_penjual() {
+        echo $this->notifikasi_model->hitung_notif_penjual();
+    }
+
 
 
 }

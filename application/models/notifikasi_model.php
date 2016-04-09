@@ -15,24 +15,30 @@
 	public function select_notif_penjual(){
 		$this->db->where('kepada', $this->session->userdata('id_user'));
 		$this->db->where('sudahbaca', 'N');
-		return $this->db->get($this->table2);
+		return $this->db->get($this->table2)->result();
 	}
 
 	public function hitung_notif_admin(){
 		// $this->db->where('kepada', $this->session->userdata('id_user'));
+		$this->db->where('sudahbaca', 'N');
 		$this->db->FROM($this->table1);
 		return $this->db->count_all_results();
 	}
 
 	public function hitung_notif_penjual(){
 		$this->db->where('kepada', $this->session->userdata('id_user'));
+		$this->db->where('sudahbaca', 'N');
 		$this->db->FROM($this->table2);
 		return $this->db->count_all_results();
 	}
 
-	// public function insert_notif(){
-	// 	//kodingan insert notif 
-	// }
+	public function insert_notif_admin($notif){			//notif
+		$this->db->insert($this->table1, $notif); 
+	}
+
+	public function insert_notif_penjual($notif){			//notif
+		$this->db->insert($this->table2, $notif); 
+	}
 
 }
 ?>
