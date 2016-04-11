@@ -49,8 +49,8 @@ class Transaksi_Model extends CI_Model {
         
         'id_user' => $this->input->post('id_user'),
         'alamat_pengiriman' => $this->input->post('alamat_pengiriman'),
-        'id_kota' => $this->input->post('kota'),
-        'no_telp' => $this->input->post('no_telp'),
+        // 'id_kota' => $this->input->post('kota'),
+        // 'no_telp' => $this->input->post('no_telp'),
          'status' => 'Pending'
         );
          $this->db->set('tgl_transaksi', 'NOW()', FALSE);

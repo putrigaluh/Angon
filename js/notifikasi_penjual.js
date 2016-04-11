@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 function cek(){
     $.ajax({
-        url: "../notifikasi/hitung",
+        url: "../notifikasi/hitung_penjual",
         cache: false,
         success: function(msg){
             $("#jumlah-notifikasi").html(msg);
@@ -18,7 +18,7 @@ function cek(){
 
 function tampilkan(){
     $.ajax({
-        url: "../notifikasi/get",
+        url: "../notifikasi/get_penjual",
         cache: false,
         success: function(msg){
             // $("#loading").hide();
