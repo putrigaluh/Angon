@@ -620,6 +620,13 @@ License: You must have a valid license purchased only from themeforest(the above
 										name="deskripsi" readonly >
 									</td>
 									<td>
+
+										<input type="text" class="form-control form-filter input-sm" 
+										value="<?php print $produk->id_user; ?>" 
+										name="id_user" readonly >
+									</td>
+									<td>
+										
 										<div class="margin-bottom-5">
 											<?php print "<a href=" . $this->config->base_url() . 'manage/produk/edit/' . 
 											$produk->id_produk . ">edit</a>" ?>
@@ -628,6 +635,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											<?php print "<a href=" . $this->config->base_url() . 'manage/produk/delete/' . 
 											$produk->id_produk . ">hapus</a>" ?>
 										</div>
+
 									</td>
 								</tr>
 								<?php } ?>

@@ -6,7 +6,7 @@
 		?>
 			<tr>
 				<td>
-					<tr><td><?php echo $p->id_produk; ?></td></tr>
+				<tr><td><?php echo $p->id_produk; ?></td></tr>
 		        	<tr><td><?php echo $p->nama_produk; ?></td></tr>
 		        	<tr><td><?php echo $p->harga_produk; ?></td></tr>
 		        	<tr><td><?php echo $p->deskripsi; ?></td></tr>
