@@ -545,7 +545,7 @@ License: You must have a valid license purchased only from themeforest(the above
 													* </span>
 													</label>
 													<div class="col-md-10">
-														<input type="text" class="form-control" name="nama_produk"></textarea>
+														<input type="text" class="form-control" name="nama_produk">
 													</div>
 												</div>
 												<div class="form-group">
@@ -553,7 +553,15 @@ License: You must have a valid license purchased only from themeforest(the above
 													* </span>
 													</label>
 													<div class="col-md-10">
-														<input type="text" class="form-control" name="harga_produk"></textarea>
+														<input type="text" class="form-control" name="harga_produk">
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-md-2 control-label">Berat Produk: <span class="required">
+													* </span>
+													</label>
+													<div class="col-md-10">
+														<input type="text" class="form-control" name="berat">
 													</div>
 												</div>
 												<div class="form-group">
@@ -561,7 +569,7 @@ License: You must have a valid license purchased only from themeforest(the above
 													* </span>
 													</label>
 													<div class="col-md-10">
-														<input type="text" class="form-control" name="stok"></textarea>
+														<input type="text" class="form-control" name="stok">
 													</div>
 												</div>
 												<div class="form-group">
