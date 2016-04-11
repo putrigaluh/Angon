@@ -9,7 +9,11 @@ public function __construct() {
     
  }
  public function index(){
- 	$this->load->view('ecomerce/deliveryinformation');
+ 	 $this->load->model('kota_model');
+ 	$data['daftar_kota'] = $this->kota_model->get_data_kota();
+ 	$this->load->view('ecomerce/header');
+ 	$this->load->view('ecomerce/checkout', $data);
+ 	$this->load->view('ecomerce/footer');
  }
  
  public function check(){

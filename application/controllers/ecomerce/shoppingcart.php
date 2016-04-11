@@ -20,12 +20,14 @@ public function buy($id){
             );
 
 	$this->cart->insert($data);
-
+  $this->load->view('ecomerce/header');
 	$this->load->view('ecomerce/cart');
+  $this->load->view('ecomerce/footer');
  }
 
  public function delete($rowid){
  	$this->cart->update(array('rowid' => $rowid, 'qty' =>0));
+  //if()
 	$this->load->view('ecomerce/cart');	
  }
 
@@ -35,7 +37,10 @@ public function buy($id){
  		$this->cart->update(array('rowid' => $items['rowid'], 'qty' => $_POST['qty'.$i]));
  		$i++;
  	}
+
+  $this->load->view('ecomerce/header');
  	$this->load->view('ecomerce/cart');
+  $this->load->view('ecomerce/footer');
  }
 }
 ?>

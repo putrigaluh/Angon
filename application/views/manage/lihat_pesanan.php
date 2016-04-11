@@ -603,6 +603,9 @@ License: You must have a valid license purchased only from themeforest(the above
 									<th width="10%">
 										 Status
 									</th>
+									<th width="10%">
+										Aksi
+									</th>
 									
 								</tr>
 								
@@ -628,12 +631,13 @@ License: You must have a valid license purchased only from themeforest(the above
 														</select>
 													</form>
 		           						 		</td>
-												<!-- <td>
+												<td>
 													<div class="margin-bottom-5">
-														<button class="btn btn-sm yellow filter-submit margin-bottom"><i class=""></i> Edit</button>
+														
+														<button class="btn btn-sm yellow filter-submit margin-bottom" type="submit" formaction="<?php echo base_url(); ?>manage/pesanan/detail_pesanan/<?php echo $order->id_transaksi; ?>" ><i class=""></i>Lihat Detail</button>
 													</div>
-														<button class="btn btn-sm red filter-cancel"><i class="fa fa-times"></i>Delete</button>
-												</td> -->
+														<button class="btn btn-sm red filter-cancel"><i class="fa fa-times"></i>Tolak Pesanan</button>
+												</td> 
 		       							 	</tr>
 		       							 	<?php 
 		       							}
