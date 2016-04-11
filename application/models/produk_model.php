@@ -7,8 +7,7 @@ public $alamat;
 public $id_kota;
 public $no_telp;
 public $status;
- 
- 
+  
 public function show_produk(){
 	 	$user=$this->session->userdata('kategori_user');
         if ($user == 'Peternak'){
@@ -19,7 +18,7 @@ public function show_produk(){
         return $this->db->query($sql)->result();
     }
 
-public function find($id){
+public function find($id){					//dipake notif juga
  	$this->db->where ('id_produk', $id);
  	return $this->db->get('produk')->row();
  }

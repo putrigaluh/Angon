@@ -525,11 +525,19 @@ License: You must have a valid license purchased only from themeforest(the above
 											<div class="form-body">
 										   
 												<div class="form-group"> 
-													<label class="col-md-2 control-label">Id Kategori Jenis: <span class="required">
+													<label class="col-md-2 control-label">Kategori Jenis: <span class="required">
 													* </span>
 													</label>
 													<div class="col-md-10">
-														<input type="text" class="form-control" name="id_kategori_jenis"placeholder="">
+														 <select class="form-control" name="id_kategori_produk">
+            <?php 
+
+            foreach($kat as $row)
+            { 
+              echo '<option value="'.$row->id_kategori_produk.'">'.$row->kategori_produk.'</option>';
+            }
+            ?>
+            </select>
 													</div>
 												</div>
 												<div class="form-group">
@@ -561,7 +569,7 @@ License: You must have a valid license purchased only from themeforest(the above
 													* </span>
 													</label>
 													<div class="col-md-10">
-														<textarea class="form-control" name="deksripsi"></textarea>
+														<textarea class="form-control" name="deskripsi"></textarea>  
 													</div>
 												</div>
 												<div class="form-group">

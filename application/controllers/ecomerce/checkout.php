@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Checkout extends CI_Controller {
+
+class Checkout extends MY_Controller {	//notif
 
 public function __construct() {
     parent::__construct();
@@ -16,21 +17,40 @@ public function __construct() {
  	$this->load->view('ecomerce/footer');
  }
  
- public function check(){
+ public function check()	{
  	if($this->input->post('submit')){
- 		$coba=$this->transaksi_model->insert();
+ 		$coba= $this->transaksi_model->insert();
  		//$id_trans = "select id_transaksi from transaksi order by tgl_transaksi DESC";
  		$id_trans = $this->db->insert_id();
+ 		$this->load->model('produk_model');
  		foreach($this->cart->contents() as $items){
-		$this->transaksi_model->simpan_pesanan("insert into detail_transaksi (id_transaksi,id_produk,jumlah,total_harga) values('".$id_trans."','".$items['id']."','".$items['qty']."','".$items['subtotal']."')");
-		
+			$this->transaksi_model->simpan_pesanan("insert into detail_transaksi (id_transaksi, id_produk,jumlah) values('".$id_trans."','".$items['id']."','".$items['qty']."')");
+
+			$id_detail_trans = $this->db->insert_id();
+			$produk = $this->produk_model->find($items['id']); //ngefind produk sing idne iki
+
+			$notif_penjual = array(								//notif
+ 				'isi_pesan'			=> 'ada 1 pembelian baru',	//notif
+ 				'waktu'			=> 'skrg',						//notif
+ 				'kepada'		=> $produk->id_user,			//notif
+ 				'id_detail_transaksi'	=> $id_detail_trans		//notif
+ 				);												//notif
+ 			$this->buat_notifikasi_penjual($notif_penjual);
+
 		}
 		$this->cart->destroy();
 
+
  		if($coba){	
- 		redirect('ecomerce/produk');
- 		}
- 		else{
+ 			$notif_admin = array(								//notif
+ 				'isi_pesan'			=> 'ada 1 pembelian baru',	//notif
+ 				'waktu'			=> 'skrg',						//notif
+ 				'id_transaksi'	=> $id_trans					//notif
+ 				);												//notif
+ 			$this->buat_notifikasi_admin($notif_admin);						//notif
+
+ 			redirect('ecomerce/produk');
+ 		} else {
  			echo "error123";
  		}
 	}
