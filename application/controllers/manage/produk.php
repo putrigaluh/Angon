@@ -8,9 +8,12 @@ public function __construct() {
  }
 public function index()
  {
-  $this->load->view('manage/input_produk');
- }
 
+    $this->load->model('m_produk');
+    $data['kat'] = $this->m_produk->kategori();
+  $this->load->view('manage/input_produk', $data);
+ }
+ 
  public function prosesadd(){
     
     $url = $this->do_upload();
@@ -25,10 +28,18 @@ public function index()
  }
 
  public function prosesedit() {
-        $url = $this->do_upload();
-    $this->load->model('m_produk');
-        $this->m_produk->prosesedit($url);
-        redirect('manage/produk/lihat_produk');
+       
+        $this->load->model('m_produk');
+        $this->m_produk->prosesedit();
+         $url = $this->do_upload();
+        if($url){
+            $this->m_produk->editgbr($url);
+        }
+        else{
+            echo "salah";
+        }
+        
+        redirect('manage/produk/lihat_produk'); 
     }
 
  
@@ -36,7 +47,7 @@ private function do_upload(){
    $type = explode('.', $_FILES["pic"]["name"]);
    $type = $type[count($type)-1];
    $url = "./uploads/".uniqid(rand()).'.'.$type;
-   if(in_array($type, array("jpg","jpeg","gif","png")))
+   if(in_array($type, array("jpg","jpeg","gif","png","JPG")))
     if(is_uploaded_file($_FILES["pic"]["tmp_name"]))
         if(move_uploaded_file($_FILES["pic"]["tmp_name"],$url))
             return $url;
@@ -46,9 +57,10 @@ private function do_upload(){
 
 public function edit($id) {
     $this->load->model('m_produk');
+    $data['kat'] = $this->m_produk->kategori();
     $produk = $this->m_produk->edit($id);
     $this->load->vars('p', $produk);
-    $this->load->view('manage/edit_produk');
+    $this->load->view('manage/edit_produk', $data);
     }
 
  public function lihat_produk()

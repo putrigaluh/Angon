@@ -572,7 +572,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								<thead>
 								<tr role="row" class="heading">
 									<th width="10%">
-										 ID Kategori Jenis
+										Kategori Produk
 									</th>
 									<th width="15%">
 										 Nama&nbsp;Produk
@@ -596,8 +596,8 @@ License: You must have a valid license purchased only from themeforest(the above
 								<tr role="row" class="filter">
 									<td>
 										<input type="text" class="form-control form-filter input-sm" 
-										value="<?php print $produk->id_kategori_jenis; ?>" 
-										name="id_kategori_jenis" readonly >
+										value="<?php print $produk->kategori_produk; ?>" 
+										name="kategori_produk" readonly >
 									</td>
 									<td>
 										<input type="text" class="form-control form-filter input-sm" 

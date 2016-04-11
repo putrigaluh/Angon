@@ -531,13 +531,26 @@ License: You must have a valid license purchased only from themeforest(the above
 												  <input type="hidden" name="id_produk" value="<?php print $p->row('id_produk');?>">
 													</div>
 												</div>
+												
 												<div class="form-group"> 
-													<label class="col-md-2 control-label">Id Kategori Jenis: <span class="required">
+													<label class="col-md-2 control-label">Kategori Produk: <span class="required">
 													* </span>
 													</label>
 													<div class="col-md-10">
-														 <input type="text"  class="form-control" name="id_kategori_jenis" value="<?php print $p->row('id_kategori_jenis');?>">
+													 <select class="form-control" name="id_kategori_produk">
+													    <?php	      
+													       $sql = $p->row('id_kategori_produk');
+													         foreach($kat as $row){
+													         	echo '<option value="'.$row->id_kategori_produk.'"';	
+													         if($row->id_kategori_produk == $sql){
+													         	echo "selected";
+													         }
+												            	echo '>'.$row->kategori_produk. '</option>';
+												            }       
+												        ?>
+            										</select>
 													</div>
+												
 												</div>
 												<div class="form-group">
 													<label class="col-md-2 control-label">Nama Produk: <span class="required">
