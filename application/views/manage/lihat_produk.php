@@ -581,6 +581,9 @@ License: You must have a valid license purchased only from themeforest(the above
 										 Harga&nbsp;Produk
 									</th>
 									<th width="15%">
+										 Berat
+									</th>
+									<th width="15%">
 										 Stok
 									</th>
 									<th width="15%">
@@ -608,6 +611,11 @@ License: You must have a valid license purchased only from themeforest(the above
 										<input type="text" class="form-control form-filter input-sm" 
 										value="<?php print $produk->harga_produk; ?>" 
 										name="harga_produk" readonly >
+									</td>
+									<td>
+										<input type="text" class="form-control form-filter input-sm" 
+										value="<?php print $produk->berat; ?>" 
+										name="berat" readonly >
 									</td>
 									<td>
 										<input type="text" class="form-control form-filter input-sm" 
