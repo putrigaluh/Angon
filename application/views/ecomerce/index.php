@@ -243,7 +243,7 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center">
-											<img src="<?php echo base_url(); ?>images/home/product1.jpg" alt="" />
+											<img src="<?php echo base_url($p->gbr_produk);?>" width="1000" alt="logo" class="logo-default"/> 
 											<h2><?php echo $p->harga_produk; ?></h2>
 											<p><?php echo $p->nama_produk; ?></p>
 											<a href="<?php echo base_url(); ?>ecomerce/shoppingcart/buy/<?php echo $p->id_produk; ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
