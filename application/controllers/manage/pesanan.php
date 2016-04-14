@@ -34,5 +34,12 @@ public function __construct() {
   $this->load->view('manage/detail_pesanan');
  }
 
+ public function detail_notifikasi($id_transaksi){                      //notif
+  $this->load->model('notifikasi_model');
+  $detail_notifikasi = $this->notifikasi_model->select_detail_notif($id_transaksi);
+  $this->load->vars('daftar_transaksi', $detail_notifikasi);
+  $this->load->view('manage/lihat_pesanan');
+ }
+
 }
  ?>

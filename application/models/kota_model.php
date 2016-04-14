@@ -5,8 +5,6 @@ class Kota_model extends CI_Model {
 	public $id_provinsi;
 	public $nama_kota;
 	
-	public $labels = [];
-
 	public function __construct(){
 		parent::__construct();
 		$this->load->database();
@@ -22,6 +20,11 @@ class Kota_model extends CI_Model {
 			}
 			return $data;
 		}
+	}
+
+	public function get_data_provinsi($id_provinsi){
+		$this->db->where('kota.id_provinsi', $id_provinsi);
+		return $this->db->get('kota')->result();
 	}
 }
 ?>

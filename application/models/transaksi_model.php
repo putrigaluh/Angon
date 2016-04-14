@@ -23,7 +23,8 @@ class Transaksi_Model extends CI_Model {
     public function details($id){
          $id_user =  $this->session->userdata('id_user'); 
         
-        $sql = "select t.id_transaksi, t.tgl_transaksi, t.alamat_pengiriman, t.status, t.id_user, dt.id_produk, p.nama_produk, dt.total_harga, u.nama_user, t.no_telp 
+        //total hargae takbusek sepurane
+        $sql = "select t.id_transaksi, t.tgl_transaksi, t.alamat_pengiriman, t.status, t.id_user, dt.id_produk, p.nama_produk, u.nama_user, t.no_telp 
         from detail_transaksi dt , transaksi t, produk p , user u 
         where dt.id_transaksi = t.id_transaksi and dt.id_produk = p.id_produk and t.id_user = u.id_user and p.id_user ='".$id_user."' 
         and t.id_transaksi='".$id."'";
