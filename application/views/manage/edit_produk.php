@@ -569,6 +569,14 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 												<div class="form-group">
+													<label class="col-md-2 control-label">Berat: <span class="required">
+													* </span>
+													</label>
+													<div class="col-md-10">
+														<input type="text"  class="form-control" name="berat" value="<?php print $p->row('berat');?>">
+													</div>
+												</div>
+												<div class="form-group">
 													<label class="col-md-2 control-label">Stok: <span class="required">
 													* </span>
 													</label>
@@ -585,11 +593,8 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 												<div class="form-group">
-													<label class="col-md-2 control-label">Id User: <span class="required">
-													* </span>
-													</label>
 													<div class="col-md-10">
-														<input type="text" class="form-control" name="id_user"  value="<?php print $p->row('id_user');?>">
+														<input type="hidden" class="form-control" name="id_user"  value="<?php print $p->row('id_user');?>">
 													</div>
 												</div>
 												<div class="form-group">

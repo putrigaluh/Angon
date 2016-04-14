@@ -6,6 +6,7 @@ class m_produk extends CI_Model {
     public $id_kategori_jenis;
     public $nama_produk;
     public $harga_produk;
+    public $berat;
     public $stok;
     public $deskripsi;
     public $id_user;
@@ -38,6 +39,7 @@ class m_produk extends CI_Model {
             'id_kategori_jenis' => $this->input->post('id_kategori_produk'),
             'nama_produk' => $this->input->post('nama_produk'),
             'harga_produk' => $this->input->post('harga_produk'),
+            'berat' => $this->input->post('berat'),
             'stok' => $this->input->post('stok'),
             'deskripsi' => $this->input->post('deskripsi'),
             'id_user' => $this->input->post('id_user'),
@@ -64,6 +66,7 @@ class m_produk extends CI_Model {
             'id_kategori_jenis' => $this->input->post('id_kategori_produk'),
             'nama_produk' => $this->input->post('nama_produk'),
             'harga_produk' => $this->input->post('harga_produk'),
+            'berat' => $this->input->post('berat'),
             'stok' => $this->input->post('stok'),
             'deskripsi' => $this->input->post('deskripsi'),
             'id_user' => $this->input->post('id_user'),
@@ -78,6 +81,7 @@ class m_produk extends CI_Model {
             'id_kategori_jenis' => $this->input->post('id_kategori_produk'),
             'nama_produk' => $this->input->post('nama_produk'),
             'harga_produk' => $this->input->post('harga_produk'),
+            'berat' => $this->input->post('berat'),
             'stok' => $this->input->post('stok'),
             'deskripsi' => $this->input->post('deskripsi'),
             'id_user' => $this->input->post('id_user'),
