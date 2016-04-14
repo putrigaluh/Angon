@@ -11,7 +11,7 @@ class Logout extends CI_Controller {
 		if($this->session->userdata('is_logged_in')) {
         	$this->session->sess_destroy();
 	    }
-		redirect('./login');
+		redirect('ecomerce/produk');
 	}
 }
 ?>

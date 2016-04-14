@@ -17,22 +17,31 @@ class Login extends CI_Controller {
   }
 
   public function cek_login() {
+      $kat = $this->session->userdata('kategori_user');
       $username    = $this->input->post('username');
       $password   = $this->input->post('password');
 
       if($username && $password) {
         if($this->user_model->validate_user($username, $password)){
+          if($kat == 'Peternak' && $kat == 'Industri Ternak'){
             redirect('manage/index');
+          }else{
+            redirect('ecomerce/produk');
+          }
+            
         } else {
             $this->show_login_page("
-            <div id=\"alert\" class=\"alert alert-error\">Username atau password tidak cocok</div>");
+            <div class='alert alert-danger display-hide'>
+            <button class='close' data-close='alert'></button>
+              <span> username and password anda salah. </span>
+            </div>
+        ");
         }
       } else {
         $this->show_login_page("
         <div class='alert alert-danger display-hide'>
         <button class='close' data-close='alert'></button>
-            
-           <span> Enter any username and password. </span>
+          <span> Masukkan username and password anda. </span>
         </div>
         ");
       }

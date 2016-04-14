@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = "ecomerce/produk";
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
