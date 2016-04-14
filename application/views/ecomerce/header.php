@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | E-Shopper</title>
+    <title>Home | Angon</title>
     <link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>css/font-awesome.min.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>css/prettyPhoto.css" rel="stylesheet">
@@ -62,38 +62,33 @@
 						<div class="logo pull-left">
 							<a href="index.html"><img src="<?php echo base_url(); ?>images/home/logo.png" alt="" /></a>
 						</div>
-						<!--<div class="btn-group pull-right">
-							<div class="btn-group">
-								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-									USA
-									<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu">
-									<li><a href="#">Canada</a></li>
-									<li><a href="#">UK</a></li>
-								</ul>
-							</div>
-							
-							<div class="btn-group">
-								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-									DOLLAR
-									<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu">
-									<li><a href="#">Canadian Dollar</a></li>
-									<li><a href="#">Pound</a></li>
-								</ul>
-							</div>
-						</div>-->
+						
 					</div>
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
-							<ul class="nav navbar-nav">
+							<ul class="nav navbar-nav collapse navbar-collapse" >
 								<li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-								<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
+								<?php 
+								$kat = $this->session->userdata('kategori_user');
+								if($kat == 'Industri Ternak' && $kat == 'Peternak'){
+									echo "<li><a href='".base_url()."manage/index'><i class='fa fa-user'></i>Penjualan Saya</a></li>";
+									echo $kat;
+								}
+								?>
+								
+								<li class="dropdown"><a href="#">Pesanan Saya<i class="fa fa-angle-down"></i></a>
+									<ul role="menu" class="sub-menu">
+										<li><a href="<?php echo base_url();?>ecomerce/konfirmasi">Konfirmasi Pesanan</a></li>
+									</ul>
+								</li>
 								<li><a href="<?php echo base_url();?>ecomerce/checkout"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="<?php echo base_url();?>ecomerce/shoppingcart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+								<li><a href="<?php echo base_url();?>ecomerce/cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<?php if($this->session->userdata('is_logged_in') == true){ 
+									echo "<li><a href='". base_url()."logout'><i class='fa fa-lock'></i> Logout</a></li>";
+								}else{
+									echo "<li><a href='". base_url()."login'><i class='fa fa-lock'></i> Login</a></li>";
+								}
+								?>
 							</ul>
 						</div>
 					</div>
@@ -121,7 +116,7 @@
                                         <li><a href="<?php echo base_url();?>ecomerce/produk">Products</a></li>
 										<li><a href="product-details.html">Product Details</a></li> 
 										<li><a href="<?php echo base_url();?>ecomerce/checkout">Checkout</a></li> 
-										<li><a href="<?php echo base_url();?>ecomerce/shoppingcart">Cart</a></li> 
+										<li><a href="<?php echo base_url();?>ecomerce/cart">Cart</a></li> 
 										<li><a href="login.html">Login</a></li> 
                                     </ul>
                                 </li> 
