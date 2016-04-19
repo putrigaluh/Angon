@@ -18,7 +18,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN HEAD -->
 <head>
 <meta charset="utf-8"/>
-<title>Metronic | eCommerce - Detail pemesanan</title>
+<title>Metronic | Form Stuff - Form Validation</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -26,24 +26,24 @@ License: You must have a valid license purchased only from themeforest(the above
 <meta content="" name="author"/>
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
-<link href="<?php echo base_url(); ?>/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-<link href="<?php echo base_url(); ?>/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
-<link href="<?php echo base_url(); ?>/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-<link href="<?php echo base_url(); ?>/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
-<link href="<?php echo base_url(); ?>/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo base_url(''); ?>/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo base_url(''); ?>/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo base_url(''); ?>/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
 <!-- END GLOBAL MANDATORY STYLES -->
 <!-- BEGIN PAGE LEVEL STYLES -->
-<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/global/plugins/select2/select2.css"/>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css"/>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css"/>
-<!-- END PAGE LEVEL STYLES -->
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(''); ?>/assets/global/plugins/select2/select2.css"/>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css"/>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css"/>
+<!-- END PAGE LEVEL SCRIPTS -->
 <!-- BEGIN THEME STYLES -->
-<link href="<?php echo base_url(); ?>/assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
-<link href="<?php echo base_url(); ?>/assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
-<link href="<?php echo base_url(); ?>/assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
-<link id="style_color" href="<?php echo base_url(); ?>/assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css"/>
-<link href="<?php echo base_url(); ?>/assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo base_url(''); ?>/assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
+<link href="<?php echo base_url(''); ?>/assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo base_url(''); ?>/assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
+<link id="style_color" href="<?php echo base_url(''); ?>/assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo base_url(''); ?>/assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css"/>
 <!-- END THEME STYLES -->
 <link rel="shortcut icon" href="favicon.ico"/>
 </head>
@@ -66,7 +66,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!-- BEGIN LOGO -->
 		<div class="page-logo">
 			<a href="index.html">
-			<img src="<?php echo base_url(); ?>/assets/admin/layout/img/logo.png" alt="logo" class="logo-default"/>
+			<img src="<?php echo base_url(''); ?>/assets/admin/layout/img/logo.png" alt="logo" class="logo-default"/>
 			</a>
 			<div class="menu-toggler sidebar-toggler hide">
 				<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
@@ -190,13 +190,200 @@ License: You must have a valid license purchased only from themeforest(the above
 					</ul>
 				</li>
 				<!-- END NOTIFICATION DROPDOWN -->
+				<!-- BEGIN INBOX DROPDOWN -->
+				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+				<li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
+					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+					<i class="icon-envelope-open"></i>
+					<span class="badge badge-default">
+					4 </span>
+					</a>
+					<ul class="dropdown-menu">
+						<li class="external">
+							<h3>You have <span class="bold">7 New</span> Messages</h3>
+							<a href="page_inbox.html">view all</a>
+						</li>
+						<li>
+							<ul class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
+								<li>
+									<a href="inbox.html?a=view">
+									<span class="photo">
+									<img src="../../assets/admin/layout3/img/avatar2.jpg" class="img-circle" alt="">
+									</span>
+									<span class="subject">
+									<span class="from">
+									Lisa Wong </span>
+									<span class="time">Just Now </span>
+									</span>
+									<span class="message">
+									Vivamus sed auctor nibh congue nibh. auctor nibh auctor nibh... </span>
+									</a>
+								</li>
+								<li>
+									<a href="inbox.html?a=view">
+									<span class="photo">
+									<img src="../../assets/admin/layout3/img/avatar3.jpg" class="img-circle" alt="">
+									</span>
+									<span class="subject">
+									<span class="from">
+									Richard Doe </span>
+									<span class="time">16 mins </span>
+									</span>
+									<span class="message">
+									Vivamus sed congue nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
+									</a>
+								</li>
+								<li>
+									<a href="inbox.html?a=view">
+									<span class="photo">
+									<img src="../../assets/admin/layout3/img/avatar1.jpg" class="img-circle" alt="">
+									</span>
+									<span class="subject">
+									<span class="from">
+									Bob Nilson </span>
+									<span class="time">2 hrs </span>
+									</span>
+									<span class="message">
+									Vivamus sed nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
+									</a>
+								</li>
+								<li>
+									<a href="inbox.html?a=view">
+									<span class="photo">
+									<img src="../../assets/admin/layout3/img/avatar2.jpg" class="img-circle" alt="">
+									</span>
+									<span class="subject">
+									<span class="from">
+									Lisa Wong </span>
+									<span class="time">40 mins </span>
+									</span>
+									<span class="message">
+									Vivamus sed auctor 40% nibh congue nibh... </span>
+									</a>
+								</li>
+								<li>
+									<a href="inbox.html?a=view">
+									<span class="photo">
+									<img src="../../assets/admin/layout3/img/avatar3.jpg" class="img-circle" alt="">
+									</span>
+									<span class="subject">
+									<span class="from">
+									Richard Doe </span>
+									<span class="time">46 mins </span>
+									</span>
+									<span class="message">
+									Vivamus sed congue nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<!-- END INBOX DROPDOWN -->
+				<!-- BEGIN TODO DROPDOWN -->
+				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+				<li class="dropdown dropdown-extended dropdown-tasks" id="header_task_bar">
+					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+					<i class="icon-calendar"></i>
+					<span class="badge badge-default">
+					3 </span>
+					</a>
+					<ul class="dropdown-menu extended tasks">
+						<li class="external">
+							<h3>You have <span class="bold">12 pending</span> tasks</h3>
+							<a href="page_todo.html">view all</a>
+						</li>
+						<li>
+							<ul class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
+								<li>
+									<a href="javascript:;">
+									<span class="task">
+									<span class="desc">New release v1.2 </span>
+									<span class="percent">30%</span>
+									</span>
+									<span class="progress">
+									<span style="width: 40%;" class="progress-bar progress-bar-success" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">40% Complete</span></span>
+									</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:;">
+									<span class="task">
+									<span class="desc">Application deployment</span>
+									<span class="percent">65%</span>
+									</span>
+									<span class="progress">
+									<span style="width: 65%;" class="progress-bar progress-bar-danger" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">65% Complete</span></span>
+									</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:;">
+									<span class="task">
+									<span class="desc">Mobile app release</span>
+									<span class="percent">98%</span>
+									</span>
+									<span class="progress">
+									<span style="width: 98%;" class="progress-bar progress-bar-success" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">98% Complete</span></span>
+									</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:;">
+									<span class="task">
+									<span class="desc">Database migration</span>
+									<span class="percent">10%</span>
+									</span>
+									<span class="progress">
+									<span style="width: 10%;" class="progress-bar progress-bar-warning" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">10% Complete</span></span>
+									</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:;">
+									<span class="task">
+									<span class="desc">Web server upgrade</span>
+									<span class="percent">58%</span>
+									</span>
+									<span class="progress">
+									<span style="width: 58%;" class="progress-bar progress-bar-info" aria-valuenow="58" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">58% Complete</span></span>
+									</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:;">
+									<span class="task">
+									<span class="desc">Mobile development</span>
+									<span class="percent">85%</span>
+									</span>
+									<span class="progress">
+									<span style="width: 85%;" class="progress-bar progress-bar-success" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">85% Complete</span></span>
+									</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:;">
+									<span class="task">
+									<span class="desc">New UI release</span>
+									<span class="percent">38%</span>
+									</span>
+									<span class="progress progress-striped">
+									<span style="width: 38%;" class="progress-bar progress-bar-important" aria-valuenow="18" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">38% Complete</span></span>
+									</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<!-- END TODO DROPDOWN -->
 				<!-- BEGIN USER LOGIN DROPDOWN -->
 				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
 				<li class="dropdown dropdown-user">
 					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<img alt="" class="img-circle" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar3_small.jpg"/>
+					<img alt="" class="img-circle" src="../../assets/admin/layout/img/avatar3_small.jpg"/>
 					<span class="username username-hide-on-mobile">
-					<?php echo $this->session->userdata('username'); ?></span>
+					Nick </span>
 					<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-default">
@@ -227,7 +414,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							<i class="icon-lock"></i> Lock Screen </a>
 						</li>
 						<li>
-							<a href="<?php echo base_url(); ?>logout">
+							<a href="login.html">
 							<i class="icon-key"></i> Log Out </a>
 						</li>
 					</ul>
@@ -290,16 +477,14 @@ License: You must have a valid license purchased only from themeforest(the above
 					</form>
 					<!-- END RESPONSIVE QUICK SEARCH FORM -->
 				</li>
-				<li class="start active open">
+				<li class="start ">
 					<a href="javascript:;">
 					<i class="icon-home"></i>
 					<span class="title">Dashboard</span>
-					<span class="selected"></span>
-					<span class="arrow open"></span>
+					<span class="arrow "></span>
 					</a>
-					<!--
 					<ul class="sub-menu">
-						<li class="active">
+						<li>
 							<a href="index.html">
 							<i class="icon-bar-chart"></i>
 							Default Dashboard</a>
@@ -315,51 +500,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							New Dashboard #2</a>
 						</li>
 					</ul>
-					-->
 				</li>
-				<li>
-					<a href="javascript:;">
-					<i class="icon-basket"></i>
-					<span class="title">Manage Penjualan</span>
-					<span class="arrow "></span>
-					</a>
-					<ul class="sub-menu">
-						<li>
-							<a href="ecommerce_index.html">
-							<i class="icon-home"></i>
-							Dashboard</a>
-						</li>
-						<li>
-							<a href="<?php echo base_url(); ?>manage/produk/input_produk">
-							<i class="icon-pencil"></i>
-							Input Produk</a>
-						</li>
-						<li>
-							<a href="<?php echo base_url(); ?>manage/produk/lihat_produk">
-							<i class="icon-handbag"></i>
-							Lihat Produk</a>
-						</li>
-						<li>
-							<a href="<?php echo base_url(); ?>manage/pesanan">
-							<i class="icon-basket"></i>
-							Lihat Pesanan</a>
-						</li>
-						
-						
-						
-					</ul>
-				</li>
-				<?php if($this->session->userdata('kategori_user')=='Peternak') {
-				echo "<li>";
-					echo "<a href= ". base_url() ."ecomerce/produk>";
-					echo "<i class='icon-basket'></i>";
-					echo "<span class='title'>Beli Produk</span>";
-					echo "<span class='arrow' ></span>";
-					echo "</a>";
-				echo "</li>";
-				
-				}
-				?>
 				
 			</ul>
 			<!-- END SIDEBAR MENU -->
@@ -493,7 +634,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			<!-- END STYLE CUSTOMIZER -->
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			Detail Pemesanan <small></small>
+			Form Tarik Dana <small>form tarik dana</small>
 			</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
@@ -503,11 +644,11 @@ License: You must have a valid license purchased only from themeforest(the above
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">eCommerce</a>
+						<a href="#">Manage</a>
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">Order View</a>
+						<a href="#">Form Tarik Dana</a>
 					</li>
 				</ul>
 				<div class="page-toolbar">
@@ -538,616 +679,140 @@ License: You must have a valid license purchased only from themeforest(the above
 			<!-- BEGIN PAGE CONTENT-->
 			<div class="row">
 				<div class="col-md-12">
-					<!-- Begin: life time stats -->
-					<div class="portlet">
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<!-- BEGIN VALIDATION STATES-->
+					<div class="portlet box purple">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-shopping-cart"></i>Order <span class="hidden-480">
-								| Dec 27, 2013 7:16:25 </span>
+								<i class="fa fa-gift"></i>Form Tarik Dana
 							</div>
-							<div class="actions">
-								<a href="javascript:;" class="btn default yellow-stripe">
-								<i class="fa fa-angle-left"></i>
-								<span class="hidden-480">
-								Back </span>
+							<div class="tools">
+								<a href="javascript:;" class="collapse">
 								</a>
-								<div class="btn-group">
-									<a class="btn default yellow-stripe dropdown-toggle" href="javascript:;" data-toggle="dropdown">
-									<i class="fa fa-cog"></i>
-									<span class="hidden-480">
-									Tools </span>
-									<i class="fa fa-angle-down"></i>
-									</a>
-									<ul class="dropdown-menu pull-right">
-										<li>
-											<a href="javascript:;">
-											Export to Excel </a>
-										</li>
-										<li>
-											<a href="javascript:;">
-											Export to CSV </a>
-										</li>
-										<li>
-											<a href="javascript:;">
-											Export to XML </a>
-										</li>
-										<li class="divider">
-										</li>
-										<li>
-											<a href="javascript:;">
-											Print Invoice </a>
-										</li>
-									</ul>
-								</div>
+								<a href="#portlet-config" data-toggle="modal" class="config">
+								</a>
+								<a href="javascript:;" class="reload">
+								</a>
+								<a href="javascript:;" class="remove">
+								</a>
 							</div>
 						</div>
-						<div class="portlet-body">
-							<div class="tabbable">
-								<ul class="nav nav-tabs nav-tabs-lg">
-									<li class="active">
-										<a href="#tab_1" data-toggle="tab">
-										Details </a>
-									</li>
-									<li>
-										<a href="#tab_2" data-toggle="tab">
-										Invoices <span class="badge badge-success">
-										4 </span>
-										</a>
-									</li>
-									
-									<li>
-										<a href="#tab_4" data-toggle="tab">
-										Shipments <span class="badge badge-danger">
-										2 </span>
-										</a>
-									</li>
-									
-								</ul>
-								<div class="tab-content">
-									<div class="tab-pane active" id="tab_1">
-										<div class="row">
-											<div class="col-md-6 col-sm-12">
-												<div class="portlet yellow-crusta box">
-													<div class="portlet-title">
-														<div class="caption">
-															<i class="fa fa-cogs"></i>Order Details
-														</div>
-														<!--<div class="actions">
-															<a href="javascript:;" class="btn btn-default btn-sm">
-															<i class="fa fa-pencil"></i> Edit </a>
-														</div>-->
-													</div>
-													<div class="portlet-body">
-														<div class="row static-info">
-															<div class="col-md-5 name">
-																 Order #:
-															</div>
-															<?php if (is_array($p) || is_object($p)) { ?>
-															<div class="col-md-7 value">
-																 <?php 
-																echo $p->row_array()['id_transaksi']; ?> 
-															</div>
-														</div>
-														<div class="row static-info">
-															<div class="col-md-5 name">
-																 Order Date & Time:
-															</div>
-															<div class="col-md-7 value">
-																 <?php echo $p->row('tgl_transaksi'); ?> 
-															</div>
-														</div>
-														<div class="row static-info">
-															<div class="col-md-5 name">
-																 Order Status:
-															</div>
-															<div class="col-md-7 value">
-																<span class="label label-success">
-																<?php echo $p->row('status'); ?>  </span>
-															</div>
-														</div>
-														<div class="row static-info">
-															<div class="col-md-5 name">
-																 Grand Total:
-															</div>
-															<div class="col-md-7 value">
-																 <?php //echo $p->row('total_harga'); total hargae takbusek sepurane?> 
-															</div>
-														</div>
-														<div class="row static-info">
-															<div class="col-md-5 name">
-																 Payment Information:
-															</div>
-															<div class="col-md-7 value">
-																 Credit Card
-															</div>
-															<?php } ?>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-6 col-sm-12">
-												<div class="portlet blue-hoki box">
-													<div class="portlet-title">
-														<div class="caption">
-															<i class="fa fa-cogs"></i>Customer Information
-														</div>
-														<!--<div class="actions">
-															<a href="javascript:;" class="btn btn-default btn-sm">
-															<i class="fa fa-pencil"></i> Edit </a>
-														</div>-->
-													</div>
-													<div class="portlet-body">
-														<div class="row static-info">
-															<div class="col-md-5 name">
-																 Customer Name:
-															</div>
-															<div class="col-md-7 value">
-																 <?php echo $p->row('nama_user'); ?> 
-															</div>
-														</div>
-														<div class="row static-info">
-															<div class="col-md-5 name">
-																 State:
-															</div>
-															<div class="col-md-7 value">
-																 New York
-															</div>
-														</div>
-														<div class="row static-info">
-															<div class="col-md-5 name">
-																 Phone Number:
-															</div>
-															<div class="col-md-7 value">
-																 <?php echo $p->row('no_telp'); ?> 
-															</div>
-														</div>
-													</div>
-													
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-6 col-sm-12">
-												<div class="portlet green-meadow box">
-													<div class="portlet-title">
-														<div class="caption">
-															<i class="fa fa-cogs"></i>Produk Yang Dipesan
-														</div>
-														<!--<div class="actions">
-															<a href="javascript:;" class="btn btn-default btn-sm">
-															<i class="fa fa-pencil"></i> Edit </a>
-														</div>-->
-													</div>
-													<div class="portlet-body">
-														<div class="row static-info">
-															<div class="col-md-12 value">
-																 <?php foreach ($p as $d){
-																 echo print_r($d);
-																	}
-																	?>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-6 col-sm-12">
-												<div class="portlet red-sunglo box">
-													<div class="portlet-title">
-														<div class="caption">
-															<i class="fa fa-cogs"></i>Shipping Address
-														</div>
-														<!--<div class="actions">
-															<a href="javascript:;" class="btn btn-default btn-sm">
-															<i class="fa fa-pencil"></i> Edit </a>
-														</div>-->
-													</div>
-													<div class="portlet-body">
-														<div class="row static-info">
-															<div class="col-md-12 value">
-																 Jhon Done<br>
-																 #24 Park Avenue Str<br>
-																 New York<br>
-																 Connecticut, 23456 New York<br>
-																 United States<br>
-																 T: 123123232<br>
-																 F: 231231232<br>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-12 col-sm-12">
-												<div class="portlet grey-cascade box">
-													<div class="portlet-title">
-														<div class="caption">
-															<i class="fa fa-cogs"></i>Shopping Cart
-														</div>
-														<!--<div class="actions">
-															<a href="javascript:;" class="btn btn-default btn-sm">
-															<i class="fa fa-pencil"></i> Edit </a>
-														</div>-->
-													</div>
-													<div class="portlet-body">
-														<div class="table-responsive">
-															<table class="table table-hover table-bordered table-striped">
-															<thead>
-															<tr>
-																<th>
-																	 Product
-																</th>
-																<th>
-																	 Item Status
-																</th>
-																<th>
-																	 Original Price
-																</th>
-																<th>
-																	 Price
-																</th>
-																<th>
-																	 Quantity
-																</th>
-																<th>
-																	 Tax Amount
-																</th>
-																<th>
-																	 Tax Percent
-																</th>
-																<th>
-																	 Discount Amount
-																</th>
-																<th>
-																	 Total
-																</th>
-															</tr>
-															</thead>
-															<tbody>
-															<tr>
-																<td>
-																	<a href="javascript:;">
-																	Product 1 </a>
-																</td>
-																<td>
-																	<span class="label label-sm label-success">
-																	Available
-																</td>
-																<td>
-																	 345.50$
-																</td>
-																<td>
-																	 345.50$
-																</td>
-																<td>
-																	 2
-																</td>
-																<td>
-																	 2.00$
-																</td>
-																<td>
-																	 4%
-																</td>
-																<td>
-																	 0.00$
-																</td>
-																<td>
-																	 691.00$
-																</td>
-															</tr>
-															<tr>
-																<td>
-																	<a href="javascript:;">
-																	Product 1 </a>
-																</td>
-																<td>
-																	<span class="label label-sm label-success">
-																	Available
-																</td>
-																<td>
-																	 345.50$
-																</td>
-																<td>
-																	 345.50$
-																</td>
-																<td>
-																	 2
-																</td>
-																<td>
-																	 2.00$
-																</td>
-																<td>
-																	 4%
-																</td>
-																<td>
-																	 0.00$
-																</td>
-																<td>
-																	 691.00$
-																</td>
-															</tr>
-															<tr>
-																<td>
-																	<a href="javascript:;">
-																	Product 1 </a>
-																</td>
-																<td>
-																	<span class="label label-sm label-success">
-																	Available
-																</td>
-																<td>
-																	 345.50$
-																</td>
-																<td>
-																	 345.50$
-																</td>
-																<td>
-																	 2
-																</td>
-																<td>
-																	 2.00$
-																</td>
-																<td>
-																	 4%
-																</td>
-																<td>
-																	 0.00$
-																</td>
-																<td>
-																	 691.00$
-																</td>
-															</tr>
-															<tr>
-																<td>
-																	<a href="javascript:;">
-																	Product 1 </a>
-																</td>
-																<td>
-																	<span class="label label-sm label-success">
-																	Available
-																</td>
-																<td>
-																	 345.50$
-																</td>
-																<td>
-																	 345.50$
-																</td>
-																<td>
-																	 2
-																</td>
-																<td>
-																	 2.00$
-																</td>
-																<td>
-																	 4%
-																</td>
-																<td>
-																	 0.00$
-																</td>
-																<td>
-																	 691.00$
-																</td>
-															</tr>
-															</tbody>
-															</table>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-6">
-											</div>
-											<div class="col-md-6">
-												<div class="well">
-													<div class="row static-info align-reverse">
-														<div class="col-md-8 name">
-															 Sub Total:
-														</div>
-														<div class="col-md-3 value">
-															 $1,124.50
-														</div>
-													</div>
-													<div class="row static-info align-reverse">
-														<div class="col-md-8 name">
-															 Shipping:
-														</div>
-														<div class="col-md-3 value">
-															 $40.50
-														</div>
-													</div>
-													<div class="row static-info align-reverse">
-														<div class="col-md-8 name">
-															 Grand Total:
-														</div>
-														<div class="col-md-3 value">
-															 $1,260.00
-														</div>
-													</div>
-													<div class="row static-info align-reverse">
-														<div class="col-md-8 name">
-															 Total Paid:
-														</div>
-														<div class="col-md-3 value">
-															 $1,260.00
-														</div>
-													</div>
-													<div class="row static-info align-reverse">
-														<div class="col-md-8 name">
-															 Total Refunded:
-														</div>
-														<div class="col-md-3 value">
-															 $0.00
-														</div>
-													</div>
-													<div class="row static-info align-reverse">
-														<div class="col-md-8 name">
-															 Total Due:
-														</div>
-														<div class="col-md-3 value">
-															 $1,124.50
-														</div>
-													</div>
-												</div>
-											</div>
+						<div class="portlet-body form">
+							<!-- BEGIN FORM-->
+							<form action="<?php echo base_url() ?>manage/tarikdana/tarik_dana" method="post" id="form_sample_1" class="form-horizontal">
+								<div class="form-body">
+								<?php 
+								$error = $this->session->flashdata('error');
+								if ($error != "") { ?>
+									<div class="alert alert-danger">
+										<button class="close" data-close="alert"></button>
+										<?php echo $error ?>
+									</div>
+								<?php } ?>
+									<div class="form-group">
+										<label class="control-label col-md-3">Dana Tersedia <span class="required">
+										* </span>
+										</label>
+										<div class="col-md-4">
+										<!-- <pre> -->
+											<input type="text" disabled="" name="dana" data-required="1" class="form-control" value="<?php echo $d->saldo; ?>" />
+											<!-- </pre> -->
 										</div>
 									</div>
-									<div class="tab-pane" id="tab_2">
-										<div class="table-container">
-											<div class="table-actions-wrapper">
-												<span>
-												</span>
-												<select class="table-group-action-input form-control input-inline input-small input-sm">
-													<option value="">Select...</option>
-													<option value="pending">Pending</option>
-													<option value="paid">Paid</option>
-													<option value="canceled">Canceled</option>
-												</select>
-												<button class="btn btn-sm yellow table-group-action-submit"><i class="fa fa-check"></i> Submit</button>
-											</div>
-											<table class="table table-striped table-bordered table-hover" id="datatable_invoices">
-											<thead>
-											<tr role="row" class="heading">
-												<th width="5%">
-													<input type="checkbox" class="group-checkable">
-												</th>
-												<th width="5%">
-													 Invoice&nbsp;#
-												</th>
-												<th width="15%">
-													 Bill To
-												</th>
-												<th width="15%">
-													 Invoice&nbsp;Date
-												</th>
-												<th width="10%">
-													 Amount
-												</th>
-												<th width="10%">
-													 Status
-												</th>
-												<th width="10%">
-													 Actions
-												</th>
-											</tr>
-											<tr role="row" class="filter">
-												<td>
-												</td>
-												<td>
-													<input type="text" class="form-control form-filter input-sm" name="order_invoice_no">
-												</td>
-												<td>
-													<input type="text" class="form-control form-filter input-sm" name="order_invoice_bill_to">
-												</td>
-												<td>
-													<div class="input-group date date-picker margin-bottom-5" data-date-format="dd/mm/yyyy">
-														<input type="text" class="form-control form-filter input-sm" readonly name="order_invoice_date_from" placeholder="From">
-														<span class="input-group-btn">
-														<button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
-														</span>
-													</div>
-													<div class="input-group date date-picker" data-date-format="dd/mm/yyyy">
-														<input type="text" class="form-control form-filter input-sm" readonly name="order_invoice_date_to" placeholder="To">
-														<span class="input-group-btn">
-														<button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
-														</span>
-													</div>
-												</td>
-												<td>
-													<div class="margin-bottom-5">
-														<input type="text" class="form-control form-filter input-sm" name="order_invoice_amount_from" placeholder="From"/>
-													</div>
-													<input type="text" class="form-control form-filter input-sm" name="order_invoice_amount_to" placeholder="To"/>
-												</td>
-												<td>
-													<select name="order_invoice_status" class="form-control form-filter input-sm">
-														<option value="">Select...</option>
-														<option value="pending">Pending</option>
-														<option value="paid">Paid</option>
-														<option value="canceled">Canceled</option>
-													</select>
-												</td>
-												<td>
-													<div class="margin-bottom-5">
-														<button class="btn btn-sm yellow filter-submit margin-bottom"><i class="fa fa-search"></i> Search</button>
-													</div>
-													<button class="btn btn-sm red filter-cancel"><i class="fa fa-times"></i> Reset</button>
-												</td>
-											</tr>
-											</thead>
-											<tbody>
-											</tbody>
-											</table>
+									<div class="form-group">
+										<label class="control-label col-md-3">Jumlah Penarikan <span class="required">
+										* </span>
+										</label>
+										<div class="col-md-4">
+											<input name="jumlah-penarikan" type="text" class="form-control"/>
 										</div>
 									</div>
-									
-									<div class="tab-pane" id="tab_4">
-										<div class="table-container">
-											<table class="table table-striped table-bordered table-hover" id="datatable_shipment">
-											<thead>
-											<tr role="row" class="heading">
-												<th width="5%">
-													 Shipment&nbsp;#
-												</th>
-												<th width="15%">
-													 Ship&nbsp;To
-												</th>
-												<th width="15%">
-													 Shipped&nbsp;Date
-												</th>
-												<th width="10%">
-													 Quantity
-												</th>
-												<th width="10%">
-													 Actions
-												</th>
-											</tr>
-											<tr role="row" class="filter">
-												<td>
-													<input type="text" class="form-control form-filter input-sm" name="order_shipment_no">
-												</td>
-												<td>
-													<input type="text" class="form-control form-filter input-sm" name="order_shipment_ship_to">
-												</td>
-												<td>
-													<div class="input-group date date-picker margin-bottom-5" data-date-format="dd/mm/yyyy">
-														<input type="text" class="form-control form-filter input-sm" readonly name="order_shipment_date_from" placeholder="From">
-														<span class="input-group-btn">
-														<button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
-														</span>
-													</div>
-													<div class="input-group date date-picker" data-date-format="dd/mm/yyyy">
-														<input type="text" class="form-control form-filter input-sm" readonly name="order_shipment_date_to" placeholder="To">
-														<span class="input-group-btn">
-														<button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
-														</span>
-													</div>
-												</td>
-												<td>
-													<div class="margin-bottom-5">
-														<input type="text" class="form-control form-filter input-sm" name="order_shipment_quantity_from" placeholder="From"/>
-													</div>
-													<input type="text" class="form-control form-filter input-sm" name="order_shipment_quantity_to" placeholder="To"/>
-												</td>
-												<td>
-													<div class="margin-bottom-5">
-														<button class="btn btn-sm yellow filter-submit margin-bottom"><i class="fa fa-search"></i> Search</button>
-													</div>
-													<button class="btn btn-sm red filter-cancel"><i class="fa fa-times"></i> Reset</button>
-												</td>
-											</tr>
-											</thead>
-											<tbody>
-											</tbody>
-											</table>
+									<div class="form-group">
+										<label class="control-label col-md-3">Nomor Rekening <span class="required">
+										* </span>
+										</label>
+
+												<!-- <pre>
+												<?php //var_dump($r) ?>
+												</pre> -->
+										<div class="col-md-4">
+											<select class="form-control" name="selectbank" id="selectboxbank">
+												<option value="">Pilih Bank</option>
+												<?php foreach ($r as $rekening) { ?>
+													<option value="<?php echo $rekening->id_rekening ?>"><?php echo $rekening->no_rekening.' a/n '.$rekening->nama_akun.' -- '.$rekening->nama_bank ?></option>
+												<?php } ?>
+												<option value="tambah">*Tambah No. Rekening</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="form-group tambah" style="display: none;">
+										<label class="control-label col-md-3">Nama Akun <span class="required">
+										* </span>
+										</label>
+										<div class="col-md-4">
+											<input name="nama-akun" type="text" class="form-control"/>
+										</div>
+									</div>
+
+									<div class="form-group tambah" style="display: none;">
+										<label class="control-label col-md-3">Nomor Rekening <span class="required">
+										* </span>
+										</label>
+										<div class="col-md-4">
+											<input name="nomor-rekening" type="text" class="form-control"/>
+										</div>
+									</div>
+
+									<div class="form-group tambah" style="display: none;">
+										<label class="control-label col-md-3">Nama Bank <span class="required">
+										* </span>
+										</label>
+										<div class="col-md-4">
+											<select class="form-control" name="nama-bank">
+												<option value="">Pilih Bank</option>
+												<option value="Category 1">Bank Mandiri</option>
+												<option value="Category 2">Bank Central Asia</option>
+												<option value="Category 3">Bank Negara Indonesia</option>
+												<option value="Category 4">Bank Rakyat Indonesia</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="control-label col-md-3">Kata Sandi <span class="required">
+										* </span>
+										</label>
+										<div class="col-md-4">
+											<input name="kata-sandi" type="text" class="form-control"/>
 										</div>
 									</div>
 									
 								</div>
-							</div>
+								<div class="form-actions">
+									<div class="row">
+										<div class="col-md-offset-3 col-md-9">
+											<button type="submit" class="btn btn-success uppercase pull-right">Submit</button>
+											<button type="button" class="btn default">Cancel</button>
+										</div>
+									</div>
+								</div>
+							</form>
+							<!-- END FORM-->
 						</div>
 					</div>
-					<!-- End: life time stats -->
+					<!-- END VALIDATION STATES-->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<!-- BEGIN VALIDATION STATES-->
+			
+					</div>
 				</div>
 			</div>
 			<!-- END PAGE CONTENT-->
@@ -1205,7 +870,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<div class="media-status">
 										<span class="badge badge-success">8</span>
 									</div>
-									<img class="media-object" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar3.jpg" alt="...">
+									<img class="media-object" src="<?php echo base_url(''); ?>/assets/admin/layout/img/avatar3.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Bob Nilson</h4>
 										<div class="media-heading-sub">
@@ -1214,7 +879,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</li>
 								<li class="media">
-									<img class="media-object" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar1.jpg" alt="...">
+									<img class="media-object" src="<?php echo base_url(''); ?>/assets/admin/layout/img/avatar1.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Nick Larson</h4>
 										<div class="media-heading-sub">
@@ -1226,7 +891,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<div class="media-status">
 										<span class="badge badge-danger">3</span>
 									</div>
-									<img class="media-object" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar4.jpg" alt="...">
+									<img class="media-object" src="<?php echo base_url(''); ?>/assets/admin/layout/img/avatar4.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Deon Hubert</h4>
 										<div class="media-heading-sub">
@@ -1235,7 +900,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</li>
 								<li class="media">
-									<img class="media-object" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar2.jpg" alt="...">
+									<img class="media-object" src="<?php echo base_url(''); ?>/assets/admin/layout/img/avatar2.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Ella Wong</h4>
 										<div class="media-heading-sub">
@@ -1250,7 +915,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<div class="media-status">
 										<span class="badge badge-warning">2</span>
 									</div>
-									<img class="media-object" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar6.jpg" alt="...">
+									<img class="media-object" src="<?php echo base_url(''); ?>/assets/admin/layout/img/avatar6.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Lara Kunis</h4>
 										<div class="media-heading-sub">
@@ -1265,7 +930,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<div class="media-status">
 										<span class="label label-sm label-success">new</span>
 									</div>
-									<img class="media-object" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar7.jpg" alt="...">
+									<img class="media-object" src="<?php echo base_url(''); ?>/assets/admin/layout/img/avatar7.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Ernie Kyllonen</h4>
 										<div class="media-heading-sub">
@@ -1275,7 +940,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</li>
 								<li class="media">
-									<img class="media-object" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar8.jpg" alt="...">
+									<img class="media-object" src="<?php echo base_url(''); ?>/assets/admin/layout/img/avatar8.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Lisa Stone</h4>
 										<div class="media-heading-sub">
@@ -1290,7 +955,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<div class="media-status">
 										<span class="badge badge-success">7</span>
 									</div>
-									<img class="media-object" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar9.jpg" alt="...">
+									<img class="media-object" src="<?php echo base_url(''); ?>/assets/admin/layout/img/avatar9.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Deon Portalatin</h4>
 										<div class="media-heading-sub">
@@ -1299,7 +964,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</li>
 								<li class="media">
-									<img class="media-object" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar10.jpg" alt="...">
+									<img class="media-object" src="<?php echo base_url(''); ?>/assets/admin/layout/img/avatar10.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Irina Savikova</h4>
 										<div class="media-heading-sub">
@@ -1311,7 +976,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<div class="media-status">
 										<span class="badge badge-danger">4</span>
 									</div>
-									<img class="media-object" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar11.jpg" alt="...">
+									<img class="media-object" src="<?php echo base_url(''); ?>/assets/admin/layout/img/avatar11.jpg" alt="...">
 									<div class="media-body">
 										<h4 class="media-heading">Maria Gomez</h4>
 										<div class="media-heading-sub">
@@ -1331,7 +996,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								</div>
 								<div class="page-quick-sidebar-chat-user-messages">
 									<div class="post out">
-										<img class="avatar" alt="" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar3.jpg"/>
+										<img class="avatar" alt="" src="<?php echo base_url(''); ?>/assets/admin/layout/img/avatar3.jpg"/>
 										<div class="message">
 											<span class="arrow"></span>
 											<a href="javascript:;" class="name">Bob Nilson</a>
@@ -1341,7 +1006,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</div>
 									<div class="post in">
-										<img class="avatar" alt="" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar2.jpg"/>
+										<img class="avatar" alt="" src="<?php echo base_url(''); ?>/assets/admin/layout/img/avatar2.jpg"/>
 										<div class="message">
 											<span class="arrow"></span>
 											<a href="javascript:;" class="name">Ella Wong</a>
@@ -1351,7 +1016,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</div>
 									<div class="post out">
-										<img class="avatar" alt="" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar3.jpg"/>
+										<img class="avatar" alt="" src="<?php echo base_url(''); ?>/assets/admin/layout/img/avatar3.jpg"/>
 										<div class="message">
 											<span class="arrow"></span>
 											<a href="javascript:;" class="name">Bob Nilson</a>
@@ -1361,7 +1026,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</div>
 									<div class="post in">
-										<img class="avatar" alt="" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar2.jpg"/>
+										<img class="avatar" alt="" src="<?php echo base_url(''); ?>/assets/admin/layout/img/avatar2.jpg"/>
 										<div class="message">
 											<span class="arrow"></span>
 											<a href="javascript:;" class="name">Ella Wong</a>
@@ -1371,7 +1036,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</div>
 									<div class="post out">
-										<img class="avatar" alt="" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar3.jpg"/>
+										<img class="avatar" alt="" src="<?php echo base_url(''); ?>/assets/admin/layout/img/avatar3.jpg"/>
 										<div class="message">
 											<span class="arrow"></span>
 											<a href="javascript:;" class="name">Bob Nilson</a>
@@ -1381,7 +1046,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</div>
 									<div class="post in">
-										<img class="avatar" alt="" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar2.jpg"/>
+										<img class="avatar" alt="" src="<?php echo base_url(''); ?>/assets/admin/layout/img/avatar2.jpg"/>
 										<div class="message">
 											<span class="arrow"></span>
 											<a href="javascript:;" class="name">Ella Wong</a>
@@ -1391,7 +1056,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</div>
 									<div class="post out">
-										<img class="avatar" alt="" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar3.jpg"/>
+										<img class="avatar" alt="" src="<?php echo base_url(''); ?>/assets/admin/layout/img/avatar3.jpg"/>
 										<div class="message">
 											<span class="arrow"></span>
 											<a href="javascript:;" class="name">Bob Nilson</a>
@@ -1401,7 +1066,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</div>
 									<div class="post in">
-										<img class="avatar" alt="" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar2.jpg"/>
+										<img class="avatar" alt="" src="<?php echo base_url(''); ?>/assets/admin/layout/img/avatar2.jpg"/>
 										<div class="message">
 											<span class="arrow"></span>
 											<a href="javascript:;" class="name">Ella Wong</a>
@@ -1411,7 +1076,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</div>
 									<div class="post out">
-										<img class="avatar" alt="" src="<?php echo base_url(); ?>/assets/admin/layout/img/avatar3.jpg"/>
+										<img class="avatar" alt="" src="<?php echo base_url(''); ?>/assets/admin/layout/img/avatar3.jpg"/>
 										<div class="message">
 											<span class="arrow"></span>
 											<a href="javascript:;" class="name">Bob Nilson</a>
@@ -1820,45 +1485,68 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
 <!-- BEGIN CORE PLUGINS -->
 <!--[if lt IE 9]>
-<script src="<?php echo base_url(); ?>/assets/global/plugins/respond.min.js"></script>
-<script src="<?php echo base_url(); ?>/assets/global/plugins/excanvas.min.js"></script> 
+<script src="<?php echo base_url(''); ?>/assets/global/plugins/respond.min.js"></script>
+<script src="../../assets/global/plugins/excanvas.min.js"></script> 
 <![endif]-->
-<script src="<?php echo base_url(); ?>/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>/assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url(''); ?>/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url(''); ?>/assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
 <!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-<script src="<?php echo base_url(); ?>/assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>/assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>/assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url(''); ?>/assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url(''); ?>/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url(''); ?>/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url(''); ?>/assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url(''); ?>/assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-<script type="text/javascript" src="<?php echo base_url(); ?>/assets/global/plugins/select2/select2.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(''); ?>/assets/global/plugins/jquery-validation/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(''); ?>/assets/global/plugins/jquery-validation/js/additional-methods.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(''); ?>/assets/global/plugins/select2/select2.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script>
+<script type="text/javascript" src="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
+<script type="text/javascript" src="<?php echo base_url(''); ?>/assets/global/plugins/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap-markdown/js/bootstrap-markdown.js"></script>
+<script type="text/javascript" src="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap-markdown/lib/markdown.js"></script>
 <!-- END PAGE LEVEL PLUGINS -->
-<!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="<?php echo base_url(); ?>/assets/global/scripts/metronic.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>/assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>/assets/global/scripts/datatable.js"></script>
-<script src="<?php echo base_url(); ?>/assets/admin/pages/scripts/ecommerce-orders-view.js"></script>
-<!-- END PAGE LEVEL SCRIPTS -->
+<!-- BEGIN PAGE LEVEL STYLES -->
+<script src="<?php echo base_url(''); ?>/assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="<?php echo base_url(''); ?>/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="<?php echo base_url(''); ?>/assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script src="<?php echo base_url(''); ?>/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+<!-- <script src="<?php echo base_url(''); ?>/assets/admin/pages/scripts/form-validation.js"></script> -->
+<!-- END PAGE LEVEL STYLES -->
 <script>
-        jQuery(document).ready(function() {    
-           Metronic.init(); // init metronic core components
+jQuery(document).ready(function() {   
+   // initiate layout and plugins
+   Metronic.init(); // init metronic core components
 Layout.init(); // init current layout
 QuickSidebar.init(); // init quick sidebar
 Demo.init(); // init demo features
-           EcommerceOrdersView.init();
-        });
-    </script>
+   // FormValidation.init();
+});
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#selectboxbank').change(function() {
+		    if ($(this).val() === 'tambah') {
+		        $('.tambah').css({'display': 'block'});
+		    } else {
+		    	$('.tambah').css({'display': 'none'});
+		    }
+		});
+	});
+</script>
+
+							<script type="text/javascript">
+							// function submit(){
+							// 	$("#form_sample_1").submit();
+							// }
+							</script>
+
 <!-- END JAVASCRIPTS -->
 </body>
 <!-- END BODY -->

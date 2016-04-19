@@ -18,6 +18,22 @@
 		return $this->db->get($this->table2)->result();
 	}
 
+	public function select_detail_notif($id_transaksi){ 			//tambahi
+		// $this->db->select('*');
+		// $this->db->from('notifikasi_penjual');
+		// $this->db->join('detail_transaksi', 'notifikasi_penjual.id_detail_transaksi = detail_transaksi.id_produk');
+		// $this->db->join('user', 'notifikasi_penjual.kepada = user.id_user');
+		// $this->db->join('transaksi', 'notifikasi_penjual.id_transaksi = transaksi = id_transaksi');
+		$this->db->select('*');
+		$this->db->from('user');
+		$this->db->join('transaksi', 'user.id_user = transaksi.id_user');
+		$this->db->join('detail_transaksi', 'transaksi.id_transaksi = detail_transaksi.id_transaksi');
+		$this->db->join('produk', 'detail_transaksi.id_produk = produk.id_produk');
+		$this->db->where('transaksi.id_transaksi', $id_transaksi);
+		return $this->db->get()->result();
+		
+	}
+
 	public function hitung_notif_admin(){
 		// $this->db->where('kepada', $this->session->userdata('id_user'));
 		$this->db->where('sudahbaca', 'N');
@@ -33,7 +49,9 @@
 	}
 
 	public function insert_notif_admin($notif){			//notif
-		$this->db->insert($this->table1, $notif); 
+		$data = array(
+			"isi_pesan" => $notif);
+		$this->db->insert($this->table1, $data); 
 	}
 
 	public function insert_notif_penjual($notif){			//notif

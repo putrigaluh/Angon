@@ -60,5 +60,4 @@ public function __construct() {
  // $this->load->view('ecomerce/deliveryinformation');
 
 }
-
 ?>
