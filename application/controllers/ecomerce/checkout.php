@@ -20,7 +20,7 @@ public function __construct() {
  public function check()	{
  	if($this->input->post('submit')){
  		$coba= $this->transaksi_model->insert();
- 		//$id_trans = "select id_transaksi from transaksi order by tgl_transaksi DESC";
+ 		
  		$id_trans = $this->db->insert_id();
  		$this->load->model('produk_model');
  		foreach($this->cart->contents() as $items){

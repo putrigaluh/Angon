@@ -49,10 +49,13 @@ class Transaksi_Model extends CI_Model {
     $data = array(
 
         'id_transaksi' => $this->input->post('id_transaksi'),
-        'id_user' => $this->input->post('id_user'),
-        'alamat_pengiriman' => $this->input->post('alamat_pengiriman'),
-        // 'id_kota' => $this->input->post('kota'),
-        // 'no_telp' => $this->input->post('no_telp'),
+        'id_user' => $this->session->userdata('id_user'),
+        'nama_pengiriman' => $this->input->post('nama'),
+        'toko_pengiriman' => $this->input->post('toko'),
+        'alamat_pengiriman' => $this->input->post('alamat'),
+        'no_telp' => $this->input->post('notelp'),
+        'id_kota' => $this->input->post('kota'),
+        'kodepos' => $this->input->post('kodepos'),
          'status' => 'Pending'
         );
     

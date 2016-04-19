@@ -17,16 +17,18 @@ class Login extends CI_Controller {
   }
 
   public function cek_login() {
-      $kat = $this->session->userdata('kategori_user');
+      
       $username    = $this->input->post('username');
       $password   = $this->input->post('password');
 
       if($username && $password) {
         if($this->user_model->validate_user($username, $password)){
-          if($kat == 'Peternak' && $kat == 'Industri Ternak'){
+
+          if($this->session->userdata('kategori_user') == 'Peternak' || $this->session->userdata('kategori_user') == 'Industri Ternak'){
             redirect('manage/index');
           }else{
-            redirect('ecomerce/produk');
+         echo $this->session->userdata('kategori_user');
+           redirect('ecomerce/produk');
           }
             
         } else {
@@ -52,7 +54,9 @@ class Login extends CI_Controller {
       $data['daftar_kota'] = $this->kota_model->get_data_kota();
       $data['page'] = 'login';
       $data['error'] = $show_error;
-      $this->load->view('flogin', $data);
+      $this->load->view('ecomerce/header');
+      $this->load->view('login', $data);
+      $this->load->view('ecomerce/footer');
   }
 }
 
