@@ -649,8 +649,8 @@ License: You must have a valid license purchased only from themeforest(the above
 															<div class="col-md-5 name">
 																 Grand Total:
 															</div>
-															<div class="col-md-7 value">
-																 <?php //echo $p->row('total_harga'); total hargae takbusek sepurane?> 
+															<div class="col-md-7 value"> <pre>
+																 <?php //var_dump($p->row())?> </pre>
 															</div>
 														</div>
 														<div class="row static-info">

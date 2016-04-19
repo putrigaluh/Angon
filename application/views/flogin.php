@@ -112,14 +112,28 @@ License: You must have a valid license purchased only from themeforest(the above
 			<label class="control-label visible-ie8 visible-ie9">Address</label>
 			<input class="form-control placeholder-no-fix" type="text" placeholder="Address" name="alamat"/>
 		</div>
+
 		<div class="form-group"> 
-			<label class="control-label visible-ie8 visible-ie9">Kota</label>
-			<select name="kota" class="form-control">
-				<option value="">Kota</option>
+			<label class="control-label visible-ie8 visible-ie9">Provinsi</label>
+			<select name="provinsi" class="form-control provinsi">
+				<option value="">Provinsi</option>
 				<?php
 					foreach ($daftar_kota as $k) {
 					 	echo "<option value='".$k->id_kota."'>".$k->nama_kota."</option>";
 					 } 
+				?>
+				
+			</select>
+		</div> 
+
+		<div class="form-group"> 
+			<label class="control-label visible-ie8 visible-ie9">Kota</label>
+			<select name="kota" class="form-control state kota">
+				<option value="">Kota</option>
+				<?php
+					// foreach ($daftar_kota as $k) {
+					//  	echo "<option value='".$k->id_kota."'>".$k->nama_kota."</option>";
+					//  } 
 				?>
 				
 			</select>
@@ -191,6 +205,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="<?php echo base_url(''); ?>/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
 <script src="<?php echo base_url(''); ?>/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
 <script src="<?php echo base_url(''); ?>/assets/admin/pages/scripts/login.js" type="text/javascript"></script>
+<script src="<?php echo base_url(''); ?>js/selectbox.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
 jQuery(document).ready(function() {     
