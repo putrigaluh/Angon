@@ -10,6 +10,25 @@ class User_Model extends CI_Model {
     public $username;
     public $password;
 
+    function registrasi() {
+        $registrasi = array(
+            'id_user' => $this->input->post('id_user'),
+            'nama_user' => $this->input->post('nama'),
+            'kategori_user' => $this->input->post('kategori'),
+            'no_telp' => $this->input->post('notelp'),
+            'nama_toko' => $this->input->post('toko'),
+            'alamat_user' => $this->input->post('alamat'),
+            'id_kota' => $this->input->post('kota'),
+            'kodepos' => $this->input->post('kodepos'),
+            'username' => $this->input->post('username'),
+            'password' => $this->input->post('password')
+        );
+        $insert = $this->db->insert('user', $registrasi);
+        return $insert;
+        
+        
+    }
+
   function set_session(){
         $this->session->set_userdata(array(
             'id_user' => $this->details->id_user,

@@ -37,9 +37,9 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN THEME STYLES -->
 <link href="<?php echo base_url(''); ?>/assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
 <link href="<?php echo base_url(''); ?>/assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
-<link href="<?php echo base_url(''); ?>/assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
-<link href="<?php echo base_url(''); ?>/assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color"/>
-<link href="<?php echo base_url(''); ?>/assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo base_url(''); ?>/assets/admin/layout4/css/layout.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo base_url(''); ?>/assets/admin/layout4/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color"/>
+<link href="<?php echo base_url(''); ?>/assets/admin/layout4/css/custom.css" rel="stylesheet" type="text/css"/>
 <!-- END THEME STYLES -->
 <link rel="shortcut icon" href="favicon.ico"/>
 </head>
@@ -53,7 +53,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN LOGO -->
 <div class="logo">
 	<a href="index.html">
-	<img src="<?php echo base_url(''); ?>/assets/admin/layout/img/logo-big.png" alt=""/>
+	<img src="<?php echo base_url(''); ?>/assets/admin/layout4/img/logo-big.png" alt=""/>
 	</a>
 </div>
 <!-- END LOGO -->
@@ -188,8 +188,8 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="<?php echo base_url(''); ?>/assets/global/scripts/metronic.js" type="text/javascript"></script>
-<script src="<?php echo base_url(''); ?>/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
-<script src="<?php echo base_url(''); ?>/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+<script src="<?php echo base_url(''); ?>/assets/admin/layout4/scripts/layout.js" type="text/javascript"></script>
+<script src="<?php echo base_url(''); ?>/assets/admin/layout4/scripts/demo.js" type="text/javascript"></script>
 <script src="<?php echo base_url(''); ?>/assets/admin/pages/scripts/login.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>

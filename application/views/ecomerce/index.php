@@ -1,584 +1,497 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+
+<!-- Mirrored from ahmedsaeed.me/shopfine/index2.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Apr 2016 16:02:21 GMT -->
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Home | E-Shopper</title>
-    <link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo base_url(); ?>css/font-awesome.min.css" rel="stylesheet">
-    <link href="<?php echo base_url(); ?>css/prettyPhoto.css" rel="stylesheet">
-    <link href="<?php echo base_url(); ?>css/price-range.css" rel="stylesheet">
-    <link href="<?php echo base_url(); ?>css/animate.css" rel="stylesheet">
-	<link href="<?php echo base_url(); ?>css/main.css" rel="stylesheet">
-	<link href="<?php echo base_url(); ?>css/responsive.css" rel="stylesheet">
-    <!--[if lt IE 9]>
-    <script src="<?php echo base_url(); ?>js/html5shiv.js"></script>
-    <script src="<?php echo base_url(); ?>js/respond.min.js"></script>
-    <![endif]-->       
-    <link rel="shortcut icon" href="<?php echo base_url(); ?>images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo base_url(); ?>images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo base_url(); ?>images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo base_url(); ?>images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="<?php echo base_url(); ?>images/ico/apple-touch-icon-57-precomposed.png">
-</head><!--/head-->
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>ShopFine: eCommerce Website</title>
+	<meta name="description" content="">
+	<meta name="author" content="Ahmed Saeed">
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/bootstrap.min.css" media="screen">
+	<!-- jquery ui css -->
+	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/jquery-ui-1.10.1.min.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/customize.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/font-awesome.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/style.css">
+	<!-- flexslider css-->
+	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/flexslider.css">
+	<!-- fancybox -->
+	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/js/fancybox/jquery.fancybox.css">
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+		<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/font-awesome-ie7.css">
+	<![endif]-->
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="<?php echo base_url(); ?>ecom/images/favicon.html">
+	<link rel="apple-touch-icon" href="<?php echo base_url(); ?>ecom/images/apple-touch-icon.html">
+	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo base_url(); ?>ecom/images/apple-touch-icon-72x72.html">
+	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo base_url(); ?>ecom/images/apple-touch-icon-114x114.html">
+</head>
 
 <body>
-	
-	
-	<section id="slider"><!--slider-->
+
+	<div id="mainContainer" class="clearfix">
+
+		<!--begain header-->
+		
+		<!-- end header -->
+
+
+
 		<div class="container">
+
 			<div class="row">
-				<div class="col-sm-12">
-					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
-						<ol class="carousel-indicators">
-							<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
-							<li data-target="#slider-carousel" data-slide-to="1"></li>
-							<li data-target="#slider-carousel" data-slide-to="2"></li>
-						</ol>
-						
-						<div class="carousel-inner">
-							<div class="item active">
-								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>Free E-Commerce Template</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-									<button type="button" class="btn btn-default get">Get it now</button>
-								</div>
-								<div class="col-sm-6">
-									<img src="<?php echo base_url(); ?>images/home/girl1.jpg" class="girl img-responsive" alt="" />
-									<img src="<?php echo base_url(); ?>images/home/pricing.png"  class="pricing" alt="" />
-								</div>
-							</div>
-							<div class="item">
-								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>100% Responsive Design</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-									<button type="button" class="btn btn-default get">Get it now</button>
-								</div>
-								<div class="col-sm-6">
-									<img src="<?php echo base_url(); ?>images/home/girl2.jpg" class="girl img-responsive" alt="" />
-									<img src="<?php echo base_url(); ?>images/home/pricing.png"  class="pricing" alt="" />
+
+				<div class="span8">
+					<div class="flexslider">
+						<ul class="slides">
+							<li><img src="<?php echo base_url(); ?>ecom/img/614x300.jpg" alt="slide1"></li>
+							<li><img src="<?php echo base_url(); ?>ecom/img/614x300.jpg" alt="slide2"></li>
+							<li><img src="<?php echo base_url(); ?>ecom/img/614x300.jpg" alt="slide3"></li>
+						</ul>
+					</div><!--end flexslider-->
+				</div><!--end span8-->
+
+
+				<div class="span4">
+
+					<div id="homeSpecial">
+						<div class="titleHeader clearfix">
+							<h3>Special</h3>
+							<div class="pagers">
+								<div class="btn-toolbar">
+									<div class="btn-group">
+										<button class="btn btn-mini vNext"><i class="icon-caret-down"></i></button>
+										<button class="btn btn-mini vPrev"><i class="icon-caret-up"></i></button>
+									</div>
+									<button class="btn btn-mini">View All</button>
 								</div>
 							</div>
-							
-							<div class="item">
-								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>Free Ecommerce Template</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-									<button type="button" class="btn btn-default get">Get it now</button>
+						</div><!--end titleHeader-->
+
+						<!-- iklan -->
+						<ul class="vProductItems cycle-slideshow vertical clearfix"
+					    data-cycle-fx="carousel"
+					    data-cycle-timeout=0
+					    data-cycle-slides="> li"
+					    data-cycle-next=".vPrev"
+					    data-cycle-prev=".vNext"
+					    data-cycle-carousel-visible="2"
+					    data-cycle-carousel-vertical="true">
+							<li class="span4 clearfix">
+								<div class="thumbImage">
+									<a href="#"><img src="<?php echo base_url(); ?>ecom/img/92x92.jpg" alt=""></a>
 								</div>
-								<div class="col-sm-6">
-									<img src="<?php echo base_url(); ?>images/home/girl3.jpg" class="girl img-responsive" alt="" />
-									<img src="<?php echo base_url(); ?>images/home/pricing.png" class="pricing" alt="" />
-								</div>
-							</div>
-							
-						</div>
-						
-						<a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
-							<i class="fa fa-angle-left"></i>
-						</a>
-						<a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
-							<i class="fa fa-angle-right"></i>
-						</a>
-					</div>
-					
-				</div>
-			</div>
-		</div>
-	</section><!--/slider-->
-	
-	<section>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-3">
-					<div class="left-sidebar">
-						<h2>Kategori</h2>
-						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
-							<div class="panel panel-default">
-								 <?php  foreach($kat as $row) { 
-								 	
-              						echo '<div class="panel-heading">
-											<h4 class="panel-title"><a href="">'.
-              								$row->kategori_produk.
-              								'</a></h4>
-              							</div>';
-					            }
-					            ?>
-								
-							</div>
-							
-						</div><!--/category-products-->
-					
-						<div class="brands_products"><!--brands_products-->
-							<h2>Brands</h2>
-							<div class="brands-name">
-								<ul class="nav nav-pills nav-stacked">
-									<li><a href="#"> <span class="pull-right">(50)</span>Acne</a></li>
-									<li><a href="#"> <span class="pull-right">(56)</span>Grüne Erde</a></li>
-									<li><a href="#"> <span class="pull-right">(27)</span>Albiro</a></li>
-									<li><a href="#"> <span class="pull-right">(32)</span>Ronhill</a></li>
-									<li><a href="#"> <span class="pull-right">(5)</span>Oddmolly</a></li>
-									<li><a href="#"> <span class="pull-right">(9)</span>Boudestijn</a></li>
-									<li><a href="#"> <span class="pull-right">(4)</span>Rösch creative culture</a></li>
-								</ul>
-							</div>
-						</div><!--/brands_products-->
-						
-						<div class="price-range"><!--price-range-->
-							<h2>Price Range</h2>
-							<div class="well text-center">
-								 <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
-								 <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
-							</div>
-						</div><!--/price-range-->
-						
-						<div class="shipping text-center"><!--shipping-->
-							<img src="<?php echo base_url(); ?>images/home/shipping.jpg" alt="" />
-						</div><!--/shipping-->
-					
-					</div>
-				</div>
-				
-				<div class="col-sm-9 padding-right">
-					<div class="features_items"><!--features_items-->
-						<h2 class="title text-center">Features Items</h2>
-						<?php foreach($daftar_produk as $p){	?>
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-										<div class="productinfo text-center">
-											<img src="<?php echo base_url(); ?>images/home/product1.jpg" alt="" />
-											<h2><?php echo $p->harga_produk; ?></h2>
-											<p><?php echo $p->nama_produk; ?></p>
-											<a href="<?php echo base_url(); ?>ecomerce/shoppingcart/buy/<?php echo $p->id_produk; ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-										</div>
-										<!--<div class="product-overlay">
-											<div class="overlay-content">
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-										</div>-->
-								</div>
-								<div class="choose">
-									<ul class="nav nav-pills nav-justified">
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+								<div class="thumbSetting">
+									<div class="thumbTitle">
+										<a href="#" class="invarseColor">
+											hahaha
+										</a>
+									</div>
+									<div class="thumbPrice">
+										<span>$150.00</span>
+									</div>
+									<ul class="rating">
+										<li><i class="star-off"></i></li>
+										<li><i class="star-off"></i></li>
+										<li><i class="star-off"></i></li>
+										<li><i class="star-off"></i></li>
+										<li><i class="star-off"></i></li>
 									</ul>
 								</div>
-								
+							</li>
+							<li class="span4 clearfix">
+								<div class="thumbImage">
+									<a href="#"><img src="<?php echo base_url(); ?>ecom/img/92x92.jpg" alt=""></a>
+								</div>
+								<div class="thumbSetting">
+									<div class="thumbTitle">
+										<a href="#" class="invarseColor">
+											Foliomania the designer portfolio
+										</a>
+									</div>
+									<div class="thumbPrice">
+										<span>$150.00</span>
+									</div>
+									<ul class="rating">
+										<li><i class="star-on"></i></li>
+										<li><i class="star-on"></i></li>
+										<li><i class="star-on"></i></li>
+										<li><i class="star-off"></i></li>
+										<li><i class="star-off"></i></li>
+									</ul>
+								</div>
+							</li>
+							<li class="span4 clearfix">
+								<div class="thumbImage">
+									<a href="#"><img src="<?php echo base_url(); ?>ecom/img/92x92.jpg" alt=""></a>
+								</div>
+								<div class="thumbSetting">
+									<div class="thumbTitle">
+										<a href="#" class="invarseColor">
+											Foliomania the designer portfolio
+										</a>
+									</div>
+									<div class="thumbPrice">
+										<span>$150.00</span>
+									</div>
+									<ul class="rating">
+										<li><i class="star-on"></i></li>
+										<li><i class="star-on"></i></li>
+										<li><i class="star-on"></i></li>
+										<li><i class="star-off"></i></li>
+										<li><i class="star-off"></i></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div><!--end special-->
+				</div><!--end span4-->
+
+			</div><!--end row-->
+
+
+
+			<div class="row">
+				<div class="span12">
+
+					<div id="featuredItems">
+						
+						<div class="titleHeader clearfix">
+							<h3>Produk Ternak</h3>
+							<div class="pagers">
+								<div class="btn-toolbar">
+									<button class="btn btn-mini" action="haha.php">View All</button>
+								</div>
 							</div>
-						</div>
-						<?php }?>
+						</div><!--end titleHeader-->
+
+						<div class="row">
+
+							<ul class="hProductItems clearfix">
+								<?php foreach($daftar_produk as $p){	?>
+								<li class="span3 clearfix">
+									<div class="thumbnail">
+										<a href="#"><img src="<?php echo base_url(); ?>ecom/img/212x192.jpg" alt=""></a>
+									</div>
+									<div class="thumbSetting">
+										<div class="thumbTitle">
+											<a href="#" class="invarseColor">
+												<?php echo $p->nama_produk; ?>
+											</a>
+										</div>
+										<div class="thumbPrice">
+											<span> Rp. <?php echo $p->harga_produk; ?></span>
+										</div>
+
+										<div class="thumbButtons">
+											
+											<a href="<?php echo base_url(); ?>ecomerce/shoppingcart/buy/<?php echo $p->id_produk; ?>">
+												<button class="btn btn-primary btn-small" data-title="Beli Produk" data-placement="top" data-toggle="tooltip">
+													<i class="icon-shopping-cart"></i> 
+												</button>
+											</a>
+											<button class="btn btn-small" data-title="+To WishList" data-placement="top" data-toggle="tooltip">
+												<i class="icon-heart"></i>
+											</button>
+										
+											<button class="btn btn-small" data-title="+To Compare" data-placement="top" data-toggle="tooltip">
+												<i class="icon-refresh"></i>
+											</button>
+										</div>
+
+										<ul class="rating">
+											<li><i class="star-on"></i></li>
+											<li><i class="star-on"></i></li>
+											<li><i class="star-on"></i></li>
+											<li><i class="star-on"></i></li>
+											<li><i class="star-off"></i></li>
+										</ul>
+									</div>
+								</li>
+								<?php }?>
+								
+							</ul>
+						</div><!--end row-->
+					</div><!--end featuredItems-->
+				</div><!--end span12-->
+			</div><!--end row-->
+
+			<!-- iklan
+			<div class="row">
+				<div class="span12">
+					<div id="latestItems">
 						
+						<div class="titleHeader clearfix">
+							<h3>Featured Items</h3>
+							<div class="pagers">
+								<div class="btn-toolbar">
+									<button class="btn btn-mini">View All</button>
+								</div>
+							</div>
+						</div><!--end titleHeader
 						
-					</div><!--features_items-->
-					
-					<div class="category-tab"><!--category-tab-->
-						<div class="col-sm-12">
-							<ul class="nav nav-tabs">
-								<li class="active"><a href="#tshirt" data-toggle="tab">T-Shirt</a></li>
-								<li><a href="#blazers" data-toggle="tab">Blazers</a></li>
-								<li><a href="#sunglass" data-toggle="tab">Sunglass</a></li>
-								<li><a href="#kids" data-toggle="tab">Kids</a></li>
-								<li><a href="#poloshirt" data-toggle="tab">Polo shirt</a></li>
+
+						<div class="row">
+							<ul class="hProductItems clearfix">
+								<li class="span3 clearfix">
+									<div class="thumbnail">
+										<a href="#"><img src="<?php echo base_url(); ?>ecom/img/212x192.jpg" alt=""></a>
+									</div>
+									<div class="thumbSetting">
+										<div class="thumbTitle">
+											<a href="#" class="invarseColor">
+												Foliomania the designer portfolio brochure
+											</a>
+										</div>
+										<div class="thumbPrice">
+											<span>$150.00</span>
+										</div>
+
+										<div class="thumbButtons">
+											<button class="btn btn-primary btn-small" data-title="+To Cart" data-placement="top" data-toggle="tooltip">
+												<i class="icon-shopping-cart"></i>
+											</button>
+											<button class="btn btn-small" data-title="+To WishList" data-placement="top" data-toggle="tooltip">
+												<i class="icon-heart"></i>
+											</button>
+										
+											<button class="btn btn-small" data-title="+To Compare" data-placement="top" data-toggle="tooltip">
+												<i class="icon-refresh"></i>
+											</button>
+										</div>
+
+										<ul class="rating">
+											<li><i class="star-on"></i></li>
+											<li><i class="star-on"></i></li>
+											<li><i class="star-on"></i></li>
+											<li><i class="star-on"></i></li>
+											<li><i class="star-off"></i></li>
+										</ul>
+									</div>
+								</li>
+								<li class="span3 clearfix">
+									<div class="thumbnail">
+										<a href="#"><img src="<?php echo base_url(); ?>ecom/img/212x192.jpg" alt=""></a>
+									</div>
+									<div class="thumbSetting">
+										<div class="thumbTitle">
+											<a href="#" class="invarseColor">
+												Foliomania the designer portfolio brochure
+											</a>
+										</div>
+										<div class="thumbPrice">
+											<span><span class="strike-through">$200.00</span> $150.00</span>
+										</div>
+
+										<div class="thumbButtons">
+											<button class="btn btn-primary btn-small" data-title="+To Cart" data-placement="top" data-toggle="tooltip">
+												<i class="icon-shopping-cart"></i>
+											</button>
+											<button class="btn btn-small" data-title="+To WishList" data-placement="top" data-toggle="tooltip">
+												<i class="icon-heart"></i>
+											</button>
+										
+											<button class="btn btn-small" data-title="+To Compare" data-placement="top" data-toggle="tooltip">
+												<i class="icon-refresh"></i>
+											</button>
+										</div>
+
+										<ul class="rating">
+											<li><i class="star-on"></i></li>
+											<li><i class="star-on"></i></li>
+											<li><i class="star-on"></i></li>
+											<li><i class="star-off"></i></li>
+											<li><i class="star-off"></i></li>
+										</ul>
+									</div>
+								</li>
+								<li class="span3 clearfix">
+									<div class="thumbnail">
+										<a href="#"><img src="<?php echo base_url(); ?>ecom/img/212x192.jpg" alt=""></a>
+									</div>
+									<div class="thumbSetting">
+										<div class="thumbTitle">
+											<a href="#" class="invarseColor">
+												Foliomania the designer portfolio brochure
+											</a>
+										</div>
+										<div class="thumbPrice">
+											<span>$150.00</span>
+										</div>
+
+										<div class="thumbButtons">
+											<button class="btn btn-primary btn-small" data-title="+To Cart" data-placement="top" data-toggle="tooltip">
+												<i class="icon-shopping-cart"></i>
+											</button>
+											<button class="btn btn-small" data-title="+To WishList" data-placement="top" data-toggle="tooltip">
+												<i class="icon-heart"></i>
+											</button>
+										
+											<button class="btn btn-small" data-title="+To Compare" data-placement="top" data-toggle="tooltip">
+												<i class="icon-refresh"></i>
+											</button>
+										</div>
+									</div>
+								</li>
+								<li class="span3 clearfix">
+									<div class="thumbnail">
+										<a href="#"><img src="<?php echo base_url(); ?>ecom/img/212x192.jpg" alt=""></a>
+									</div>
+									<div class="thumbSetting">
+										<div class="thumbTitle">
+											<a href="#" class="invarseColor">
+												Foliomania the designer portfolio brochure
+											</a>
+										</div>
+										<div class="thumbPrice">
+											<span><span class="strike-through">$200.00</span> $150.00</span>
+										</div>
+
+										<div class="thumbButtons">
+											<button class="btn btn-primary btn-small" data-title="+To Cart" data-placement="top" data-toggle="tooltip">
+												<i class="icon-shopping-cart"></i>
+											</button>
+											<button class="btn btn-small" data-title="+To WishList" data-placement="top" data-toggle="tooltip">
+												<i class="icon-heart"></i>
+											</button>
+										
+											<button class="btn btn-small" data-title="+To Compare" data-placement="top" data-toggle="tooltip">
+												<i class="icon-refresh"></i>
+											</button>
+										</div>
+
+										<ul class="rating">
+											<li><i class="star-on"></i></li>
+											<li><i class="star-on"></i></li>
+											<li><i class="star-off"></i></li>
+											<li><i class="star-off"></i></li>
+											<li><i class="star-off"></i></li>
+										</ul>
+									</div>
+								</li>
 							</ul>
 						</div>
-						<div class="tab-content">
-							<div class="tab-pane fade active in" id="tshirt" >
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="<?php echo base_url(); ?>images/home/gallery1.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="<?php echo base_url(); ?>images/home/gallery2.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="<?php echo base_url(); ?>images/home/gallery3.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="<?php echo base_url(); ?>images/home/gallery4.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<div class="tab-pane fade" id="blazers" >
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="<?php echo base_url(); ?>images/home/gallery4.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="<?php echo base_url(); ?>images/home/gallery3.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="<?php echo base_url(); ?>images/home/gallery2.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="<?php echo base_url(); ?>images/home/gallery1.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<div class="tab-pane fade" id="sunglass" >
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="<?php echo base_url(); ?>images/home/gallery3.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="<?php echo base_url(); ?>images/home/gallery4.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="<?php echo base_url(); ?>images/home/gallery1.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="<?php echo base_url(); ?>images/home/gallery2.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<div class="tab-pane fade" id="kids" >
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="<?php echo base_url(); ?>images/home/gallery1.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="<?php echo base_url(); ?>images/home/gallery2.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="<?php echo base_url(); ?>images/home/gallery3.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="<?php echo base_url(); ?>images/home/gallery4.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<div class="tab-pane fade" id="poloshirt" >
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="<?php echo base_url(); ?>images/home/gallery2.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="<?php echo base_url(); ?>images/home/gallery4.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="<?php echo base_url(); ?>images/home/gallery3.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="<?php echo base_url(); ?>images/home/gallery1.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div><!--/category-tab-->
-					
-					<div class="recommended_items"><!--recommended_items-->
-						<h2 class="title text-center">recommended items</h2>
-						
-						<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-							<div class="carousel-inner">
-								<div class="item active">
-								<?php foreach($daftar_produk as $p){	?>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="<?php echo base_url(); ?>images/home/recommend1.jpg" alt="" />
-													<h2><?php echo $p->harga_produk; ?></h2>
-													<p><?php echo $p->nama_produk; ?></p>
-													<a href="<?php echo base_url(); ?>ecomerce/shoppingcart/buy/<?php echo $p->id_produk; ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-									<?php }?>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="<?php echo base_url(); ?>images/home/recommend2.jpg" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="<?php echo base_url(); ?>images/home/recommend3.jpg" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item">	
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="<?php echo base_url(); ?>images/home/recommend1.jpg" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="<?php echo base_url(); ?>images/home/recommend2.jpg" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="<?php echo base_url(); ?>images/home/recommend3.jpg" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							 <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
-								<i class="fa fa-angle-left"></i>
-							  </a>
-							  <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-								<i class="fa fa-angle-right"></i>
-							  </a>			
-						</div>
-					</div><!--/recommended_items-->
-					
+					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-	
-	
+		-->
 
-  
-    <script src="<?php echo base_url(); ?>js/jquery.js"></script>
-	<script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
-	<script src="<?php echo base_url(); ?>js/jquery.scrollUp.min.js"></script>
-	<script src="<?php echo base_url(); ?>js/price-range.js"></script>
-    <script src="<?php echo base_url(); ?>js/jquery.prettyPhoto.js"></script>
-    <script src="<?php echo base_url(); ?>js/main.js"></script>
+
+			<div class="row">
+				<div class="span12">
+					<div id="brands">
+						<div class="titleHeader clearfix">
+							<h3>Brands</h3>
+							<div class="pagers">
+								<div class="btn-toolbar">
+									<button class="btn btn-mini">View All</button>
+								</div>
+							</div>
+						</div><!--end titleHeader-->
+						<ul class="brandList clearfix">
+							<li>
+								<a href="#"><img src="<?php echo base_url(); ?>ecom/img/Layer-4.png" alt="logo"></a>
+							</li>
+							<li>
+								<a href="#"><img src="<?php echo base_url(); ?>ecom/img/Layer-1.png" alt="logo"></a>
+							</li>
+							<li>
+								<a href="#"><img src="<?php echo base_url(); ?>ecom/img/Layer-3.png" alt="logo"></a>
+							</li>
+							<li>
+								<a href="#"><img src="<?php echo base_url(); ?>ecom/img/Layer-2.png" alt="logo"></a>
+							</li>
+						</ul>
+					</div><!--end brands-->
+				</div><!--end span12-->
+			</div><!--end row-->
+
+		</div><!--end conatiner-->
+
+
+		<!--begain footer-->
+		
+		<!--end footer-->
+
+	</div><!--end mainContainer-->
+
+
+	<!-- Sidebar Widget
+	================================================== -->
+	<div class="switcher">
+		<h3>Site Switcher</h3>
+		<a class="Widget-toggle-link">+</a>
+
+		<div class="switcher-content clearfix">
+			<div class="layout-switch">
+				<h4>Layout Style</h4>
+				<div class="btn-group">
+					<a id="wide-style" class="btn">Wide</a>
+	  				<a id="boxed-style" class="btn">Boxed</a>
+				</div>
+			</div><!--end layout-switch-->
+
+			<div class="color-switch clearfix">
+				<h4>Color Style</h4>
+				<a id="orange-color" class="color-switch-link">orange</a>
+				<a id="blue-color" class="color-switch-link">blue</a>
+				<a id="green-color" class="color-switch-link">green</a>
+				<a id="brown-color" class="color-switch-link">brown</a>
+				<a id="red-color" class="color-switch-link">red</a>
+			</div><!--end color-switch-->
+
+			<div class="pattern-switch">
+				<h4>BG Pattern</h4>
+				<a style="background:url(<?php echo base_url(); ?>ecom/img/backgrounds/retina_wood.png);">retina_wood</a>
+				<a style="background:url(<?php echo base_url(); ?>ecom/img/backgrounds/bgnoise_lg.png);">bgnoise_lg</a>
+				<a style="background:url(<?php echo base_url(); ?>ecom/img/backgrounds/purty_wood.png);">purty_wood</a>
+				<a style="background:url(<?php echo base_url(); ?>ecom/img/backgrounds/irongrip.png);">irongrip</a>
+				<a style="background:url(<?php echo base_url(); ?>ecom/img/backgrounds/low_contrast_linen.png);">low_contrast_linen</a>
+				<a style="background:url(<?php echo base_url(); ?>ecom/img/backgrounds/tex2res5.png);">tex2res5</a>
+				<a style="background:url(<?php echo base_url(); ?>ecom/img/backgrounds/wood_pattern.png);">wood_pattern</a>
+			</div><!--end pattern-switch-->
+
+		</div><!--end switcher-content-->
+	</div>
+	<!-- End Sidebar Widget-->
+
+
+	<!-- JS
+	================================================== -->
+	<script src="<?php echo base_url(); ?>ecom/ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="<?php echo base_url(); ?>ecom/ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
+    <!-- jQuery.Cookie -->
+	<script src="<?php echo base_url(); ?>ecom/js/jquery.cookie.js"></script>
+	<!-- bootstrap -->
+    <script src="<?php echo base_url(); ?>ecom/js/bootstrap.min.js"></script>
+    <!-- flexslider -->
+    <script src="<?php echo base_url(); ?>ecom/js/jquery.flexslider-min.js"></script>
+    <!-- cycle2 -->
+    <script src="<?php echo base_url(); ?>ecom/js/jquery.cycle2.min.js"></script>
+    <script src="<?php echo base_url(); ?>ecom/js/jquery.cycle2.carousel.min.js"></script>
+    <!-- tweets -->
+    <script src="<?php echo base_url(); ?>ecom/js/jquery.tweet.js"></script>
+    <!-- fancybox -->
+    <script src="<?php echo base_url(); ?>ecom/js/fancybox/jquery.fancybox.js"></script>
+    <!-- custom function-->
+    <script src="<?php echo base_url(); ?>ecom/js/custom.js"></script>
+    
 </body>
+
+
+<!-- Mirrored from ahmedsaeed.me/shopfine/index2.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Apr 2016 16:02:23 GMT -->
 </html>

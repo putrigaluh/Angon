@@ -15,8 +15,10 @@ public function __construct() {
 
  private function lihat_pesanan(){
  	$data['daftar_transaksi'] = $this->transaksi_model->showTransaksi();
-	
+//$this->load->view('manage/header');
+   //$this->load->view('manage/sidebar');
 	$this->load->view('manage/lihat_pesanan', $data);
+
  }
 
  function update_data($id) {

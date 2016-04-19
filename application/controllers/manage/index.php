@@ -8,7 +8,9 @@ public function __construct() {
 
 public function index()
  {
-  $this->load->view('manage/index');
+ 	//$this->load->view('manage/header');
+ 	//$this->load->view('manage/sidebar');
+  	$this->load->view('manage/index');
  }
  
 }
