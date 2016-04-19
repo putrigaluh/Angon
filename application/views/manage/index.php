@@ -242,6 +242,25 @@ License: You must have a valid license purchased only from themeforest(the above
 						
 					</ul>
 				</li>
+
+				<li>
+					<a href="javascript:;">
+					<i class="icon-basket"></i>
+					<span class="title">Saldo</span>
+					<span class="arrow "></span>
+					</a>
+					<ul class="sub-menu">
+						
+						<li>
+							<a href="<?php echo base_url(); ?>manage/tarikdana/lihat_dana">
+							<i class="icon-pencil"></i>
+							Tarik Dana</a>
+						</li>
+												
+					</ul>
+				</li>
+
+
 				<?php if($this->session->userdata('kategori_user')=='Peternak') {
 				echo "<li>";
 					echo "<a href= ". base_url() ."ecomerce/produk>";

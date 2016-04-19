@@ -49,7 +49,9 @@
 	}
 
 	public function insert_notif_admin($notif){			//notif
-		$this->db->insert($this->table1, $notif); 
+		$data = array(
+			"isi_pesan" => $notif);
+		$this->db->insert($this->table1, $data); 
 	}
 
 	public function insert_notif_penjual($notif){			//notif
