@@ -8,15 +8,21 @@ public function __construct() {
      $this->load->model('m_produk');
  }
 
-public function index()
- {
+public function index(){
  	$data['daftar_produk']= $this->produk_model->show_produk();
- 	$data['kat'] = $this->m_produk->kategori();
-	$this->load->view("ecomerce/header");
-	$this->load->view('ecomerce/index', $data);	 
+ 	$data2['kat'] = $this->m_produk->kategori();
+	$this->load->view("ecomerce/header", $data2);
+	$this->load->view('ecomerce/index', $data);	
+
 	// $this->load->view('ecomerce/index', array(
 	// 	'data' => $data,
 	// 	'kat' => $kat));
+	$this->load->view("ecomerce/footer");
+ }
+ function detail_produk($id){
+ 	$data['detail']= $this->produk_model->show_produk();
+ 	$this->load->view("ecomerce/header");
+	$this->load->view('ecomerce/index', $data);	 
 	$this->load->view("ecomerce/footer");
  }
  

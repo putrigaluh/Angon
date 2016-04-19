@@ -2,24 +2,20 @@
 
 class Regis extends CI_Controller {
 	public function index(){
-		$this->load->model('regis_model');
-		$model = $this->regis_model;
-		//$model->get_data_kategori();
+		$this->load->model('user_model');
+		$this->load->model('kota_model');
+		
+		$kota['daftar_kota'] = $this->kota_model->get_data_kota();
+   		
 
 		if (isset($_POST['btnSubmit'])) {
-			$model->id_user = $_POST['id'];
-			$model->nama_user = $_POST['nama'];
-			$model->kategori_user = $_POST['kategori'];
-			$model->alamat_user = $_POST['alamat'];
-			$model->id_kota = $_POST['kota'];				
-			$model->username = $_POST['username'];
-			$model->password = $_POST['password'];
-			$model->insert();
-
-			/*redirect('login'); */
-
+			$this->user_model->registrasi();
+    		redirect('login');
+			
 		} else {
-			$this->load->view('login', ['model'=>$model]);
+			$this->load->view('ecomerce/header');
+			$this->load->view('register', $kota);
+			$this->load->view('ecomerce/footer');
 		}
 	}
 
