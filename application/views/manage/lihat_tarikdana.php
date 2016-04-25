@@ -18,7 +18,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN HEAD -->
 <head>
 <meta charset="utf-8"/>
-<title>Metronic | Form Stuff - Form Validation</title>
+<title>Metronic | eCommerce - Orders</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -34,10 +34,9 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- END GLOBAL MANDATORY STYLES -->
 <!-- BEGIN PAGE LEVEL STYLES -->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(''); ?>/assets/global/plugins/select2/select2.css"/>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css"/>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(''); ?>/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css"/>
-<!-- END PAGE LEVEL SCRIPTS -->
+<!-- END PAGE LEVEL STYLES -->
 <!-- BEGIN THEME STYLES -->
 <link href="<?php echo base_url(''); ?>/assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
 <link href="<?php echo base_url(''); ?>/assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
@@ -105,76 +104,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									New user registered. </span>
 									</a>
 								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">3 mins</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-danger">
-									<i class="fa fa-bolt"></i>
-									</span>
-									Server #12 overloaded. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">10 mins</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-warning">
-									<i class="fa fa-bell-o"></i>
-									</span>
-									Server #2 not responding. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">14 hrs</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-info">
-									<i class="fa fa-bullhorn"></i>
-									</span>
-									Application error. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">2 days</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-danger">
-									<i class="fa fa-bolt"></i>
-									</span>
-									Database overloaded 68%. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">3 days</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-danger">
-									<i class="fa fa-bolt"></i>
-									</span>
-									A user IP blocked. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">4 days</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-warning">
-									<i class="fa fa-bell-o"></i>
-									</span>
-									Storage Server #4 not responding dfdfdfd. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">5 days</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-info">
-									<i class="fa fa-bullhorn"></i>
-									</span>
-									System Error. </span>
-									</a>
-								</li>
+								
 								<li>
 									<a href="javascript:;">
 									<span class="time">9 days</span>
@@ -190,200 +120,14 @@ License: You must have a valid license purchased only from themeforest(the above
 					</ul>
 				</li>
 				<!-- END NOTIFICATION DROPDOWN -->
-				<!-- BEGIN INBOX DROPDOWN -->
-				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-				<li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
-					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<i class="icon-envelope-open"></i>
-					<span class="badge badge-default">
-					4 </span>
-					</a>
-					<ul class="dropdown-menu">
-						<li class="external">
-							<h3>You have <span class="bold">7 New</span> Messages</h3>
-							<a href="page_inbox.html">view all</a>
-						</li>
-						<li>
-							<ul class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
-								<li>
-									<a href="inbox.html?a=view">
-									<span class="photo">
-									<img src="../../assets/admin/layout3/img/avatar2.jpg" class="img-circle" alt="">
-									</span>
-									<span class="subject">
-									<span class="from">
-									Lisa Wong </span>
-									<span class="time">Just Now </span>
-									</span>
-									<span class="message">
-									Vivamus sed auctor nibh congue nibh. auctor nibh auctor nibh... </span>
-									</a>
-								</li>
-								<li>
-									<a href="inbox.html?a=view">
-									<span class="photo">
-									<img src="../../assets/admin/layout3/img/avatar3.jpg" class="img-circle" alt="">
-									</span>
-									<span class="subject">
-									<span class="from">
-									Richard Doe </span>
-									<span class="time">16 mins </span>
-									</span>
-									<span class="message">
-									Vivamus sed congue nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
-									</a>
-								</li>
-								<li>
-									<a href="inbox.html?a=view">
-									<span class="photo">
-									<img src="../../assets/admin/layout3/img/avatar1.jpg" class="img-circle" alt="">
-									</span>
-									<span class="subject">
-									<span class="from">
-									Bob Nilson </span>
-									<span class="time">2 hrs </span>
-									</span>
-									<span class="message">
-									Vivamus sed nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
-									</a>
-								</li>
-								<li>
-									<a href="inbox.html?a=view">
-									<span class="photo">
-									<img src="../../assets/admin/layout3/img/avatar2.jpg" class="img-circle" alt="">
-									</span>
-									<span class="subject">
-									<span class="from">
-									Lisa Wong </span>
-									<span class="time">40 mins </span>
-									</span>
-									<span class="message">
-									Vivamus sed auctor 40% nibh congue nibh... </span>
-									</a>
-								</li>
-								<li>
-									<a href="inbox.html?a=view">
-									<span class="photo">
-									<img src="../../assets/admin/layout3/img/avatar3.jpg" class="img-circle" alt="">
-									</span>
-									<span class="subject">
-									<span class="from">
-									Richard Doe </span>
-									<span class="time">46 mins </span>
-									</span>
-									<span class="message">
-									Vivamus sed congue nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
-									</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<!-- END INBOX DROPDOWN -->
-				<!-- BEGIN TODO DROPDOWN -->
-				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-				<li class="dropdown dropdown-extended dropdown-tasks" id="header_task_bar">
-					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<i class="icon-calendar"></i>
-					<span class="badge badge-default">
-					3 </span>
-					</a>
-					<ul class="dropdown-menu extended tasks">
-						<li class="external">
-							<h3>You have <span class="bold">12 pending</span> tasks</h3>
-							<a href="page_todo.html">view all</a>
-						</li>
-						<li>
-							<ul class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
-								<li>
-									<a href="javascript:;">
-									<span class="task">
-									<span class="desc">New release v1.2 </span>
-									<span class="percent">30%</span>
-									</span>
-									<span class="progress">
-									<span style="width: 40%;" class="progress-bar progress-bar-success" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">40% Complete</span></span>
-									</span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="task">
-									<span class="desc">Application deployment</span>
-									<span class="percent">65%</span>
-									</span>
-									<span class="progress">
-									<span style="width: 65%;" class="progress-bar progress-bar-danger" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">65% Complete</span></span>
-									</span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="task">
-									<span class="desc">Mobile app release</span>
-									<span class="percent">98%</span>
-									</span>
-									<span class="progress">
-									<span style="width: 98%;" class="progress-bar progress-bar-success" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">98% Complete</span></span>
-									</span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="task">
-									<span class="desc">Database migration</span>
-									<span class="percent">10%</span>
-									</span>
-									<span class="progress">
-									<span style="width: 10%;" class="progress-bar progress-bar-warning" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">10% Complete</span></span>
-									</span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="task">
-									<span class="desc">Web server upgrade</span>
-									<span class="percent">58%</span>
-									</span>
-									<span class="progress">
-									<span style="width: 58%;" class="progress-bar progress-bar-info" aria-valuenow="58" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">58% Complete</span></span>
-									</span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="task">
-									<span class="desc">Mobile development</span>
-									<span class="percent">85%</span>
-									</span>
-									<span class="progress">
-									<span style="width: 85%;" class="progress-bar progress-bar-success" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">85% Complete</span></span>
-									</span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="task">
-									<span class="desc">New UI release</span>
-									<span class="percent">38%</span>
-									</span>
-									<span class="progress progress-striped">
-									<span style="width: 38%;" class="progress-bar progress-bar-important" aria-valuenow="18" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">38% Complete</span></span>
-									</span>
-									</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<!-- END TODO DROPDOWN -->
+				
 				<!-- BEGIN USER LOGIN DROPDOWN -->
 				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
 				<li class="dropdown dropdown-user">
 					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<img alt="" class="img-circle" src="../../assets/admin/layout/img/avatar3_small.jpg"/>
+					<img alt="" class="img-circle" src="<?php echo base_url(''); ?>/assets/admin/layout/img/avatar3_small.jpg"/>
 					<span class="username username-hide-on-mobile">
-					Nick </span>
+					<?php echo $this->session->userdata('username'); ?> </span>
 					<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-default">
@@ -414,7 +158,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							<i class="icon-lock"></i> Lock Screen </a>
 						</li>
 						<li>
-							<a href="login.html">
+							<a href="<?php echo base_url(''); ?>logout">
 							<i class="icon-key"></i> Log Out </a>
 						</li>
 					</ul>
@@ -477,30 +221,58 @@ License: You must have a valid license purchased only from themeforest(the above
 					</form>
 					<!-- END RESPONSIVE QUICK SEARCH FORM -->
 				</li>
-				<li class="start ">
+				<li >
 					<a href="javascript:;">
 					<i class="icon-home"></i>
 					<span class="title">Dashboard</span>
+					<span class="selected"></span>
+					<span class="arrow open"></span>
+					</a>
+					
+				</li>
+				<li>
+					<a href="javascript:;">
+					<i class="icon-basket"></i>
+					<span class="title">Manage Penjualan</span>
 					<span class="arrow "></span>
 					</a>
 					<ul class="sub-menu">
 						<li>
-							<a href="index.html">
-							<i class="icon-bar-chart"></i>
-							Default Dashboard</a>
+							<a href="ecommerce_index.html">
+							<i class="icon-home"></i>
+							Dashboard</a>
 						</li>
 						<li>
-							<a href="index_2.html">
-							<i class="icon-bulb"></i>
-							New Dashboard #1</a>
+							<a href="<?php echo base_url(); ?>manage/produk/input_produk">
+							<i class="icon-pencil"></i>
+							Input Produk</a>
 						</li>
 						<li>
-							<a href="index_3.html">
-							<i class="icon-graph"></i>
-							New Dashboard #2</a>
+							<a href="<?php echo base_url(); ?>manage/produk/lihat_produk">
+							<i class="icon-handbag"></i>
+							Lihat Produk</a>
 						</li>
+						<li class="start active open">
+							<a href="<?php echo base_url(); ?>manage/pesanan">
+							<i class="icon-basket"></i>
+							Lihat Pesanan</a>
+						</li>
+						
+						
+						
 					</ul>
 				</li>
+				<?php if($this->session->userdata('kategori_user')=='Peternak') {
+				echo "<li>";
+					echo "<a href= ". base_url() ."ecomerce/produk>";
+					echo "<i class='icon-basket'></i>";
+					echo "<span class='title'>Beli Produk</span>";
+					echo "<span class='arrow' ></span>";
+					echo "</a>";
+				echo "</li>";
+				
+				}
+				?>
 				
 			</ul>
 			<!-- END SIDEBAR MENU -->
@@ -634,7 +406,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			<!-- END STYLE CUSTOMIZER -->
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			Form Tarik Dana <small>form tarik dana</small>
+			Request<small>Tarik Dana</small>
 			</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
@@ -644,175 +416,161 @@ License: You must have a valid license purchased only from themeforest(the above
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">Manage</a>
+						<a href="#">Manage Dana</a>
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">Form Tarik Dana</a>
+						<a href="#">Request Tarik Dana</a>
 					</li>
 				</ul>
-				<div class="page-toolbar">
-					<div class="btn-group pull-right">
-						<button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
-						Actions <i class="fa fa-angle-down"></i>
-						</button>
-						<ul class="dropdown-menu pull-right" role="menu">
-							<li>
-								<a href="#">Action</a>
-							</li>
-							<li>
-								<a href="#">Another action</a>
-							</li>
-							<li>
-								<a href="#">Something else here</a>
-							</li>
-							<li class="divider">
-							</li>
-							<li>
-								<a href="#">Separated link</a>
-							</li>
-						</ul>
-					</div>
-				</div>
+				
 			</div>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->
 			<div class="row">
 				<div class="col-md-12">
 					
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<!-- BEGIN VALIDATION STATES-->
-					<div class="portlet box purple">
+					<!-- Begin: life time stats -->
+					<div class="portlet">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-gift"></i>Form Tarik Dana
+								<i class="fa fa-shopping-cart"></i>Order Listing
 							</div>
-							<div class="tools">
-								<a href="javascript:;" class="collapse">
-								</a>
-								<a href="#portlet-config" data-toggle="modal" class="config">
-								</a>
-								<a href="javascript:;" class="reload">
-								</a>
-								<a href="javascript:;" class="remove">
-								</a>
-							</div>
+							
 						</div>
-						<div class="portlet-body form">
-							<!-- BEGIN FORM-->
-							<form action="<?php echo base_url() ?>manage/tarikdana/tarik_dana" method="post" id="form_sample_1" class="form-horizontal">
-								<div class="form-body">
-								<?php 
-								$error = $this->session->flashdata('error');
-								if ($error != "") { ?>
-									<div class="alert alert-danger">
-										<button class="close" data-close="alert"></button>
-										<?php echo $error ?>
-									</div>
-								<?php } ?>
-									<div class="form-group">
-										<label class="control-label col-md-3">Dana Tersedia <span class="required">
-										* </span>
-										</label>
-										<div class="col-md-4">
-										<!-- <pre> -->
-											<input type="text" disabled="" name="dana" data-required="1" class="form-control" value="<?php echo $d->saldo; ?>" />
-											<!-- </pre> -->
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="control-label col-md-3">Jumlah Penarikan <span class="required">
-										* </span>
-										</label>
-										<div class="col-md-4">
-											<input name="jumlah-penarikan" type="text" class="form-control"/>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="control-label col-md-3">Nomor Rekening <span class="required">
-										* </span>
-										</label>
-
-												<!-- <pre>
-												<?php //var_dump($r) ?>
-												</pre> -->
-										<div class="col-md-4">
-											<select class="form-control" name="selectbank" id="selectboxbank">
-												<option value="">Pilih Bank</option>
-												<?php foreach ($r as $rekening) { ?>
-													<option value="<?php echo $rekening->id_rekening ?>"><?php echo $rekening->no_rekening.' a/n '.$rekening->nama_akun.' -- '.$rekening->nama_bank ?></option>
-												<?php } ?>
-												<option value="tambah">*Tambah No. Rekening</option>
-											</select>
-										</div>
-									</div>
-
-									<div class="form-group tambah" style="display: none;">
-										<label class="control-label col-md-3">Nama Akun <span class="required">
-										* </span>
-										</label>
-										<div class="col-md-4">
-											<input name="nama-akun" type="text" class="form-control"/>
-										</div>
-									</div>
-
-									<div class="form-group tambah" style="display: none;">
-										<label class="control-label col-md-3">Nomor Rekening <span class="required">
-										* </span>
-										</label>
-										<div class="col-md-4">
-											<input name="nomor-rekening" type="text" class="form-control"/>
-										</div>
-									</div>
-
-									<div class="form-group tambah" style="display: none;">
-										<label class="control-label col-md-3">Nama Bank <span class="required">
-										* </span>
-										</label>
-										<div class="col-md-4">
-											<select class="form-control" name="nama-bank">
-												<option value="">Pilih Bank</option>
-												<option value="Bank Mandiri">Bank Mandiri</option>
-												<option value="Bank Central Asia">Bank Central Asia</option>
-												<option value="Bank Negara Indonesia">Bank Negara Indonesia</option>
-												<option value="Bank Rakyat Indonesia">Bank Rakyat Indonesia</option>
-											</select>
-										</div>
-									</div>
-
-									<div class="form-group">
-										<label class="control-label col-md-3">Kata Sandi <span class="required">
-										* </span>
-										</label>
-										<div class="col-md-4">
-											<input name="kata-sandi" type="text" class="form-control"/>
-										</div>
-									</div>
+						<div class="portlet-body">
+							<div class="table-container">
+								<div class="table-actions-wrapper">
+									<span>
+									</span>
+									<select class="table-group-action-input form-control input-inline input-small input-sm">
+										<option value="">Select...</option>
+										<option value="Cancel">Cancel</option>
+										<option value="Cancel">Hold</option>
+										<option value="Cancel">On Hold</option>
+										<option value="Close">Close</option>
+									</select>
+									<button class="btn btn-sm yellow table-group-action-submit"><i class="fa fa-check"></i> Submit</button>
+								</div>
+								<table class="table table-striped table-bordered table-hover" id="datatable_orders">
+									<thead>
+										<tr role="row" class="heading">
 									
-								</div>
-								<div class="form-actions">
-									<div class="row">
-										<div class="col-md-offset-3 col-md-9">
-											<button type="submit" class="btn btn-success uppercase pull-right">Submit</button>
-											<button type="button" class="btn default">Cancel</button>
+										<th width="5%">
+											 Nomor Pesanan
+										</th>
+										<th width="15%">
+											 Tanggal Transaksi
+										</th>
+										
+										<th width="10%">
+											 Status
+										</th>
+										<th width="10%">
+											 Actions
+										</th>
+										</tr>
+									</thead>
+									<tr role="row" class="filter">
+									
+									<td>
+										<input type="text" class="form-control form-filter input-sm" name="order_id">
+									</td>
+									<td>
+										<div class="input-group date date-picker margin-bottom-5" data-date-format="dd/mm/yyyy">
+											<input type="text" class="form-control form-filter input-sm" readonly name="order_date_from" placeholder="From">
+											<span class="input-group-btn">
+											<button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
+											</span>
 										</div>
-									</div>
-								</div>
-							</form>
-							<!-- END FORM-->
+										<div class="input-group date date-picker" data-date-format="dd/mm/yyyy">
+											<input type="text" class="form-control form-filter input-sm" readonly name="order_date_to" placeholder="To">
+											<span class="input-group-btn">
+											<button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
+											</span>
+										</div>
+									</td>
+									
+									<td>
+										<select name="order_status" class="form-control form-filter input-sm">
+											<?php  
+									        //Re-Index
+													$array = array_values($enm);
+													foreach ($array as $v1) {
+														echo "<option>" .$v1."</option>";
+													}
+													?>
+										</select>
+									</td>
+									<td>
+										<div class="margin-bottom-5">
+											<button class="btn btn-sm yellow filter-submit margin-bottom"><i class="fa fa-search"></i> Search</button>
+										</div>
+										<button class="btn btn-sm red filter-cancel"><i class="fa fa-times"></i> Reset</button>
+									</td>
+								</tr>
+								
+								</table>
+
+								<table class="table table-striped table-bordered table-hover" id="datatable_orders">
+								<thead>
+								<tr role="row" class="heading">
+									
+									<th width="5%">
+										 Id Request
+									</th>
+									<th width="15%">
+										 Jumlah Penarikan
+									</th>
+									<th width="15%">
+										 Nomor Rekening
+									</th>
+									<th width="10%">
+										 Nama Akun
+									</th>
+									<th width="10%">
+										 Nama Bank
+									</th>
+									<th width="10%">
+										 Status
+									</th>
+									
+									
+								</tr>
+								
+								</thead>
+								<tbody>
+									<?php
+										foreach($d as $reqdana){
+											?>
+											<tr>
+												<td><?php echo $reqdana->id_tarikdana; ?></a></td>
+		           						 		<td><?php echo $reqdana->jumlah_tarikdana; ?></td>
+		           						 		<td><?php echo $reqdana->no_rekening; ?></td>
+		            							<td><?php echo $reqdana->nama_akun; ?></td>
+		          						  		<td><?php echo $reqdana->nama_bank; ?></td>
+		           						 		<td>
+		           						 			<form action="<?php echo base_url(); ?>manage/tarikdana/update_status/<?php echo $reqdana->id_tarikdana; ?>" method="post">
+
+			           						 			<select name="req_status" class="form-control form-filter input-sm" onchange="this.form.submit()">
+															<option value="Belum Diproses" <?php if($reqdana->status == "Belum Diproses") echo "selected"; ?>>Belum Diproses</option>
+															<option value="Sedang diproses" <?php if($reqdana->status == "Sedang diproses") echo "selected"; ?>>Sedang diproses</option>
+															<option value="Selesai" <?php if($reqdana->status == "Selesai") echo "selected"; ?>>Selesai</option>
+														</select>
+													</form>
+		           						 		</td>
+												
+		       							 	</tr>
+		       							 	<?php 
+		       							}
+		       						?>
+									   
+								</tbody>
+								</table>
+							</div>
 						</div>
 					</div>
-					<!-- END VALIDATION STATES-->
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<!-- BEGIN VALIDATION STATES-->
-			
-					</div>
+					<!-- End: life time stats -->
 				</div>
 			</div>
 			<!-- END PAGE CONTENT-->
@@ -1486,7 +1244,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN CORE PLUGINS -->
 <!--[if lt IE 9]>
 <script src="<?php echo base_url(''); ?>/assets/global/plugins/respond.min.js"></script>
-<script src="../../assets/global/plugins/excanvas.min.js"></script> 
+<script src="<?php echo base_url(''); ?>/assets/global/plugins/excanvas.min.js"></script> 
 <![endif]-->
 <script src="<?php echo base_url(''); ?>/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url(''); ?>/assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
@@ -1501,52 +1259,28 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-<script type="text/javascript" src="<?php echo base_url(''); ?>/assets/global/plugins/jquery-validation/js/jquery.validate.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url(''); ?>/assets/global/plugins/jquery-validation/js/additional-methods.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(''); ?>/assets/global/plugins/select2/select2.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(''); ?>/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(''); ?>/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
 <script type="text/javascript" src="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script>
-<script type="text/javascript" src="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
-<script type="text/javascript" src="<?php echo base_url(''); ?>/assets/global/plugins/ckeditor/ckeditor.js"></script>
-<script type="text/javascript" src="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap-markdown/js/bootstrap-markdown.js"></script>
-<script type="text/javascript" src="<?php echo base_url(''); ?>/assets/global/plugins/bootstrap-markdown/lib/markdown.js"></script>
 <!-- END PAGE LEVEL PLUGINS -->
-<!-- BEGIN PAGE LEVEL STYLES -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="<?php echo base_url(''); ?>/assets/global/scripts/metronic.js" type="text/javascript"></script>
 <script src="<?php echo base_url(''); ?>/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
 <script src="<?php echo base_url(''); ?>/assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
 <script src="<?php echo base_url(''); ?>/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
-<!-- <script src="<?php echo base_url(''); ?>/assets/admin/pages/scripts/form-validation.js"></script> -->
-<!-- END PAGE LEVEL STYLES -->
+<script src="<?php echo base_url(''); ?>/assets/global/scripts/datatable.js"></script>
+<script src="<?php echo base_url(''); ?>/assets/admin/pages/scripts/ecommerce-orders.js"></script>
+<!-- END PAGE LEVEL SCRIPTS -->
 <script>
-jQuery(document).ready(function() {   
-   // initiate layout and plugins
-   Metronic.init(); // init metronic core components
+        jQuery(document).ready(function() {    
+           Metronic.init(); // init metronic core components
 Layout.init(); // init current layout
 QuickSidebar.init(); // init quick sidebar
 Demo.init(); // init demo features
-   // FormValidation.init();
-});
-</script>
-
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('#selectboxbank').change(function() {
-		    if ($(this).val() === 'tambah') {
-		        $('.tambah').css({'display': 'block'});
-		    } else {
-		    	$('.tambah').css({'display': 'none'});
-		    }
-		});
-	});
-</script>
-
-							<script type="text/javascript">
-							// function submit(){
-							// 	$("#form_sample_1").submit();
-							// }
-							</script>
-
+           EcommerceOrders.init();
+        });
+    </script>
 <!-- END JAVASCRIPTS -->
 </body>
 <!-- END BODY -->

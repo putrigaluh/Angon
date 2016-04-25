@@ -3,9 +3,7 @@
 class Transaksi_Model extends CI_Model {
     var $table = 'transaksi';
     var $field = 'status';
-    
-    
-    
+   
     
     public function showTransaksi(){
          
@@ -53,6 +51,7 @@ class Transaksi_Model extends CI_Model {
     function update_status_pembayaran($id) {
         $data = array (
             'status' => "Terbayar",
+
         );
         $this->db->where('id_transaksi', $id);
         $this->db->update('transaksi', $data);
@@ -60,6 +59,7 @@ class Transaksi_Model extends CI_Model {
 
     public function insert(){
     
+
         $tgl=date('Y-m-d');
         //$status ='Pending';
         $data = array(
@@ -82,6 +82,7 @@ class Transaksi_Model extends CI_Model {
         
         return $this->db->insert_id();
     
+
     }
     
     function simpan_pesanan($id_trans, $items)

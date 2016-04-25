@@ -37,7 +37,7 @@ public function __construct() {
 			$produk = $this->produk_model->find($items['id']); //ngefind produk sing idne iki
 
 			$notif_penjual = array(								//notif
- 				'isi_pesan'			=> 'ada 1 pembelian baru',	//notif
+ 				'isi_pesan'		=> 'ada 1 pembelian baru',		//notif
  				'waktu'			=> 'skrg',						//notif
  				'kepada'		=> $produk->id_user,			//notif
  				'id_detail_transaksi'	=> $this->last_id_detail_trans		//notif
@@ -48,15 +48,19 @@ public function __construct() {
 		$this->cart->destroy();
 
 
+
  		if($this->last_id_trans){	
+
  			$notif_admin = array(								//notif
- 				'isi_pesan'			=> 'ada 1 pembelian baru',	//notif
+ 				'isi_pesan'		=> 'ada 1 pembelian baru',		//notif
  				'waktu'			=> 'skrg',						//notif
  				'id_transaksi'	=> $this->last_id_trans					//notif
  				);												//notif
+
  			$this->buat_notifikasi_admin($notif_admin);						//notif
 
  			$this->summary();
+
  		} else {
  			echo "error123";
  		}

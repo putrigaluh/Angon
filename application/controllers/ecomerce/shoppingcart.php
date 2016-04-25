@@ -8,6 +8,7 @@ public function __construct() {
     $this->load->model('produk_model');
  }
 
+
  function index(){
   $this->load_page('ecomerce/cart');
  }

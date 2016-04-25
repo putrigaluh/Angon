@@ -88,10 +88,10 @@ License: You must have a valid license purchased only from themeforest(the above
 					<span class="badge badge-default" id="jumlah-notifikasi"></span>
 					</a>
 					<ul class="dropdown-menu">
-						<li class="external">
+						<!-- <li class="external">
 							<h3><span class="bold">12 pending</span> notifications</h3>
 							<a href="extra_profile.html">view all</a>
-						</li>
+						</li> -->
 						<li>
 							<ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283" id="konten-notifikasi">
 								
@@ -106,7 +106,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 					<img alt="" class="img-circle" src="<?php echo base_url(''); ?>/assets/admin/layout/img/avatar3_small.jpg"/>
 					<span class="username username-hide-on-mobile">
-					Nick </span>
+					Admin </span>
 					<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-default">
@@ -256,6 +256,36 @@ License: You must have a valid license purchased only from themeforest(the above
 							<a href="<?php echo base_url(); ?>admin/user">
 							<i class="icon-home"></i>
 							Lihat User Terdaftar</a>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<a href="javascript:;">
+					<i class="icon-pencil"></i>
+					<span class="title">Request Tarik Dana</span>
+					<span class="arrow "></span>
+					</a>
+					<ul class="sub-menu">
+						<li>
+							<a href="<?php echo base_url(); ?>manage/tarikdana/menampilkan_request">
+							<i class="icon-home"></i>
+							Lihat Request Tarik Dana</a>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<a href="javascript:;">
+					<i class="icon-pencil"></i>
+					<span class="title">Request Return Dana</span>
+					<span class="arrow "></span>
+					</a>
+					<ul class="sub-menu">
+						<li>
+							<a href="<?php echo base_url(); ?>manage/return_dana/select">
+							<i class="icon-home"></i>
+							Lihat Request Return Dana</a>
 						</li>
 					</ul>
 				</li>
