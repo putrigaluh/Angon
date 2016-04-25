@@ -38,13 +38,12 @@
 			<div class="upperHeader">
 				<div class="container">
 					<ul class="pull-right inline">
-						<li><a class="invarseColor" href="#">My Account</a></li>
+						<li><a class="invarseColor" href="#">Akun Saya</a></li>
 						<li class="divider-vertical"></li>
-						<li><a class="invarseColor" href="#">My Wish List (5)</a></li>
+						<li><a class="invarseColor" href="<?php echo base_url();?>ecomerce/konfirmasi">Pesanan Saya</a></li>
 						<li class="divider-vertical"></li>
-						<li><a class="invarseColor" href="#">Shoping Cart</a></li>
-						<li class="divider-vertical"></li>
-						<li><a class="invarseColor" href="#">Checkout</a></li>
+						<li><a class="invarseColor" href="">Layanan Pelanggan</a></li>
+						
 					</ul>
 					<p>
 					
@@ -59,7 +58,7 @@
 				</div><!--end container-->
 			</div><!--end upperHeader-->
 
-			<div class="middleHeader">
+				<div class="middleHeader">
 				<div class="container">
 
 					<div class="middleContainer clearfix">
@@ -81,17 +80,21 @@
 						
 						<div class="btn-group">
 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-							    <i class="icon-shopping-cart"></i> 3 Items
+							    <i class="icon-shopping-cart"></i> 2 Produk
 							    <span class="caret"></span>
 							</a>
 							<div class="dropdown-menu cart-content pull-right">
 								<table class="table-cart">
 									<tbody>
+
+									
+									
+									<?php echo form_hidden($i.'[rowid]', $items['rowid']); ?>
 									<tr>
 										<td class="cart-product-info">
 											<a href="#"><img src="<?php echo base_url(); ?>ecom/img/72x72.jpg" alt="product image"></a>
 											<div class="cart-product-desc">
-												<p><a class="invarseColor" href="#">Foliomania the designer portfolio brochure</a></p>
+												<p><a class="invarseColor" href="#"><?php echo $items['name']; ?></a></p>
 												<ul class="unstyled">
 													<li>Available: Yes</li>
 													<li>Color: Black</li>
@@ -99,35 +102,20 @@
 											</div>
 										</td>
 										<td class="cart-product-setting">
-											<p><strong>1x-$500.00</strong></p>
+											<p><strong><?php echo $items['price']; ?></strong></p>
 											<a href="#" class="remove-pro" data-toggle="tooltip" data-title="Delete"><i class="icon-trash"></i></a>
 										</td>
 									</tr>
-									<tr>
-										<td class="cart-product-info">
-											<a href="#"><img src="<?php echo base_url(); ?>ecom/img/72x72.jpg" alt="product image"></a>
-											<div class="cart-product-desc">
-												<p><a class="invarseColor" href="#">Foliomania the designer portfolio brochure</a></p>
-												<ul class="unstyled">
-													<li>Available: Yes</li>
-													<li>Color: Black</li>
-												</ul>
-											</div>
-										</td>
-										<td class="cart-product-setting">
-											<p><strong>2x-$450.00</strong></p>
-											<a href="#" class="remove-pro" data-toggle="tooltip" data-title="Delete"><i class="icon-trash"></i></a>
-										</td>
-									</tr>
+									
 								</tbody>
 								<tfoot>
 									<tr>
 										<td class="cart-product-info">
-											<a href="#" class="btn btn-small">Vew cart</a>
+											<a href="<?php echo base_url();?>ecomerce/shoppingcart" class="btn btn-small">Vew cart</a>
 											<a href="#" class="btn btn-small btn-primary">Checkout</a>
 										</td>
 										<td>
-											<h3>TOTAL<br>$1,598.30</h3>
+											<h3>TOTAL<br>Rp. <?php echo $items['subtotal']; ?></h3>
 										</td>
 									</tr>
 								</tfoot>
@@ -139,105 +127,37 @@
 					</div><!--end middleCoontainer-->
 
 				</div><!--end container-->
-			</div><!--end middleHeader-->
+			</div><!--end middleHeader-->>
 
 			<div class="mainNav">
 				<div class="container">
 					<div class="navbar">
-					      	
+					     	
 				      	<ul class="nav">
 				      		<li class="active"><a href="#"><i class="icon-home"></i></a></li>
 				      		<?php  foreach($kat as $row) { 
 								 	
-              						echo '<li><a href="#">'.
+              						echo "<li value=''><a href='". base_url()."ecomerce/produk/pencarian/".$row->id_kategori_produk."'>".
               								$row->kategori_produk.
               								'</a></li>';
 					            }
-					            ?>
-				      		<!--
-				      		<li>
-				      			<a href="#">Pages &nbsp;<i class="icon-caret-down"></i></a>
-				      			<div>
-					      			<ul>
-					      				<li><a href="index-2.html"> <span>-</span> index1</a></li>
-					      				<li><a href="index2.html"> <span>-</span> index2</a></li>
-					      				<li><a href="account.html"> <span>-</span> account</a></li>
-					      				<li><a href="login.html"> <span>-</span> login</a></li>
-					      				<li><a href="register.html"> <span>-</span> register</a></li>
-					      				<li><a href="cart.html"> <span>-</span> Cart</a></li>
-					      				<li><a href="wishlist.html"> <span>-</span> wishlist</a></li>
-					      				<li><a href="checkout.html"> <span>-</span> Checkout</a></li>
-					      				<li><a href="compare.html"> <span>-</span> Compare</a></li>
-					      				<li><a href="contact.html"> <span>-</span> Contact</a></li>
-					      				<li><a href="search.html"> <span>-</span> Search</a></li>
-					      				<li><a href="blog.html"> <span>-</span> blog</a></li>
-					      				<li><a href="post.html"> <span>-</span> post</a></li>
-					      				<li><a href="category_grid.html"> <span>-</span> category grid</a></li>
-					      				<li><a href="category_list.html"> <span>-</span> category list</a></li>
-					      				<li><a href="product_details.html"> <span>-</span> product details1</a></li>
-					      				<li><a href="product_details2.html"> <span>-</span> product details2</a></li>
-					      			</ul>
-					      		</div>
-				      		</li>
-				      		<li>
-				      			<a href="#">Women &nbsp;<i class="icon-caret-down"></i></a>
-				      			<div>
-					      			<ul>
-					      				<li><a href="#"> <span>-</span> Dresses (2)</a></li>
-					      				<li><a href="#"> <span>-</span> Jackets &amp; Coats (4)</a></li>
-					      				<li>
-					      					<a href="#"> <span>-</span> Skirts (0) <i class="icon-caret-right pull-right"></i></a>
-					      					<div>
-								      			<ul>
-								      				<li><a href="#"> <span>-</span> Dresses (2)</a></li>
-								      				<li><a href="#"> <span>-</span> Jackets &amp; Coats (4)</a></li>
-								      				<li><a href="#"> <span>-</span> Skirts (0)</a></li>
-								      				<li><a href="#"> <span>-</span> Suits &amp; Tailoring (82)</a></li>
-								      				<li><a href="#"> <span>-</span> Tops (58)</a></li>
-								      				<li><a href="#"> <span>-</span> Shoes (15)</a></li>
-								      				<li><a href="#"> <span>-</span> Shorts (54) </a></li>
-								      			</ul>
-								      		</div>
-					      				</li>
-					      				<li><a href="#"> <span>-</span> Suits &amp; Tailoring (82)</a></li>
-					      				<li><a href="#"> <span>-</span> Tops (58)</a></li>
-					      				<li><a href="#"> <span>-</span> Shoes (15)</a></li>
-					      				<li><a href="#"> <span>-</span> Shorts (54) </a></li>
-					      			</ul>
-					      		</div>
-				      		</li>
-				      		<li>
-				      			<a href="#">Men &nbsp;<i class="icon-caret-down"></i></a>
-				      			<div>
-					      			<ul>
-					      				<li><a href="#"> <span>-</span> Dresses (2)</a></li>
-					      				<li><a href="#"> <span>-</span> Jackets &amp; Coats (4)</a></li>
-					      				<li><a href="#"> <span>-</span> Skirts (0)</a></li>
-					      				<li><a href="#"> <span>-</span> Suits &amp; Tailoring (82)</a></li>
-					      				<li><a href="#"> <span>-</span> Tops (58)</a></li>
-					      				<li><a href="#"> <span>-</span> Shoes (15)</a></li>
-					      				<li><a href="#"> <span>-</span> Shorts (54) </a></li>
-					      			</ul>
-					      		</div>
-				      		</li>
-				      		<li><a href="#">Children</a></li>
-				      		<li><a href="#">FootWear</a></li>
-				      		<li>
-				      			<a href="#">Accessories &nbsp;<i class="icon-caret-down"></i></a>
-				      			<div>
-					      			<ul>
-					      				<li><a href="#"> <span>-</span> Dresses (2)</a></li>
-					      				<li><a href="#"> <span>-</span> Jackets &amp; Coats (4)</a></li>
-					      				<li><a href="#"> <span>-</span> Skirts (0)</a></li>
-					      				<li><a href="#"> <span>-</span> Suits &amp; Tailoring (82)</a></li>
-					      				<li><a href="#"> <span>-</span> Tops (58)</a></li>
-					      				<li><a href="#"> <span>-</span> Shoes (15)</a></li>
-					      				<li><a href="#"> <span>-</span> Shorts (54) </a></li>
-					      			</ul>
-					      		</div>
-				      		</li>
-				      		<li><a href="#">OutLet</a></li>
-				      		<li><a href="#">Designers</a></li>-->
+					         ?>
+
+					     <li><a href="#">Ternak &nbsp;<i class="icon-caret-down"></i></a>
+					     							     <div>
+					     	<ul>
+					     		
+					     		<?php  foreach($dr as $rw) { 
+								 	
+              						echo '<li><a href="#">'.
+              								$rw->kategori_produk.
+              								'</a></li>';
+					            }?>
+					     	</ul>
+
+					     </div>
+					     </li>
+
 				      	</ul><!--end nav-->
 
 					</div>
@@ -245,21 +165,3 @@
 			</div><!--end mainNav-->
 			
 		</header>
-		<script src="../../ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script src="../../ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
-    <!-- jQuery.Cookie -->
-	<script src="<?php echo base_url(); ?>ecom/js/jquery.cookie.js"></script>
-	<!-- bootstrap -->
-    <script src="<?php echo base_url(); ?>ecom/js/bootstrap.min.js"></script>
-    <!-- flexslider -->
-    <script src="<?php echo base_url(); ?>ecom/js/jquery.flexslider-min.js"></script>
-    <!-- cycle2 -->
-    <script src="<?php echo base_url(); ?>ecom/js/jquery.cycle2.min.js"></script>
-    <script src="<?php echo base_url(); ?>ecom/js/jquery.cycle2.carousel.min.js"></script>
-    <!-- tweets -->
-    <script src="<?php echo base_url(); ?>ecom/js/jquery.tweet.js"></script>
-    <!-- fancybox -->
-    <script src="<?php echo base_url(); ?>ecom/js/fancybox/jquery.fancybox.js"></script>
-    <!-- custom function-->
-    <script src="<?php echo base_url(); ?>ecom/js/custom.js"></script>
-    </html>

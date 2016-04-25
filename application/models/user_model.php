@@ -10,23 +10,41 @@ class User_Model extends CI_Model {
     public $username;
     public $password;
 
+    function select_username($username){
+
+        $this->db->select('username');
+        $this->db->from($this->table);
+        $this->db->where('username',$username);
+        $result = $this->db->get()->result(); 
+        return $result;
+    }
+
     function registrasi() {
         $registrasi = array(
-            'id_user' => $this->input->post('id_user'),
-            'nama_user' => $this->input->post('nama'),
-            'kategori_user' => $this->input->post('kategori'),
-            'no_telp' => $this->input->post('notelp'),
-            'nama_toko' => $this->input->post('toko'),
-            'alamat_user' => $this->input->post('alamat'),
-            'id_kota' => $this->input->post('kota'),
-            'kodepos' => $this->input->post('kodepos'),
-            'username' => $this->input->post('username'),
-            'password' => $this->input->post('password')
+            'id_user' => mysql_real_escape_string($this->input->post('id_user')),
+            'nama_user' => mysql_real_escape_string($this->input->post('nama')),
+            'kategori_user' => mysql_real_escape_string($this->input->post('kategori')),
+            'no_telp' => mysql_real_escape_string($this->input->post('notelp')),
+            'nama_toko' => mysql_real_escape_string($this->input->post('toko')),
+            'alamat_user' => mysql_real_escape_string($this->input->post('alamat')),
+            'id_kota' => mysql_real_escape_string($this->input->post('kota')),
+            'kodepos' => mysql_real_escape_string($this->input->post('kodepos')),
+            'username' => mysql_real_escape_string($this->input->post('username')),
+            'password' => mysql_real_escape_string($this->input->post('password'))
         );
-        $insert = $this->db->insert('user', $registrasi);
-        return $insert;
+
+        // $username = array($this->db->query("select username from user"));
+            
+           // $i=0;
+         //if($registrasi['username'] == $username[$i]){
+
+        // }else{
+           $insert = $this->db->insert('user', $registrasi);
+            return $insert;
+        // }
         
-        
+    
+
     }
 
   function set_session(){
@@ -91,6 +109,16 @@ class User_Model extends CI_Model {
     function delete($id) {
         $this->db->where('id_user', $id);
         $this->db->delete('user');
+    }
+
+    //fungsi untuk select data user buat checkout
+    public function data_pengirim(){
+        $id = $this->session->userdata('id_user');
+        $this->db->from($this->table);
+        $this->db->join('kota','user.id_kota');
+        $this->db->join('provinsi','kota.id_kota');
+        $this->db->where('id_user',$id);
+        return $this->db->get()->row();
     }
 
 }

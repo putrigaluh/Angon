@@ -312,7 +312,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							Dashboard</a>
 						</li>
 						<li>
-							<a href="<?php echo base_url(); ?>manage/produk/input_produk">
+							<a href="<?php echo base_url(); ?>manage/produk">
 							<i class="icon-pencil"></i>
 							Input Produk</a>
 						</li>

@@ -47,7 +47,9 @@
 		return $this->db->count_all_results();
 	}
 
-	public function insert_notif_admin($notif){			
+
+	public function insert_notif_admin($notif){			//notif
+
 		$this->db->insert($this->table1, $notif); 
 	}
 

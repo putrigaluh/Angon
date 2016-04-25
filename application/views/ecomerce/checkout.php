@@ -5,41 +5,7 @@
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 
 <!-- Mirrored from ahmedsaeed.me/shopfine/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Apr 2016 16:02:24 GMT -->
-<head>
 
-	<!-- Basic Page Needs
-  ================================================== -->
-	<meta charset="utf-8">
-	<title>ShopFine: Checkout</title>
-	<meta name="description" content="">
-	<meta name="author" content="Ahmed Saeed">
-	<!-- Mobile Specific Metas
-  ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<!-- CSS
-  ================================================== -->
-	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/bootstrap.min.css" media="screen">
-	<!-- jquery ui css -->
-	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/jquery-ui-1.10.1.min.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/customize.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/font-awesome.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/style.css">
-	<!-- flexslider css-->
-	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/flexslider.css">
-	<!-- fancybox -->
-	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/js/fancybox/jquery.fancybox.css">
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
-		<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/font-awesome-ie7.css">
-	<![endif]-->
-	<!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="<?php echo base_url(); ?>ecom/images/favicon.html">
-	<link rel="apple-touch-icon" href="<?php echo base_url(); ?>ecom/images/apple-touch-icon.html">
-	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo base_url(); ?>ecom/images/apple-touch-icon-72x72.html">
-	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo base_url(); ?>ecom/images/apple-touch-icon-114x114.html">
-</head>
 
 <body>
 
@@ -48,8 +14,6 @@
 		<!--begain header-->
 		
 		<!-- end header -->
-
-
 
 		<div class="container">
 
@@ -85,18 +49,17 @@
 
 										<td>
 											<h3>Login</h3>
-											<form method='post' action='login'>
+											<form method='post' action='".base_url()."login'>
 												<div class='controls'>
 													<label>Masukkan Username: <span class='text-error'>*</span></label>
-													<input type='text' name=''value='' placeholder='budi'>
+													<input type='text' name='username'value='' placeholder='budi'>
 												</div>
 												<div class='controls'>
 													<label>Masukkan Password: <span class='text-error'>*</span></label>
-													<input type='password' name='' value='' placeholder='**************'>
+													<input type='password' name='password' value='' placeholder='**************'>
 												</div>
 												<div class='controls'>
-													<label class='checkbox'>
-												      <input type='checkbox'> Check me out
+													
 												    </label>
 												    <button type='submit' class='btn btn-primary'>Login</button>
 												</div>
@@ -118,10 +81,10 @@
 						<div class="checkout-content">
 							<form method="post" action="" class="form-inline">
 								<label class="radio inline">
-								  <input type="radio" name="add" value="option1"> Gunakan data saya
+								  <input type="radio" name="add" value="option1" id="radio_data_pribadi"> Gunakan data saya
 								</label>&nbsp;&nbsp;
 								<label class="radio inline">
-								  <input type="radio" name="add" value="option2"> Saya ingin membuat informasi pengiriman lain
+								  <input type="radio" name="add" value="option2" id="radio_data_baru"> Saya ingin membuat informasi pengiriman lain
 								</label>
 							</form><!--end form-->
 
@@ -129,20 +92,21 @@
 
 							<form method="post" action="<?php echo base_url();?>ecomerce/checkout/check" class="form-horizontal">
 
-								<div class="control-group success">
+								<div class="control-group">
 								    <label class="control-label" for="inputFirstName">Nama Lengkap: <span class="text-error">*</span></label>
 								    <div class="controls">
 								      <input type="text" id="inputFirstName" name="nama" placeholder="Budi">
 								      <!--<span class="help-inline"><i class="icon-ok"></i> Avaliable input!</span>-->
 								    </div>
 								</div><!--end control-group-->
-
-								<div class="control-group">
-								    <label class="control-label" for="inputCompany">Nama Perusahaan / Nama Toko:</label>
-								    <div class="controls">
-								      <input type="text" id="inputCompany" name="toko" placeholder="PT. Jaya Kusuma">
+								<?php if ($this->session->userdata('kategori_user') == 'Industri Ternak' || $this->session->userdata('kategori_user') == 'Peternak' ) {
+								echo "<div class='control-group'>
+								    <label class='control-label' for='inputCompany'>Nama Perusahaan / Nama Toko:</label>
+								    <div class='controls'>
+								      <input type='text' id='inputCompany' name='toko' placeholder='PT. Jaya Kusuma'>
 								    </div>
-								</div><!--end control-group-->
+								</div>";
+								} ?>
 
 								<div class="control-group">
 								    <label class="control-label" for="inputFirstAdd">Alamat: <span class="text-error">*</span></label>
@@ -166,10 +130,10 @@
 								    <div class="controls">
 								      <select name="provinsi">
 								      	<option value="#">-- Pilih Provinsi --</option>
-								      	<option value="#">Contury2</option>
-								      	<option value="#">Contury3</option>
-								      	<option value="#">Contury4</option>
-								      	<option value="#">Contury5</option>
+								      	<option value="#">Jawa Timur</option>
+								      	<option value="#">Jawa Tengah</option>
+								      	<option value="#">Jawa Barat</option>
+								      	<option value="#">Jakarta</option>
 								      </select>
 								    </div>
 								</div>
@@ -177,8 +141,8 @@
 								<div class="control-group">
 								    <label class="control-label" for="inputCity">Kota: <span class="text-error">*</span></label>
 								    <div class="controls">
-								      <select name="kota">
-								      	<option value="">-- Pilih Kota --</option>
+								      <select name="kota" id="kota">
+								      	<option value="pilih">-- Pilih Kota --</option>
 											<?php
 												foreach ($daftar_kota as $k) {
 												 	echo "<option value='".$k->id_kota."'>".$k->nama_kota."</option>";
@@ -324,6 +288,30 @@
     <script src="<?php echo base_url(); ?>ecom/js/fancybox/jquery.fancybox.js"></script>
     <!-- custom function-->
     <script src="<?php echo base_url(); ?>ecom/js/custom.js"></script>
+
+    <script>
+
+    $("#radio_data_pribadi").click(function(){
+    	$("#inputFirstName").val("<?php echo $data_pengirim->nama_user; ?>");
+    	$("#inputCompany").val("<?php echo $data_pengirim->nama_toko; ?>");
+    	$("#inputFirstAdd").val("<?php echo $data_pengirim->alamat_user; ?>");
+    	$("#inputTele").val("<?php echo $data_pengirim->no_telp; ?>");
+    	$("#kota").val("<?php echo $data_pengirim->id_kota; ?>");
+    	$("#inputPostCode").val("<?php echo $data_pengirim->kodepos; ?>");
+    });
+
+
+   
+	$("#radio_data_baru").click(function(){
+    	$("#inputFirstName").val("");
+    	$("#inputCompany").val("");
+    	$("#inputFirstAdd").val("");
+    	$("#inputTele").val("");
+    	$("#kota").val("pilih");
+    	$("#inputPostCode").val("");
+    });
+
+    </script>
     
 </body>
 

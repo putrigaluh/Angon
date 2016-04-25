@@ -66,10 +66,10 @@
 
 							<h4>&nbsp;&nbsp;&nbsp;&nbsp;1. Informasi Personal</h4>
 							<input  type="hidden" placeholder="" name="id"/>
-							<div class="control-group success">
-							    <label class="control-label" for="inputFirstName">Nama Lengkap: <span class="text-error">*</span></label>
+							<div class="control-group">
+							    <label class="control-label" >Nama Lengkap: <span class="text-error">*</span></label>
 							    <div class="controls">
-							      <input type="text" id="inputFirstName" name="nama" placeholder="Budi">
+							      <input type="text" id="inputFirstName" name="nama" placeholder="Budi" required>
 							      <!--<span class="help-inline"><i class="icon-ok"></i> Avaliable input!</span>-->
 							    </div>
 							</div><!--end control-group-->
@@ -77,11 +77,11 @@
 							<div class="control-group">
 							    <div class="control-label">Daftar Sebagai: <span class="text-error">*</span></div>
 							    <div class="controls">
-							      <select name="kategori">
+							      <select name="kategori" id="pilihkategori" required >
 							      	<option value="" >-- Pilih Kategori --</option>
-									<option value="peternak">Peternak</option>
-									<option value="industri ternak">Industri Ternak</option>
-									<option value="pengguna hasil ternak">Pengguna Hasil Ternak</option>
+									<option value="Peternak">Peternak</option>
+									<option value="Industri Ternak">Industri Ternak</option>
+									<option value="Pengguna Hasil Ternak">Pengguna Hasil Ternak</option>
 							      </select>
 							    </div>
 							</div>
@@ -89,7 +89,7 @@
 							<div class="control-group">
 							    <label class="control-label" for="inputTele">Nomor Telepon: <span class="text-error">*</span></label>
 							    <div class="controls">
-							      <input type="text" id="inputTele" name="notelp" placeholder="085755141414">
+							      <input type="text" id="inputTele" name="notelp" placeholder="085755141414" required>
 							    </div>
 							</div><!--end control-group-->
 
@@ -97,12 +97,12 @@
 
 							<!--end control-group-->
 
-							<h4>&nbsp;&nbsp;&nbsp;&nbsp;2. Informasi Toko</h4>
+							<h4>&nbsp;&nbsp;&nbsp;&nbsp;2. Informasi Lokasi Pengiriman</h4>
 
-							<div class="control-group">
+							<div class="control-group namaPerusahaan" style="display: none;">
 							    <label class="control-label" for="inputCompany">Nama Perusahaan / Nama Toko:</label>
 							    <div class="controls">
-							      <input type="text" id="inputCompany" name="toko" placeholder="PT. Jaya Kusuma">
+							      <input type="text" id="inputCompany" name="toko" placeholder="PT. Jaya Kusuma" >
 							    </div>
 							</div><!--end control-group-->
 
@@ -111,7 +111,7 @@
 							<div class="control-group">
 							    <label class="control-label" for="inputFirstAdd">Alamat: <span class="text-error">*</span></label>
 							    <div class="controls">
-							      <textarea  id="inputFirstAdd" name="alamat" placeholder="3st el-hikem"></textarea>
+							      <textarea  id="inputFirstAdd" name="alamat" placeholder="3st el-hikem" required></textarea>
 							    </div>
 							</div><!--end control-group-->
 
@@ -132,7 +132,7 @@
 							<div class="control-group">
 							    <label class="control-label" for="inputCity">Kota: <span class="text-error">*</span></label>
 							    <div class="controls">
-							      <select name="kota">
+							      <select name="kota" required>
 							      	<option value="">-- Pilih Kota --</option>
 										<?php
 											foreach ($daftar_kota as $k) {
@@ -146,7 +146,7 @@
 							<div class="control-group">
 							    <label class="control-label" for="inputPostCode">Kodepos: <span class="text-error">*</span></label>
 							    <div class="controls">
-							      <input type="text" id="inputPostCode" name="kodepos" placeholder="Email">
+							      <input type="text" id="inputPostCode" name="kodepos" placeholder="65142" required>
 							    </div>
 							</div><!--end control-group-->
 
@@ -159,14 +159,16 @@
 							<div class="control-group">
 							    <label class="control-label" for="inputPass">Username: <span class="text-error">*</span></label>
 							    <div class="controls">
-							      <input type="text" id="inputPass" name="username" placeholder="budi">
+							      <input type="text" id="input-username" name="username" placeholder="budi" required>
+							      <span class="help-inline"><i class="icon-ok"></i> Username tersedia</span>
+							      <span class="help-inline"><i class="icon-remove"></i> Username sudah ada</span>
 							    </div>
 							</div><!--end control-group-->
 
-							<div class="control-group">
+							<div class="control-group ">
 							    <label class="control-label" for="inputConPass">Password: <span class="text-error">*</span></label>
 							    <div class="controls">
-							      <input type="password" id="inputConPass" name="password" placeholder="**********">
+							      <input type="password" id="inputConPass" name="password" placeholder="**********" required>
 							    </div>
 							</div><!--end control-group-->
 
@@ -263,7 +265,25 @@
     <script src="<?php echo base_url(); ?>ecom/js/fancybox/jquery.fancybox.js"></script>
     <!-- custom function-->
     <script src="<?php echo base_url(); ?>ecom/js/custom.js"></script>
-    
+
+    <script src="<?php echo base_url() ?>ecom/js/cek_username.js"></script>
+
+
+    <script type="text/javascript">
+	$(document).ready(function(){
+		$('#pilihkategori').change(function() {
+		    if ($(this).val() === 'Industri Ternak' || $(this).val() === 'Peternak') {
+		        $('.namaPerusahaan').css({'display': 'block'});
+		        
+		    } else {
+		    	$('.namaPerusahaan').css({'display': 'none'});
+		    	
+		    }
+		});
+	});
+	</script>
+
+
 </body>
 
 

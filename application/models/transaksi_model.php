@@ -40,33 +40,57 @@ class Transaksi_Model extends CI_Model {
         $this->db->update('transaksi', $data);
     }
 
+
+    function update_status_penerimaan($id) {
+        $data = array (
+            'status' => "Selesai",
+        );
+        $this->db->where('id_transaksi', $id);
+        $this->db->update('transaksi', $data);
+    }
+    function update_status_pembayaran($id) {
+        $data = array (
+            'status' => "Terbayar",
+
+        );
+        $this->db->where('id_transaksi', $id);
+        $this->db->update('transaksi', $data);
+    }
+
     public function insert(){
     
-    $tgl=date('Y-m-d');
-    //$status ='Pending';
-    $data = array(
 
-        'id_transaksi' => $this->input->post('id_transaksi'),
-        'id_user' => $this->session->userdata('id_user'),
-        'nama_pengiriman' => $this->input->post('nama'),
-        'toko_pengiriman' => $this->input->post('toko'),
-        'alamat_pengiriman' => $this->input->post('alamat'),
-        'no_telp' => $this->input->post('notelp'),
-        'id_kota' => $this->input->post('kota'),
-        'kodepos' => $this->input->post('kodepos'),
-        'status' => 'Pending'
-        );
+        $tgl=date('Y-m-d');
+        //$status ='Pending';
+        $data = array(
+
+            'id_transaksi' => $this->input->post('id_transaksi'),
+            'id_user' => $this->session->userdata('id_user'),
+            'nama_pengiriman' => $this->input->post('nama'),
+            'toko_pengiriman' => $this->input->post('toko'),
+            'alamat_pengiriman' => $this->input->post('alamat'),
+            'no_telp' => $this->input->post('notelp'),
+            'id_kota' => $this->input->post('kota'),
+            'total_bayar' => $this->cart->total(),
+            'kodepos' => $this->input->post('kodepos'),
+             'status' => 'Pending'
+            );
+        
+            $this->db->set('tgl_transaksi', 'NOW()', FALSE);
+           
+        $this->db->insert('transaksi', $data); 
+        
+        return $this->db->insert_id();
     
-        $this->db->set('tgl_transaksi', 'NOW()', FALSE);
-       
-    $insert = $this->db->insert('transaksi', $data); 
-    return $insert;
-   
+
     }
     
-    function simpan_pesanan($datainput)
+    function simpan_pesanan($id_trans, $items)
     {
-        $q = $this->db->query($datainput);
+        $query = "insert into detail_transaksi (id_transaksi, id_produk,jumlah,sub_total) values('".$id_trans."','".$items['id']."','".$items['qty']."','".$items['subtotal']."')";
+        $this->db->query($query);
+
+        return $this->db->insert_id();
     }
 
     function pesanan_pembeli(){
@@ -77,8 +101,21 @@ class Transaksi_Model extends CI_Model {
         $this->db->from('detail_transaksi');
         $this->db->join('transaksi', 'detail_transaksi.id_transaksi = transaksi.id_transaksi');
         $this->db->where('transaksi.id_user', $id_user);
+        $this->db->order_by('transaksi.id_transaksi DESC');
         $query = $this->db->get();
         return $query->result();
+    }
+
+    function pesanan_terakhir($id_trans, $id_detail_trans){
+        $id_user =  $this->session->userdata('id_user');
+        $this->db->select('*');
+        $this->db->from('detail_transaksi');
+        $this->db->join('transaksi', 'detail_transaksi.id_transaksi = transaksi.id_transaksi');
+        $this->db->where('transaksi.id_user = '. $id_user. ' AND transaksi.id_transaksi = '. $id_trans, null, FALSE);
+        
+        $query = $this->db->get();
+        // die($this->db->last_query());
+        return $query->row();
     }
 }
 
