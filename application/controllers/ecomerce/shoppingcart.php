@@ -7,9 +7,7 @@ public function __construct() {
  	$this->load->library('cart');
     $this->load->model('produk_model');
  }
-
-
-
+ 
 public function buy($id){
  	$product = $this->produk_model->find($id);
  	$data = array(

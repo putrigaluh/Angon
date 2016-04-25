@@ -3,9 +3,7 @@
 class Transaksi_Model extends CI_Model {
     var $table = 'transaksi';
     var $field = 'status';
-    
-    
-    
+   
     
     public function showTransaksi(){
          
@@ -56,15 +54,14 @@ class Transaksi_Model extends CI_Model {
         'no_telp' => $this->input->post('notelp'),
         'id_kota' => $this->input->post('kota'),
         'kodepos' => $this->input->post('kodepos'),
-         'status' => 'Pending'
+        'status' => 'Pending'
         );
     
         $this->db->set('tgl_transaksi', 'NOW()', FALSE);
        
     $insert = $this->db->insert('transaksi', $data); 
     return $insert;
-
-    
+   
     }
     
     function simpan_pesanan($datainput)

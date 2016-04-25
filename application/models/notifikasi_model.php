@@ -5,11 +5,10 @@
 	var $details;
 
 	public function select_notif_admin(){
-		// $this->db->where('kepada', $this->session->userdata('id_user'));
 		$this->db->where('sudahbaca', 'N');
 		return $this->db->get($this->table1)->result();
 		//$sql = "SELECT * FROM $table INNER JOIN produk USING(id_produk) WHERE produk.id_user='$this->session->userdata('id_user')' and sudahbaca='N'";
-		//return $this->db->query($sql)->result();
+		//return $this->db->query($sql)->result(); 
 	}
 
 	public function select_notif_penjual(){
@@ -48,13 +47,11 @@
 		return $this->db->count_all_results();
 	}
 
-	public function insert_notif_admin($notif){			//notif
-		$data = array(
-			"isi_pesan" => $notif);
-		$this->db->insert($this->table1, $data); 
+	public function insert_notif_admin($notif){			
+		$this->db->insert($this->table1, $notif); 
 	}
 
-	public function insert_notif_penjual($notif){			//notif
+	public function insert_notif_penjual($notif){			
 		$this->db->insert($this->table2, $notif); 
 	}
 
