@@ -323,7 +323,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							Lihat Produk</a>
 						</li>
 						<li>
-							<a href="<?php echo base_url(); ?>manage/produk/lihat_pesanan">
+							<a href="<?php echo base_url(); ?>manage/pesanan">
 							<i class="icon-basket"></i>
 							Lihat Pesanan</a>
 						</li>

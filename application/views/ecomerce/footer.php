@@ -1,39 +1,5 @@
 <html>
-<head>
 
-	<!-- Basic Page Needs
-  ================================================== -->
-	<meta charset="utf-8">
-	<title>ShopFine: eCommerce Website</title>
-	<meta name="description" content="">
-	<meta name="author" content="Ahmed Saeed">
-	<!-- Mobile Specific Metas
-  ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<!-- CSS
-  ================================================== -->
-	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/bootstrap.min.css" media="screen">
-	<!-- jquery ui css -->
-	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/jquery-ui-1.10.1.min.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/customize.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/font-awesome.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/style.css">
-	<!-- flexslider css-->
-	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/flexslider.css">
-	<!-- fancybox -->
-	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/js/fancybox/jquery.fancybox.css">
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
-		<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/font-awesome-ie7.css">
-	<![endif]-->
-	<!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="<?php echo base_url(); ?>ecom/images/favicon.html">
-	<link rel="apple-touch-icon" href="<?php echo base_url(); ?>ecom/images/apple-touch-icon.html">
-	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo base_url(); ?>ecom/images/apple-touch-icon-72x72.html">
-	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo base_url(); ?>ecom/images/apple-touch-icon-114x114.html">
-</head>
 <footer>
 		<div class="footerOuter">
 			<div class="container">
@@ -133,21 +99,5 @@
 			</div>
 		</div>
 		</footer>
-			<script src="../../ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script src="../../ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
-    <!-- jQuery.Cookie -->
-	<script src="<?php echo base_url(); ?>ecom/js/jquery.cookie.js"></script>
-	<!-- bootstrap -->
-    <script src="<?php echo base_url(); ?>ecom/js/bootstrap.min.js"></script>
-    <!-- flexslider -->
-    <script src="<?php echo base_url(); ?>ecom/js/jquery.flexslider-min.js"></script>
-    <!-- cycle2 -->
-    <script src="<?php echo base_url(); ?>ecom/js/jquery.cycle2.min.js"></script>
-    <script src="<?php echo base_url(); ?>ecom/js/jquery.cycle2.carousel.min.js"></script>
-    <!-- tweets -->
-    <script src="<?php echo base_url(); ?>ecom/js/jquery.tweet.js"></script>
-    <!-- fancybox -->
-    <script src="<?php echo base_url(); ?>ecom/js/fancybox/jquery.fancybox.js"></script>
-    <!-- custom function-->
-    <script src="<?php echo base_url(); ?>ecom/js/custom.js"></script>
+			
     </html>

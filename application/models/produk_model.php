@@ -17,8 +17,26 @@ public function find($id){					//dipake notif juga
  	$this->db->where ('id_produk', $id);
  	return $this->db->get('produk')->row();
 }
- public function kategori(){
- 	
+function kategori(){
+        $user=$this->session->userdata('kategori_user');
+        if ($user == 'Peternak'){
+            $query = $this->db->query("select * from kategori_produk where id_kategori_produk like 'I%'");
+        }else if($user == 'Pengguna Hasil Ternak'){
+            $query = $this->db->query("select * from kategori_produk where id_kategori_produk like 'P%'");
+        }else{
+            $query = $this->db->query("select * from kategori_produk where id_kategori_produk like 'I%'");
+        }
+            return $query->result();
+ }
+ function drop(){
+        $query = $this->db->query("select * from kategori_produk where id_kategori_produk like 'P%'");
+        return $query->result();
+}
+
+
+ public function cari_kategori($kat){
+ 	$this->db->where('id_kategori_jenis',$kat);
+    return $this->db->get('produk')->result();
 }
 
 }
