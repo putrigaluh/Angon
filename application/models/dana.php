@@ -2,7 +2,7 @@
 	class Dana extends CI_Model {
 	var $table = 'user';
 	var $table1 = 'tarik_dana';
-	var $table2 = 'rekening';
+
 	var $details;
 
 	public function select_dana(){
@@ -15,9 +15,6 @@
 		$this->db->insert($this->table1, $data); 
 	}
 
-	public function insert_rekening($data){
-		$this->db->insert($this->table2, $data); 
-	}
 
 
 	//fungsi untuk menampilkan semua data 
@@ -28,10 +25,7 @@
 		return $this->db->get()->row();
     }
 
-    public function menampilkan_rekening() {
-		$this->db->where('id_user', $this->session->userdata('id_user'));
-		return $this->db->get('rekening')->result();
-    }
+   
 
     public function verifikasi_password($password){
     	$this->db->from($this->table);

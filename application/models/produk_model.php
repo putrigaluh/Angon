@@ -17,26 +17,22 @@ public function find($id){					//dipake notif juga
  	$this->db->where ('id_produk', $id);
  	return $this->db->get('produk')->row();
 }
-function kategori(){
-        $user=$this->session->userdata('kategori_user');
-        if ($user == 'Peternak'){
-            $query = $this->db->query("select * from kategori_produk where id_kategori_produk like 'I%'");
-        }else if($user == 'Pengguna Hasil Ternak'){
-            $query = $this->db->query("select * from kategori_produk where id_kategori_produk like 'P%'");
-        }else{
-            $query = $this->db->query("select * from kategori_produk where id_kategori_produk like 'I%'");
-        }
-            return $query->result();
- }
- function drop(){
-        $query = $this->db->query("select * from kategori_produk where id_kategori_produk like 'P%'");
-        return $query->result();
-}
 
 
- public function cari_kategori($kat){
- 	$this->db->where('id_kategori_jenis',$kat);
-    return $this->db->get('produk')->result();
+function pencarian(){
+    $cari = $this->input->get('cari');
+   // echo "hahaha";
+   // $this->db->from('produk');
+    
+    $this->db->like('nama_produk',$cari);
+    $this->db->or_like('deskripsi',$cari);
+    $this->db->or_like('kategori_produk',$cari);
+    $this->db->or_like('nama_toko',$cari);
+    $this->db->join('kategori_produk', 'produk.id_kategori_jenis = kategori_produk.id_kategori_produk');
+    $this->db->join('user', 'produk.id_user = user.id_user');
+    
+  return $this->db->get('produk')->result();
+    //die($this->db->last_query());
 }
 
 }

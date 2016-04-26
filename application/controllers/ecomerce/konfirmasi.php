@@ -7,6 +7,7 @@ public function __construct() {
     $this->load->helper('form');
     $this->load->model('transaksi_model');
     
+    
  }
 
  public function index(){
@@ -36,27 +37,7 @@ public function __construct() {
       
     }
  }
- public function konfirmasi_pembayaran(){
-
-        $this->load->model('konfirmasi_model');
-
-     if($this->input->post('submit')){
-        $id_trans = $this->input->post('id_transaksi');
-        
-          $this->konfirmasi_model->insert_rekening();
-          $id_rekening = $this->db->insert_id();
-        
-        $this->konfirmasi_model->insert_pembayaran("insert into konfirmasi_pembayaran values(".$id_trans.",".$id_rekening.")");
-
-        redirect('ecomerce/konfirmasi');
-    }else{
-        
-        $rekening = $this->konfirmasi_model->menampilkan_rekening();
-        $this->load->vars('r', $rekening);
-         $this->load_page('ecomerce/konfirmasi_pembayaran');
-      
-    }
- }
+ 
 
 
  // function update_data($id) {
