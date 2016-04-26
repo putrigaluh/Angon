@@ -41,7 +41,9 @@
 						<?php echo form_hidden($i.'[rowid]', $items['rowid']); ?>
 							<tr>
 								<td>
-									<a href="#"><img src="<?php echo base_url(); ?>ecom/img/92x92.jpg" alt=""></a>
+								<li class="span3 clearfix">
+									<a href="#"><img src="<?php echo base_url($items['image']);?>" alt=""></a>
+								</li>
 								</td>
 								<td class="desc">
 									<h4><a href="#" class="invarseColor">

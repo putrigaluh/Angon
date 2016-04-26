@@ -39,6 +39,12 @@ public function index(){
  	}
 	
  }
+
+function input_keluhan(){
+	$this->load->view("ecomerce/header");
+	$this->load->view("ecomerce/input_keluhan");
+	$this->load->view("ecomerce/footer");
+}
  
 }
 ?>

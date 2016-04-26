@@ -16,11 +16,13 @@
 
 				<div class="span8">
 					<div class="flexslider">
+					<?php foreach($daftar_produk as $p){ ?>
 						<ul class="slides">
-							<li><img src="<?php echo base_url(); ?>ecom/img/614x300.jpg" alt="slide1"></li>
-							<li><img src="<?php echo base_url(); ?>ecom/img/614x300.jpg" alt="slide2"></li>
-							<li><img src="<?php echo base_url(); ?>ecom/img/614x300.jpg" alt="slide3"></li>
+							<li><img src="<?php echo base_url($p->gbr_produk); ?>" alt="slide1"></li>
+							<li><img src="<?php echo base_url($p->gbr_produk); ?>" alt="slide2"></li>
+							<li><img src="<?php echo base_url($p->gbr_produk); ?>" alt="slide3"></li>
 						</ul>
+						<?php } ?>
 					</div><!--end flexslider-->
 				</div><!--end span8-->
 
@@ -144,7 +146,7 @@
 								<?php foreach($daftar_produk as $p){	?>
 								<li class="span3 clearfix">
 									<div class="thumbnail">
-										<a href="#"><img src="<?php echo base_url(); ?>ecom/img/212x192.jpg" alt=""></a>
+										<a href="#"><img src="<?php echo base_url($p->gbr_produk);?>" alt=""></a>
 									</div>
 									<div class="thumbSetting">
 										<div class="thumbTitle">
@@ -170,6 +172,7 @@
 											<button class="btn btn-small" data-title="+To Compare" data-placement="top" data-toggle="tooltip">
 												<i class="icon-refresh"></i>
 											</button>
+
 										</div>
 
 										<ul class="rating">
