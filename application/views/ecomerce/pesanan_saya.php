@@ -43,7 +43,7 @@
 					</div><!--end titleHeader-->
 					<ul class="unstyled my-account">
 						<li><a class="invarseColor" href="<?php echo base_url();?>ecomerce/konfirmasi"><i class="icon-caret-right"></i> Status Pemesanan</a></li>
-						<li><a class="invarseColor" href="<?php echo base_url();?>ecomerce/konfirmasi/konfirmasi_pembayaran"><i class="icon-caret-right"></i> Konfirmasi Pembayaran</a></li>
+						<li><a class="invarseColor" href="<?php echo base_url();?>ecomerce/konfirmasi_pembayaran"><i class="icon-caret-right"></i> Konfirmasi Pembayaran</a></li>
 						<li><a class="invarseColor" href="<?php echo base_url();?>ecomerce/konfirmasi/konfirmasi_penerimaan"><i class="icon-caret-right"></i> Konfirmasi Penerimaan</a></li>
 						<li><a class="invarseColor" href="<?php echo base_url();?>ecomerce/konfirmasi/histori_pemesanan"><i class="icon-caret-right"></i> Histori Pemesanan</a></li>
 					</ul>

@@ -1,42 +1,9 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 
-<!-- Mirrored from ahmedsaeed.me/shopfine/category_grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Apr 2016 16:02:28 GMT -->
 
-<body>
-
-	<div id="mainContainer" class="clearfix">
-		<div class="container">
-			<div class="row">
-				<aside class="span3">
-					<div class="categories">
-						<div class="titleHeader clearfix">
-							<h3>Kateogri</h3>
-						</div><!--end titleHeader-->
-						<ul class="unstyled">
-							<li><a class="invarseColor active" href="#">Ternak</a>
-								<ul class="submenu">
-									<?php  foreach($dr as $row) { 
-										echo "<li><a class='invarseColor' href='". base_url()."ecomerce/produk/pencarian/".$row->id_kategori_produk."'>".
-										$row->kategori_produk."</a></li>";
-									}?>
-								</ul>
-							</li>
-							<li><a class="invarseColor" href="#">Men (6)</a></li>
-							<li><a class="invarseColor" href="#">Children (8)</a></li>
-							<li><a class="invarseColor" href="#">FootWear (3)</a></li>
-							<li><a class="invarseColor" href="#">Accesspries (56)</a></li>
-							<li><a class="invarseColor" href="#">Outlet (12)</a></li>
-							<li><a class="invarseColor" href="#">Community (0)</a></li>
-						</ul>
-					</div><!--end categories-->
 
 					<div class="pro-range-slider">
 						<div class="titleHeader clearfix">
-							<h3>Shop By Price</h3>
+							<h3>Cari Berdasarkan Harga</h3>
 						</div><!--end titleHeader-->
 						<div class="price-range">
 							<p class="clearfix">
@@ -50,7 +17,7 @@
 
 					<div class="special">
 						<div class="titleHeader clearfix">
-							<h3>Special</h3>
+							<h3>Produk Spesial</h3>
 						</div><!--end titleHeader-->
 
 						<ul class="vProductItemsTiny">
@@ -202,7 +169,7 @@
 
 					<div class="row">
 						<ul class="hProductItems clearfix">
-							<?php foreach($kategori as $p){	?>
+							<?php foreach($cari_produk as $p){	?>
 							<li class="span3 clearfix">
 								<div class="thumbnail">
 									<a href="#"><img src="<?php echo base_url(); ?>ecom/img/212x192.jpg" alt=""></a>
@@ -313,28 +280,25 @@
 	<!-- End Sidebar Widget-->
 
 
-	<!-- <?php echo base_url(); ?>ecom/js/
+	
 	================================================== -->
-	<script src="<?php echo base_url(); ?>ecom/ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.<?php echo base_url(); ?>ecom/js/"></script>
-    <script src="<?php echo base_url(); ?>ecom/ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.<?php echo base_url(); ?>ecom/js/"></script>
+	<script src="<?php echo base_url(); ?>ecom/ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="<?php echo base_url(); ?>ecom/ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
     <!-- jQuery.Cookie -->
-	<script src="<?php echo base_url(); ?>ecom/js//jquery.cookie.<?php echo base_url(); ?>ecom/js/"></script>
+	<script src="<?php echo base_url(); ?>ecom/js/jquery.cookie.js"></script>
 	<!-- bootstrap -->
-    <script src="<?php echo base_url(); ?>ecom/js//bootstrap.min.<?php echo base_url(); ?>ecom/js/"></script>
+    <script src="<?php echo base_url(); ?>ecom/js/bootstrap.min.js"></script>
     <!-- flexslider -->
-    <script src="<?php echo base_url(); ?>ecom/js//jquery.flexslider-min.<?php echo base_url(); ?>ecom/js/"></script>
+    <script src="<?php echo base_url(); ?>ecom/js/jquery.flexslider-min.js"></script>
     <!-- cycle2 -->
-    <script src="<?php echo base_url(); ?>ecom/js//jquery.cycle2.min.<?php echo base_url(); ?>ecom/js/"></script>
-    <script src="<?php echo base_url(); ?>ecom/js//jquery.cycle2.carousel.min.<?php echo base_url(); ?>ecom/js/"></script>
+    <script src="<?php echo base_url(); ?>ecom/js/jquery.cycle2.min.js"></script>
+    <script src="<?php echo base_url(); ?>ecom/js/jquery.cycle2.carousel.min.js"></script>
     <!-- tweets -->
-    <script src="<?php echo base_url(); ?>ecom/js//jquery.tweet.<?php echo base_url(); ?>ecom/js/"></script>
+    <script src="<?php echo base_url(); ?>ecom/js/jquery.tweet.js"></script>
     <!-- fancybox -->
-    <script src="<?php echo base_url(); ?>ecom/js//fancybox/jquery.fancybox.<?php echo base_url(); ?>ecom/js/"></script>
+    <script src="<?php echo base_url(); ?>ecom/js/fancybox/jquery.fancybox.js"></script>
     <!-- custom function-->
-    <script src="<?php echo base_url(); ?>ecom/js//custom.<?php echo base_url(); ?>ecom/js/"></script>
+    <script src="<?php echo base_url(); ?>ecom/js/custom.js"></script>
     
 </body>
 
-
-<!-- Mirrored from ahmedsaeed.me/shopfine/category_grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Apr 2016 16:02:28 GMT -->
-</html>

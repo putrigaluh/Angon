@@ -68,10 +68,10 @@
 					</div>
 
 					<div class="pull-right">
-						<form method="get" action="http://ahmedsaeed.me/shopfine/page" class="siteSearch">
+						<form method="get" action="<?php echo base_url();?>ecomerce/produk/pencarian" class="siteSearch">
 							<div class="input-append">
-								<input type="text" class="span2" id="appendedInputButton" placeholder="Search...">
-								<button class="btn btn-primary" type="submit" name=""><i class="icon-search"></i></button>
+								<input type="text" name="cari" class="span2" id="appendedInputButton" placeholder="Search...">
+								<button class="btn btn-primary" type="submit" ><i class="icon-search"></i></button>
 							</div>
 						</form>
 					</div>
@@ -135,28 +135,53 @@
 					     	
 				      	<ul class="nav">
 				      		<li class="active"><a href="#"><i class="icon-home"></i></a></li>
-				      		<?php  foreach($kat as $row) { 
+				      		<?php if($this->session->userdata('kategori_user') == 'Peternak' ){
+
+				      		 foreach($kat as $row) { 
 								 	
-              						echo "<li value=''><a href='". base_url()."ecomerce/produk/pencarian/".$row->id_kategori_produk."'>".
+              						echo "<li value=''><a href='". base_url()."ecomerce/produk/cari_by_kategori/".$row->id_kategori_produk."'>".
               								$row->kategori_produk.
               								'</a></li>';
 					            }
-					         ?>
-
-					     <li><a href="#">Ternak &nbsp;<i class="icon-caret-down"></i></a>
-					     							     <div>
-					     	<ul>
+					        }
+					        
+					        else if($this->session->userdata('kategori_user') == 'Pengguna Hasil Ternak'){
+						     echo "<li><a href='#'>Ternak &nbsp;<i class='icon-caret-down'></i></a>
+						     	<div>
+						     		<ul>";
 					     		
-					     		<?php  foreach($dr as $rw) { 
+					     		  foreach($dr as $rw) { 
 								 	
-              						echo '<li><a href="#">'.
+              						echo "<li><a href='". base_url()."ecomerce/produk/cari_by_kategori/".$rw->id_kategori_produk."'>".
               								$rw->kategori_produk.
-              								'</a></li>';
-					            }?>
-					     	</ul>
+              								"</a></li>";
+					            }
+					        }
 
-					     </div>
-					     </li>
+					        else if($this->session->userdata('kategori_user') == ''){
+					        	foreach($kat as $row) { 
+								 	
+              						echo "<li value=''><a href='". base_url()."ecomerce/produk/cari_by_kategori/".$row->id_kategori_produk."'>".
+              								$row->kategori_produk.
+              								'</a></li>';
+					            }
+					            echo "<li><a href='#'>Ternak &nbsp;<i class='icon-caret-down'></i></a>
+						     	<div>
+						     		<ul>";
+					     		
+					     		  foreach($dr as $rw) { 
+								 	
+              						echo "<li><a href='". base_url()."ecomerce/produk/cari_by_kategori/".$rw->id_kategori_produk."'>".
+              								$rw->kategori_produk.
+              								"</a></li>";
+					            }
+					        }
+
+					        ?>
+					     			</ul>
+
+					     		</div>
+					     	</li>
 
 				      	</ul><!--end nav-->
 

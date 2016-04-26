@@ -5,11 +5,12 @@ class Tarikdana extends My_Controller {
 public function __construct() {
     parent::__construct();
     $this->load->model('dana');
+    $this->load->model('rekening_model');
  }
 
  public function lihat_dana(){
     $dana = $this->dana->menampilkan_saldo();
-    $rekening = $this->dana->menampilkan_rekening();
+    $rekening = $this->rekening_model->menampilkan_rekening();
     $this->load->vars('d', $dana);
     $this->load->vars('r', $rekening);
     $this->load->view('manage/form_tarikdana');
@@ -28,7 +29,7 @@ public function __construct() {
             'no_rekening' => $this->input->post('nomor-rekening'),
             'nama_bank' => $this->input->post('nama-bank')
             );
-            $this->dana->insert_rekening($data);
+            $this->rekening_model->insert_rekening($data);
             $id_rekening = $this->db->insert_id();;
         } else{
             $id_rekening = $this->input->post('selectbank');

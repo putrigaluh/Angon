@@ -26,7 +26,7 @@
 
 						<div class="checkout-content">
 
-							<form method="post" action="<?php echo base_url();?>ecomerce/konfirmasi/konfirmasi_pembayaran" class="form-horizontal">
+							<form method="post" action="<?php echo base_url();?>ecomerce/konfirmasi_pembayaran/konfirm_pembayaran" class="form-horizontal">
 
 								<div class="control-group ">
 							    <label class="control-label" for="inputFirstName">Nomor Order : </label>
@@ -39,7 +39,7 @@
 								<div class="control-group ">
 								    <label class="control-label" for="inputFirstName">Pilih Bank : <span class="text-error">*</span></label>
 								    <div class="controls">
-								    	<select class="form-control" name="id_rekening" id="selectboxbank">
+								    	<select class="form-control" name="selectbank" id="selectboxbank">
 												<option value="">Pilih Bank</option>
 								      			<?php foreach ($r as $rekening) { ?>
 													<option value="<?php echo $rekening->id_rekening ?>"><?php echo $rekening->no_rekening.' a/n '.$rekening->nama_akun.' -- '.$rekening->nama_bank ?></option>
@@ -94,7 +94,7 @@
 					</div><!--end titleHeader-->
 					<ul class="unstyled my-account">
 						<li><a class="invarseColor" href="<?php echo base_url();?>ecomerce/konfirmasi"><i class="icon-caret-right"></i> Status Pemesanan</a></li>
-						<li><a class="invarseColor" href="<?php echo base_url();?>ecomerce/konfirmasi/konfirmasi_pembayaran"><i class="icon-caret-right"></i> Konfirmasi Pembayaran</a></li>
+						<li><a class="invarseColor" href="<?php echo base_url();?>ecomerce/konfirmasi_pembayaran"><i class="icon-caret-right"></i> Konfirmasi Pembayaran</a></li>
 						<li><a class="invarseColor" href="<?php echo base_url();?>ecomerce/konfirmasi/konfirmasi_penerimaan"><i class="icon-caret-right"></i> Konfirmasi Penerimaan</a></li>
 						<li><a class="invarseColor" href="<?php echo base_url();?>ecomerce/konfirmasi/histori_pemesanan"><i class="icon-caret-right"></i> Histori Pemesanan</a></li>
 					</ul>

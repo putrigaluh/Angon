@@ -19,17 +19,31 @@ class MY_Controller extends CI_Controller {
 
 	public function load_page($page = '', $data = ''){
 
-		$this->load->model('produk_model');
+		$this->load->model('kategori_model');
 
-		if($this->session->userdata('kategori_user') != 'Pengguna Hasil Ternak'){
-	 		$data1['kat'] = $this->produk_model->kategori();
-	 	}else if($this->session->userdata('kategori_user') != 'Pengguna Hasil Ternak'){
-	 		$data1['dr'] = $this->produk_model->drop();
+		if($this->session->userdata('kategori_user') == 'Peternak' || $this->session->userdata('kategori_user') == '' ){
+	 		$data1['kat'] = $this->kategori_model->kategori();
+	 	}else if($this->session->userdata('kategori_user') == 'Pengguna Hasil Ternak' || $this->session->userdata('kategori_user') == ''){
+	 		$data1['dr'] = $this->kategori_model->drop();
 	 	}
 		
 		$this->load->view("ecomerce/header", $data1);
 		$this->load->view($page, $data);	
 		$this->load->view("ecomerce/footer");
     }
+    public function load_page_produk($page = '', $data = ''){
 
+		$this->load->model('kategori_model');
+
+		if($this->session->userdata('kategori_user') == 'Peternak' || $this->session->userdata('kategori_user') == '' ){
+	 		$data1['kat'] = $this->kategori_model->kategori();
+	 	}else if($this->session->userdata('kategori_user') == 'Pengguna Hasil Ternak' || $this->session->userdata('kategori_user') == ''){
+	 		$data1['dr'] = $this->kategori_model->drop();
+	 	}
+		
+		$this->load->view("ecomerce/header", $data1);
+		$this->load->view("ecomerce/kategori", $data1);
+		$this->load->view($page, $data);	
+		$this->load->view("ecomerce/footer");
+    }
 }
