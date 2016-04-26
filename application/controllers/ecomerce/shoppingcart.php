@@ -21,7 +21,7 @@ public function buy($id){
                'price'   => $product->harga_produk,
                'name'    => $product->nama_produk,
 
-               'image'   => $product->gbr_produk
+               'image'   => $product->gbr_produk,
 
                'deskripsi'    => $product->deskripsi,
                'stok'    => $product->stok
