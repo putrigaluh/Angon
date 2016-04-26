@@ -16,7 +16,8 @@ public function buy($id){
                'id'      => $product->id_produk,
                'qty'     => 1,
                'price'   => $product->harga_produk,
-               'name'    => $product->nama_produk
+               'name'    => $product->nama_produk,
+               'image'   => $product->gbr_produk
             );
 
 	$this->cart->insert($data);

@@ -25,6 +25,12 @@ public function index(){
 	$this->load->view('ecomerce/index', $data);	 
 	$this->load->view("ecomerce/footer");
  }
+
+function input_keluhan(){
+	$this->load->view("ecomerce/header");
+	$this->load->view("ecomerce/input_keluhan");
+	$this->load->view("ecomerce/footer");
+}
  
 }
 ?>

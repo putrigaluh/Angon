@@ -45,6 +45,8 @@
 						<li><a class="invarseColor" href="#">Shoping Cart</a></li>
 						<li class="divider-vertical"></li>
 						<li><a class="invarseColor" href="#">Checkout</a></li>
+						<li class="divider-vertical"></li>
+						<li><a class="invarseColor" href="<?php echo base_url(); ?>ecomerce/produk/input_keluhan">Customer Care</a></li>
 					</ul>
 					<p>
 					
