@@ -27,10 +27,8 @@ class m_produk extends CI_Model {
         return $query->result();
     }
 
-    function kategori(){
-        $query = $this->db->query('select * from kategori_produk');
-            return $query->result();
-            }
+    
+    
 
     //fungsi untuk menambah data karyawan
     function insert($url) {

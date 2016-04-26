@@ -1,57 +1,26 @@
 
 
-<body>
 
-	<div id="mainContainer" class="clearfix">
-
-		<!--begain header-->
-		
-		<!-- end header -->
-
-
-
-		<div class="container">
-
-			<div class="row">
-
-				<div class="span8">
-					<div class="flexslider">
-					<?php foreach($daftar_produk as $p){ ?>
-						<ul class="slides">
-							<li><img src="<?php echo base_url($p->gbr_produk); ?>" alt="slide1"></li>
-							<li><img src="<?php echo base_url($p->gbr_produk); ?>" alt="slide2"></li>
-							<li><img src="<?php echo base_url($p->gbr_produk); ?>" alt="slide3"></li>
-						</ul>
-						<?php } ?>
-					</div><!--end flexslider-->
-				</div><!--end span8-->
-
-
-				<div class="span4">
-
-					<div id="homeSpecial">
+					<div class="pro-range-slider">
 						<div class="titleHeader clearfix">
-							<h3>Special</h3>
-							<div class="pagers">
-								<div class="btn-toolbar">
-									<div class="btn-group">
-										<button class="btn btn-mini vNext"><i class="icon-caret-down"></i></button>
-										<button class="btn btn-mini vPrev"><i class="icon-caret-up"></i></button>
-									</div>
-									<button class="btn btn-mini">View All</button>
-								</div>
-							</div>
+							<h3>Cari Berdasarkan Harga</h3>
+						</div><!--end titleHeader-->
+						<div class="price-range">
+							<p class="clearfix">
+							  <label>Price:</label>
+							  <input type="text" id="amount">
+							</p>
+							<div id="slider-range"></div>
+						</div>
+					</div><!--end pro-range-slider-->
+
+
+					<div class="special">
+						<div class="titleHeader clearfix">
+							<h3>Produk Spesial</h3>
 						</div><!--end titleHeader-->
 
-						<!-- iklan -->
-						<ul class="vProductItems cycle-slideshow vertical clearfix"
-					    data-cycle-fx="carousel"
-					    data-cycle-timeout=0
-					    data-cycle-slides="> li"
-					    data-cycle-next=".vPrev"
-					    data-cycle-prev=".vNext"
-					    data-cycle-carousel-visible="2"
-					    data-cycle-carousel-vertical="true">
+						<ul class="vProductItemsTiny">
 							<li class="span4 clearfix">
 								<div class="thumbImage">
 									<a href="#"><img src="<?php echo base_url(); ?>ecom/img/92x92.jpg" alt=""></a>
@@ -59,7 +28,7 @@
 								<div class="thumbSetting">
 									<div class="thumbTitle">
 										<a href="#" class="invarseColor">
-											hahaha
+											Foliomania the title here
 										</a>
 									</div>
 									<div class="thumbPrice">
@@ -116,49 +85,106 @@
 										<li><i class="star-off"></i></li>
 										<li><i class="star-off"></i></li>
 									</ul>
+								</div>
+							</li>
+							<li class="span4 clearfix">
+								<div class="thumbImage">
+									<a href="#"><img src="<?php echo base_url(); ?>ecom/img/92x92.jpg" alt=""></a>
+								</div>
+								<div class="thumbSetting">
+									<div class="thumbTitle">
+										<a href="#" class="invarseColor">
+											Foliomania the designer portfolio
+										</a>
+									</div>
+									<div class="thumbPrice">
+										<span>$150.00</span>
+									</div>
 								</div>
 							</li>
 						</ul>
 					</div><!--end special-->
-				</div><!--end span4-->
 
-			</div><!--end row-->
-
+				</aside><!--end aside-->
 
 
-			<div class="row">
-				<div class="span12">
+				<div class="span9">
 
-					<div id="featuredItems">
-						
-						<div class="titleHeader clearfix">
-							<h3>Produk Ternak</h3>
-							<div class="pagers">
-								<div class="btn-toolbar">
-									<button class="btn btn-mini" action="haha.php">View All</button>
-								</div>
+					<div id="productSlider" class="carousel slide">
+						<!-- Carousel items -->
+					    <div class="carousel-inner">
+					      <div class="active item"><img src="<?php echo base_url(); ?>ecom/img/694x240.jpg" alt=""></div>
+					      <div class="item"><img src="<?php echo base_url(); ?>ecom/img/694x240.jpg" alt=""></div>
+					      <div class="item"><img src="<?php echo base_url(); ?>ecom/img/694x240.jpg" alt=""></div>
+					    </div>
+
+					    <!-- Carousel nav -->
+					    <a class="carousel-control left" href="#productSlider" data-slide="prev">&lsaquo;</a>
+					    <a class="carousel-control right" href="#productSlider" data-slide="next">&rsaquo;</a>
+					</div><!--end productSlider-->
+
+
+					<div class="productFilter clearfix">
+
+						<div class="sortBy inline pull-left">
+							Sort By
+							<select name="sortItem">
+								<option value="Default">Default</option>
+								<option value="">Name (A-A)</option>
+								<option value="">Name (Z-A)</option>
+								<option value="">Price (Low-Hight)</option>
+								<option value="">Price (Height-Low)</option>
+								<option value="">Highest Rating</option>
+								<option value="">Lowest Rating</option>
+								<option value="">Model (A-Z)</option>
+								<option value="">Model (Z-A)</option>
+							</select>
+						</div>
+
+						<div class="showItem inline pull-left">
+							Show
+							<select name="showItem">
+								<option value="15">15</option>
+								<option value="25">25</option>
+								<option value="50">50</option>
+								<option value="75">75</option>
+								<option value="100">100</option>
+							</select>
+						</div><!--end sortBy-->
+
+						<div class="compareItem inline pull-left">
+							<button class="btn">Product Compare (4)</button>
+						</div><!--end compareItem-->
+
+						<div class="displaytBy inline pull-right">
+							Display
+							<div class="btn-group">
+								<button class="btn btn-primary active"><i class="icon-th"></i></button>
+								<button class="btn"><i class="icon-list"></i></button>
 							</div>
-						</div><!--end titleHeader-->
+						</div><!--end displaytBy-->
 
-						<div class="row">
+					</div><!--end productFilter-->
 
-							<ul class="hProductItems clearfix">
-								<?php foreach($daftar_produk as $p){	?>
-								<li class="span3 clearfix">
-									<div class="thumbnail">
-										<a href="#"><img src="<?php echo base_url($p->gbr_produk);?>" alt=""></a>
+
+					<div class="row">
+						<ul class="hProductItems clearfix">
+							<?php foreach($cari_produk as $p){	?>
+							<li class="span3 clearfix">
+								<div class="thumbnail">
+									<a href="#"><img src="<?php echo base_url(); ?>ecom/img/212x192.jpg" alt=""></a>
+								</div>
+								<div class="thumbSetting">
+									<div class="thumbTitle">
+										<a href="#" class="invarseColor">
+											<?php echo $p->nama_produk; ?>
+										</a>
 									</div>
-									<div class="thumbSetting">
-										<div class="thumbTitle">
-											<a href="#" class="invarseColor">
-												<?php echo $p->nama_produk; ?>
-											</a>
-										</div>
-										<div class="thumbPrice">
-											<span> Rp. <?php echo $p->harga_produk; ?></span>
-										</div>
+									<div class="thumbPrice">
+										<span>Rp. <?php echo $p->harga_produk; ?></span>
+									</div>
 
-										<div class="thumbButtons">
+									<div class="thumbButtons">
 											
 											<a href="<?php echo base_url(); ?>ecomerce/shoppingcart/buy/<?php echo $p->id_produk; ?>">
 												<button class="btn btn-primary btn-small" data-title="Beli Produk" data-placement="top" data-toggle="tooltip">
@@ -172,64 +198,44 @@
 											<button class="btn btn-small" data-title="+To Compare" data-placement="top" data-toggle="tooltip">
 												<i class="icon-refresh"></i>
 											</button>
-
 										</div>
 
-										<ul class="rating">
-											<li><i class="star-on"></i></li>
-											<li><i class="star-on"></i></li>
-											<li><i class="star-on"></i></li>
-											<li><i class="star-on"></i></li>
-											<li><i class="star-off"></i></li>
-										</ul>
-									</div>
-								</li>
-								<?php }?>
-								
-							</ul>
-						</div><!--end row-->
-					</div><!--end featuredItems-->
-				</div><!--end span12-->
-			</div><!--end row-->
 
-			
-
-
-			<div class="row">
-				<div class="span12">
-					<div id="brands">
-						<div class="titleHeader clearfix">
-							<h3>Brands</h3>
-							<div class="pagers">
-								<div class="btn-toolbar">
-									<button class="btn btn-mini">View All</button>
+									<ul class="rating">
+										<li><i class="star-on"></i></li>
+										<li><i class="star-on"></i></li>
+										<li><i class="star-on"></i></li>
+										<li><i class="star-on"></i></li>
+										<li><i class="star-off"></i></li>
+									</ul>
 								</div>
-							</div>
-						</div><!--end titleHeader-->
-						<ul class="brandList clearfix">
-							<li>
-								<a href="#"><img src="<?php echo base_url(); ?>ecom/img/Layer-4.png" alt="logo"></a>
 							</li>
-							<li>
-								<a href="#"><img src="<?php echo base_url(); ?>ecom/img/Layer-1.png" alt="logo"></a>
-							</li>
-							<li>
-								<a href="#"><img src="<?php echo base_url(); ?>ecom/img/Layer-3.png" alt="logo"></a>
-							</li>
-							<li>
-								<a href="#"><img src="<?php echo base_url(); ?>ecom/img/Layer-2.png" alt="logo"></a>
-							</li>
+
+							<?php }?>
+							
 						</ul>
-					</div><!--end brands-->
-				</div><!--end span12-->
+					</div><!--end row-->
+
+					<div class="pagination pagination-right">
+						<span class="pull-left">Showing 9 of 20 pages:</span>
+						<ul>
+							<li><a class="invarseColor" href="#">Prev</a></li>
+							<li class="active"><a class="invarseColor" href="#">1</a></li>
+							<li><a class="invarseColor" href="#">2</a></li>
+							<li><a class="invarseColor" href="#">2</a></li>
+							<li><a class="invarseColor" href="#">3</a></li>
+							<li><a class="invarseColor" href="#">Next</a></li>
+						</ul>
+					</div><!--end pagination-->
+
+				</div><!--end span9-->
+
 			</div><!--end row-->
 
 		</div><!--end conatiner-->
 
 
-		<!--begain footer-->
 		
-		<!--end footer-->
 
 	</div><!--end mainContainer-->
 
@@ -274,7 +280,7 @@
 	<!-- End Sidebar Widget-->
 
 
-	<!-- JS
+	
 	================================================== -->
 	<script src="<?php echo base_url(); ?>ecom/ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="<?php echo base_url(); ?>ecom/ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
@@ -295,3 +301,4 @@
     <script src="<?php echo base_url(); ?>ecom/js/custom.js"></script>
     
 </body>
+

@@ -17,8 +17,22 @@ public function find($id){					//dipake notif juga
  	$this->db->where ('id_produk', $id);
  	return $this->db->get('produk')->row();
 }
- public function kategori(){
- 	
+
+
+function pencarian(){
+    $cari = $this->input->get('cari');
+   // echo "hahaha";
+   // $this->db->from('produk');
+    
+    $this->db->like('nama_produk',$cari);
+    $this->db->or_like('deskripsi',$cari);
+    $this->db->or_like('kategori_produk',$cari);
+    $this->db->or_like('nama_toko',$cari);
+    $this->db->join('kategori_produk', 'produk.id_kategori_jenis = kategori_produk.id_kategori_produk');
+    $this->db->join('user', 'produk.id_user = user.id_user');
+    
+  return $this->db->get('produk')->result();
+    //die($this->db->last_query());
 }
 
 public function input_keluhan(){

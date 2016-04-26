@@ -312,7 +312,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							Dashboard</a>
 						</li>
 						<li>
-							<a href="<?php echo base_url(); ?>manage/produk">
+							<a href="<?php echo base_url(); ?>manage/produk/input_produk">
 							<i class="icon-pencil"></i>
 							Input Produk</a>
 						</li>
@@ -326,9 +326,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							<i class="icon-basket"></i>
 							Lihat Pesanan</a>
 						</li>
-						
-						
-						
+					
 					</ul>
 				</li>
 				<?php if($this->session->userdata('kategori_user')=='Peternak') {
@@ -475,7 +473,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			<!-- END STYLE CUSTOMIZER -->
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			Pesanan<small>Daftar Pesanan</small>
+			Request<small>Return Dana</small>
 			</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
@@ -485,11 +483,11 @@ License: You must have a valid license purchased only from themeforest(the above
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">Manage Penjualan</a>
+						<a href="#">Manage Keluhan</a>
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">Pesanan</a>
+						<a href="#">Return Dana</a>
 					</li>
 				</ul>
 				
@@ -589,16 +587,19 @@ License: You must have a valid license purchased only from themeforest(the above
 								<tr role="row" class="heading">
 									
 									<th width="5%">
-										 Pesanan
+										 No Return
 									</th>
 									<th width="15%">
-										 Tanggal Transaksi
+										 No Order
 									</th>
 									<th width="15%">
-										 Nama Pembeli
+										 Bank
 									</th>
 									<th width="10%">
-										 Alamat Pengiriman
+										 Nama Pemilik
+									</th>
+									<th width="10%">
+										 No Rekening
 									</th>
 									<th width="10%">
 										 Status
@@ -612,6 +613,14 @@ License: You must have a valid license purchased only from themeforest(the above
 								</thead>
 								<tbody>
 									<?php
+									
+
+
+									//isi nya return dana
+
+
+
+
 									if (is_array($daftar_transaksi) || is_object($daftar_transaksi)) {
 										foreach($daftar_transaksi as $order){
 											?>

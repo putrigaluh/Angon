@@ -5,41 +5,7 @@
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 
 <!-- Mirrored from ahmedsaeed.me/shopfine/cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Apr 2016 16:02:23 GMT -->
-<head>
 
-	<!-- Basic Page Needs
-  ================================================== -->
-	<meta charset="utf-8">
-	<title>ShopFine: Category Grid</title>
-	<meta name="description" content="">
-	<meta name="author" content="Ahmed Saeed">
-	<!-- Mobile Specific Metas
-  ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<!-- CSS
-  ================================================== -->
-	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/bootstrap.min.css" media="screen">
-	<!-- jquery ui css -->
-	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/jquery-ui-1.10.1.min.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/customize.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/font-awesome.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/style.css">
-	<!-- flexslider css-->
-	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/flexslider.css">
-	<!-- fancybox -->
-	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/js/fancybox/jquery.fancybox.css">
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
-		<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/font-awesome-ie7.css">
-	<![endif]-->
-	<!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="<?php echo base_url(); ?>ecom/images/favicon.html">
-	<link rel="apple-touch-icon" href="<?php echo base_url(); ?>ecom/images/apple-touch-icon.html">
-	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo base_url(); ?>ecom/images/apple-touch-icon-72x72.html">
-	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo base_url(); ?>ecom/images/apple-touch-icon-114x114.html">
-</head>
 
 <body>
 
@@ -57,6 +23,7 @@
 
 				<div class="span12">
 					<table class="table">
+						<?php echo form_open(base_url().'ecomerce/shoppingcart/update'); ?>
 						<thead>
 							<tr>
 								<th>Image</th>
@@ -68,6 +35,7 @@
 							</tr>
 						</thead>
 						<tbody>
+
 						<?php $i = 1; ?>
 						<?php foreach ($this->cart->contents() as $items): ?>
 						<?php echo form_hidden($i.'[rowid]', $items['rowid']); ?>
@@ -91,14 +59,14 @@
 									<ul class="unstyled">
 										<?php 
 
-										echo "<li>Stok Tersedia</li>";
-										echo "<li>Deskripsi</li>";
+										echo "<li>".$items['stok']."</li>";
+										echo "<li>".$items['deskripsi']."</li>";
 										?>
 									</ul>
 								</td>
 								<td class="quantity">
 									<div class="input-prepend input-append">
-										<button class="btn"><i class="icon-chevron-left"></i></button>
+										
 										
 										<?php echo form_input(array('name' => 'qty'.$i, 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5')); ?>
 										<?php if ($this->cart->has_options($items['rowid']) == TRUE): ?>
@@ -107,7 +75,7 @@
 											<strong><?php echo $option_name; ?>:</strong> <?php echo $option_value; ?><br />
 										<?php endforeach; ?>
 										<?php endif; ?>
-										<button class="btn"><i class="icon-chevron-right"></i></button>
+										
 										</p>
 									</div>
 								</td>
@@ -121,7 +89,7 @@
 								<td>
 									<button class="btn btn-small" type="submit" data-title="Refresh" data-placement="top" data-toggle="tooltip"><i class="icon-refresh"></i></button>
 									<button class="btn btn-small btn-success" data-title="Edit" data-placement="top" data-toggle="tooltip"><i class="icon-pencil"></i></button>
-									<a href="<?php echo base_url(); ?>ecomerce/shoppingcart/delete/<?php echo $items['rowid'] ?>"><button class="btn btn-small btn-danger" data-title="Remove" data-placement="top" data-toggle="tooltip"><i class="icon-trash"></i></button></a>
+									<a href="<?php echo base_url(); ?>ecomerce/shoppingcart/delete/<?php echo $items['rowid'] ?>" class="btn btn-small" data-title="Remove"><i class="icon-trash"></i></a>
 								</td>
 							</tr>
 							<?php $i++; ?>

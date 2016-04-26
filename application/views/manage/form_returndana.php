@@ -5,15 +5,45 @@
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 
 <!-- Mirrored from ahmedsaeed.me/shopfine/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Apr 2016 16:02:24 GMT -->
+<head>
 
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>ShopFine: Checkout</title>
+	<meta name="description" content="">
+	<meta name="author" content="Ahmed Saeed">
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/bootstrap.min.css" media="screen">
+	<!-- jquery ui css -->
+	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/jquery-ui-1.10.1.min.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/customize.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/font-awesome.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/style.css">
+	<!-- flexslider css-->
+	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/flexslider.css">
+	<!-- fancybox -->
+	<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/js/fancybox/jquery.fancybox.css">
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+		<link rel="stylesheet" href="<?php echo base_url(); ?>ecom/css/font-awesome-ie7.css">
+	<![endif]-->
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="<?php echo base_url(); ?>ecom/images/favicon.html">
+	<link rel="apple-touch-icon" href="<?php echo base_url(); ?>ecom/images/apple-touch-icon.html">
+	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo base_url(); ?>ecom/images/apple-touch-icon-72x72.html">
+	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo base_url(); ?>ecom/images/apple-touch-icon-114x114.html">
+</head>
 
 <body>
 
 	<div id="mainContainer" class="clearfix">
-
-		<!--begain header-->
-		
-		<!-- end header -->
 
 		<div class="container">
 
@@ -49,17 +79,18 @@
 
 										<td>
 											<h3>Login</h3>
-											<form method='post' action='".base_url()."login'>
+											<form method='post' action='login'>
 												<div class='controls'>
 													<label>Masukkan Username: <span class='text-error'>*</span></label>
-													<input type='text' name='username'value='' placeholder='budi'>
+													<input type='text' name=''value='' placeholder='budi'>
 												</div>
 												<div class='controls'>
 													<label>Masukkan Password: <span class='text-error'>*</span></label>
-													<input type='password' name='password' value='' placeholder='**************'>
+													<input type='password' name='' value='' placeholder='**************'>
 												</div>
 												<div class='controls'>
-													
+													<label class='checkbox'>
+												      <input type='checkbox'> Check me out
 												    </label>
 												    <button type='submit' class='btn btn-primary'>Login</button>
 												</div>
@@ -72,148 +103,85 @@
 					</div><!--end checkout-outer-->";
 
 					}?>
+
 					<div class="checkout-outer">
 						<div class="checkout-header">
 							<a href="#" class="invarseColor pull-right" data-toggle="tooltip" data-placment="top" data-title="EDIT" style="margin-right:12px; color:#333; font-size:13px;"><i class="icon-pencil"></i></a>
-							<h4><i class="icon-caret-down"></i> Informasi Pengiriman</h4>
+							<h4><i class="icon-caret-down"></i> Informasi Order</h4>
 						</div><!--end checkout-header-->
 
 						<div class="checkout-content">
-							<form method="post" action="" class="form-inline">
-								<label class="radio inline">
-								  <input type="radio" name="add" value="option1" id="radio_data_pribadi"> Gunakan data saya
-								</label>&nbsp;&nbsp;
-								<label class="radio inline">
-								  <input type="radio" name="add" value="option2" id="radio_data_baru"> Saya ingin membuat informasi pengiriman lain
-								</label>
-							</form><!--end form-->
-
+							
 							<hr>
 
-							<form method="post" action="<?php echo base_url();?>ecomerce/checkout/check" class="form-horizontal">
+							<form method="post" action="<?php echo base_url();?>manage/return_dana/insert" class="form-horizontal">
 
 								<div class="control-group">
-								    <label class="control-label" for="inputFirstName">Nama Lengkap: <span class="text-error">*</span></label>
+								    <label class="control-label" for="inputFirstName">Nomor Oder: <span class="text-error">*</span></label>
 								    <div class="controls">
-								      <input type="text" id="inputFirstName" name="nama" placeholder="Budi">
+								      <input type="text" id="inputNoOrder" name="no_order" placeholder="isikan nomor order">
+								    </div>
+								</div><!--end control-group-->
+								
+							<!-- </form>end form -->
+						</div><!--end checkout-content-->
+					</div><!--end checkout-outer-->
+
+
+
+					<div class="checkout-outer">
+						<div class="checkout-header">
+							<a href="#" class="invarseColor pull-right" data-toggle="tooltip" data-placment="top" data-title="EDIT" style="margin-right:12px; color:#333; font-size:13px;"><i class="icon-pencil"></i></a>
+							<h4><i class="icon-caret-down"></i> Informasi Pengembalian Dana</h4>
+						</div><!--end checkout-header-->
+
+						<div class="checkout-content">
+							
+							<hr>
+
+							<!-- <form method="post" action="<?php echo base_url();?>manage/return_dana/insert" class="form-horizontal"> -->
+
+								
+								<div class="control-group">
+								    <div class="control-label">Nama Bank: <span class="text-error">*</span></div>
+								    <div class="controls">
+								      <select name="bank">
+								      	<option value="#">-- Pilih Bank --</option>
+								      	<option value="Bank Mandiri">Bank Mandiri</option>
+										<option value="Bank Central Asia">Bank Central Asia</option>
+										<option value="Bank Negara Indonesia">Bank Negara Indonesia</option>
+										<option value="Bank Rakyat Indonesia">Bank Rakyat Indonesia</option>
+								      </select>
+								    </div>
+								</div>
+
+								<div class="control-group">
+								    <label class="control-label" for="inputFirstName">Nama Lengkap Pemilik Rekening: <span class="text-error">*</span></label>
+								    <div class="controls">
+								      <input type="text" id="inputName" name="nama_pemilik" placeholder="Nama Lengkap Pemilik Rekening">
 								      <!--<span class="help-inline"><i class="icon-ok"></i> Avaliable input!</span>-->
 								    </div>
 								</div><!--end control-group-->
-								<?php if ($this->session->userdata('kategori_user') == 'Industri Ternak' || $this->session->userdata('kategori_user') == 'Peternak' ) {
-								echo "<div class='control-group'>
-								    <label class='control-label' for='inputCompany'>Nama Perusahaan / Nama Toko:</label>
-								    <div class='controls'>
-								      <input type='text' id='inputCompany' name='toko' placeholder='PT. Jaya Kusuma'>
-								    </div>
-								</div>";
-								} ?>
 
 								<div class="control-group">
-								    <label class="control-label" for="inputFirstAdd">Alamat: <span class="text-error">*</span></label>
+								    <label class="control-label" for="inputCompany">Nomor Rekening: <span class="text-error">*</span></label>
 								    <div class="controls">
-								      <textarea  id="inputFirstAdd" name="alamat" placeholder="jalan terusan ikan nus"></textarea>
+								      <input type="text" id="inputCompany" name="no_rekening" placeholder="Nomor Rekening:">
 								    </div>
-								</div><!--end control-group-->
 
-								<div class="control-group">
-							    <label class="control-label" for="inputTele">Nomor Telepon: <span class="text-error">*</span></label>
-							    <div class="controls">
-							      <input type="text" id="inputTele" name="notelp" placeholder="085755141414">
-							    </div>
-								</div><!--end control-group-->
-								
-
-								
-
-								<div class="control-group">
-								    <div class="control-label">Provinsi: <span class="text-error">*</span></div>
-								    <div class="controls">
-								      <select name="provinsi">
-								      	<option value="#">-- Pilih Provinsi --</option>
-								      	<option value="#">Jawa Timur</option>
-								      	<option value="#">Jawa Tengah</option>
-								      	<option value="#">Jawa Barat</option>
-								      	<option value="#">Jakarta</option>
-								      </select>
-								    </div>
-								</div>
-
-								<div class="control-group">
-								    <label class="control-label" for="inputCity">Kota: <span class="text-error">*</span></label>
-								    <div class="controls">
-								      <select name="kota" id="kota">
-								      	<option value="pilih">-- Pilih Kota --</option>
-											<?php
-												foreach ($daftar_kota as $k) {
-												 	echo "<option value='".$k->id_kota."'>".$k->nama_kota."</option>";
-												 } 
-											?>
-								      </select>
-								    </div>
-								</div>
-								<div class="control-group">
-								    <label class="control-label" for="inputPostCode">Kodepos: <span class="text-error">*</span></label>
-								    <div class="controls">
-								      <input type="text" id="inputPostCode" name="kodepos" placeholder="66677">
-								    </div>
-								</div>
-
-								
-
-							<!--end form-->
-						</div><!--end checkout-content-->
-					</div><!--end checkout-outer-->
-
-
-					
-
-
-					<div class="checkout-outer">
-						<div class="checkout-header">
-							<a href="#" class="invarseColor pull-right" data-toggle="tooltip" data-placment="top" data-title="EDIT" style="margin-right:12px; color:#333; font-size:13px;"><i class="icon-pencil"></i></a>
-							<h4><i class="icon-caret-right"></i> Metode Pengiriman</h4>
-						</div><!--end checkout-header-->
-
-						<div class="checkout-content">
-							<!-- content here-->
-							<div class="control-group">
-								 <div class="control-label">Metode Pengiriman: <span class="text-error">*</span></div>
-								    <div class="controls">
-								      <select name="delivmethod">
-								      	<option value="#">-- Pilih Metode --</option>
-								      	<option value="Kurir">Kurir</option>
-								      	<option value="Penjual">Penjual</option>
-								      	
-								      </select>
-								    </div>
-								</div>
-						</div><!--end checkout-content-->
-					</div><!--end checkout-outer-->
-
-
-					<div class="checkout-outer">
-						<div class="checkout-header">
-							<a href="#" class="invarseColor pull-right" data-toggle="tooltip" data-placment="top" data-title="EDIT" style="margin-right:12px; color:#333; font-size:13px;"><i class="icon-pencil"></i></a>
-							<h4><i class="icon-caret-right"></i> Metode Pembayaran</h4>
-						</div><!--end checkout-header-->
-
-						<div class="checkout-content">
-							<!-- content here-->
-							Metode pembayaran yang tersedia saat ini adalah transfer melalui rekening bersama Angon.
-							 <div class="control-group">
-								    <label class="control-label" for="inputPostCode">BCA A/n PT Angon Indonesia <span class="text-error">*</span></label>
-								    <div class="controls">
-								       <label class="control-label" for="inputPostCode">333-678-987 <span class="text-error">*</span></label>
-								    </div>
-								</div>
-								<div class="control-group" align="center">
+								    <div class="control-group" align="center">
 							    <div class="controls">
 								    <input type="submit" name="submit" class="btn btn-primary" values="Checkout">
 							    </div>
 								</div><!--end control-group-->
 
+								</div><!--end control-group-->
+
+
+							</form><!--end form-->
 						</div><!--end checkout-content-->
 					</div><!--end checkout-outer-->
+
 
 </form>
 				</div><!--end span12-->
@@ -288,30 +256,6 @@
     <script src="<?php echo base_url(); ?>ecom/js/fancybox/jquery.fancybox.js"></script>
     <!-- custom function-->
     <script src="<?php echo base_url(); ?>ecom/js/custom.js"></script>
-
-    <script>
-
-    $("#radio_data_pribadi").click(function(){
-    	$("#inputFirstName").val("<?php echo $data_pengirim->nama_user; ?>");
-    	$("#inputCompany").val("<?php echo $data_pengirim->nama_toko; ?>");
-    	$("#inputFirstAdd").val("<?php echo $data_pengirim->alamat_user; ?>");
-    	$("#inputTele").val("<?php echo $data_pengirim->no_telp; ?>");
-    	$("#kota").val("<?php echo $data_pengirim->id_kota; ?>");
-    	$("#inputPostCode").val("<?php echo $data_pengirim->kodepos; ?>");
-    });
-
-
-   
-	$("#radio_data_baru").click(function(){
-    	$("#inputFirstName").val("");
-    	$("#inputCompany").val("");
-    	$("#inputFirstAdd").val("");
-    	$("#inputTele").val("");
-    	$("#kota").val("pilih");
-    	$("#inputPostCode").val("");
-    });
-
-    </script>
     
 </body>
 

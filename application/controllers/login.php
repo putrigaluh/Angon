@@ -1,14 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Login extends CI_Controller {
+class Login extends MY_Controller {
 
   public function __construct() {
         parent::__construct();
         $this->load->model('user_model');
-        $this->load->model('regis_model');
         $this->load->model('kota_model');
         
-        $model = $this->regis_model;
 
   }
 
@@ -50,13 +48,13 @@ class Login extends CI_Controller {
     }
 
   function show_login_page($show_error) {
-      //$data['daftar_kat_user'] = $this->regis_model->get_data_kategori();
+      
       $data['daftar_kota'] = $this->kota_model->get_data_kota();
       $data['page'] = 'login';
       $data['error'] = $show_error;
-      $this->load->view('ecomerce/header');
-      $this->load->view('login', $data);
-      $this->load->view('ecomerce/footer');
+      
+      $this->load_page('login', $data);
+      
   }
 }
 

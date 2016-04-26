@@ -1,24 +1,44 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class konfirmasi extends CI_Controller {
+class konfirmasi extends MY_Controller {
 
 public function __construct() {
     parent::__construct();
     $this->load->helper('form');
-  
-  $this->load->model('transaksi_model');
+    $this->load->model('transaksi_model');
+    
+    
  }
 
  public function index(){
- 	$this->konfirmasi_penerimaan();
+    	
+      $this->load_page('ecomerce/pesanan_saya');
+      
  }
 
- private function konfirmasi_penerimaan(){
- 	$data['pb'] = $this->transaksi_model->pesanan_pembeli();
-	$this->load->view('ecomerce/header');
-	$this->load->view('ecomerce/konfirmasi2', $data);
-  $this->load->view('ecomerce/footer');
+ public function histori_pemesanan(){
+ 	$data['pesanan_pembeli'] = $this->transaksi_model->pesanan_pembeli();
+	
+	$this->load_page('ecomerce/histori_pesanan', $data);
+  
  }
+
+ public function konfirmasi_penerimaan(){
+      
+
+	   if($this->input->post('submit')){
+      $id=$this->input->post("id");
+      $this->transaksi_model->update_status_penerimaan($id);
+      $this->session->set_flashdata('message', 'Terimakasih telah membeli di Angon');
+      redirect('ecomerce/konfirmasi');
+    }else{
+      
+      $this->load_page('ecomerce/konfirmasi_penerimaan');
+      
+    }
+ }
+ 
+
 
  // function update_data($id) {
  //        	$status = $this->input->post('order_status');

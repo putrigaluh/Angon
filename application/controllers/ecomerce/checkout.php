@@ -3,15 +3,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Checkout extends MY_Controller {	//notif
 
+	private $last_id_trans ='';
+	private $last_id_detail_trans = '';
+
 public function __construct() {
     parent::__construct();
  	$this->load->library('cart');
     $this->load->model('transaksi_model');
+    $this->load->model('user_model');
     
  }
  public function index(){
  	 $this->load->model('kota_model');
  	$data['daftar_kota'] = $this->kota_model->get_data_kota();
+ 	$data['data_pengirim'] = $this->user_model->data_pengirim();
  	$this->load->view('ecomerce/header');
  	$this->load->view('ecomerce/checkout', $data);
  	$this->load->view('ecomerce/footer');
@@ -19,21 +24,23 @@ public function __construct() {
  
  public function check()	{
  	if($this->input->post('submit')){
- 		$coba= $this->transaksi_model->insert();
  		
- 		$id_trans = $this->db->insert_id();
+ 		$this->last_id_trans = $this->transaksi_model->insert();
+ 		
  		$this->load->model('produk_model');
  		foreach($this->cart->contents() as $items){
-			$this->transaksi_model->simpan_pesanan("insert into detail_transaksi (id_transaksi, id_produk,jumlah) values('".$id_trans."','".$items['id']."','".$items['qty']."')");
+			
+			$this->last_id_detail_trans = $this->transaksi_model->simpan_pesanan($this->last_id_trans, $items);
 
-			$id_detail_trans = $this->db->insert_id();
+			// echo $this
+
 			$produk = $this->produk_model->find($items['id']); //ngefind produk sing idne iki
 
 			$notif_penjual = array(								//notif
- 				'isi_pesan'			=> 'ada 1 pembelian baru',	//notif
+ 				'isi_pesan'		=> 'ada 1 pembelian baru',		//notif
  				'waktu'			=> 'skrg',						//notif
  				'kepada'		=> $produk->id_user,			//notif
- 				'id_detail_transaksi'	=> $id_detail_trans		//notif
+ 				'id_detail_transaksi'	=> $this->last_id_detail_trans		//notif
  				);												//notif
  			$this->buat_notifikasi_penjual($notif_penjual);
 
@@ -41,23 +48,33 @@ public function __construct() {
 		$this->cart->destroy();
 
 
- 		if($coba){	
+
+ 		if($this->last_id_trans){	
+
  			$notif_admin = array(								//notif
- 				'isi_pesan'			=> 'ada 1 pembelian baru',	//notif
+ 				'isi_pesan'		=> 'ada 1 pembelian baru',		//notif
  				'waktu'			=> 'skrg',						//notif
- 				'id_transaksi'	=> $id_trans					//notif
+ 				'id_transaksi'	=> $this->last_id_trans					//notif
  				);												//notif
+
  			$this->buat_notifikasi_admin($notif_admin);						//notif
 
- 			redirect('ecomerce/produk');
+ 			$this->summary();
+
  		} else {
  			echo "error123";
  		}
 	}
 
-	echo "error";
+	
  }
- // $this->load->view('ecomerce/deliveryinformation');
+ public function summary(){
+
+ 	$sum['sum']= $this->transaksi_model->pesanan_terakhir($this->last_id_trans, $this->last_id_detail_trans);
+ 	
+ 	$this->load_page('ecomerce/summary',$sum);
+ 	
+ }
 
 }
 ?>

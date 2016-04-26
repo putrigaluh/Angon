@@ -775,10 +775,10 @@ License: You must have a valid license purchased only from themeforest(the above
 										<div class="col-md-4">
 											<select class="form-control" name="nama-bank">
 												<option value="">Pilih Bank</option>
-												<option value="Category 1">Bank Mandiri</option>
-												<option value="Category 2">Bank Central Asia</option>
-												<option value="Category 3">Bank Negara Indonesia</option>
-												<option value="Category 4">Bank Rakyat Indonesia</option>
+												<option value="Bank Mandiri">Bank Mandiri</option>
+												<option value="Bank Central Asia">Bank Central Asia</option>
+												<option value="Bank Negara Indonesia">Bank Negara Indonesia</option>
+												<option value="Bank Rakyat Indonesia">Bank Rakyat Indonesia</option>
 											</select>
 										</div>
 									</div>
