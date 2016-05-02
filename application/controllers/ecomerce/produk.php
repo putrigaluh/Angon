@@ -15,10 +15,16 @@ public function index(){
  	$this->load_page('ecomerce/index', $data);
 
  }
- function detail_produk($id){
- 	$data['detail']= $this->produk_model->show_produk();
+ function detail($id){
+ 	$data['det']= $this->produk_model->detail($id);
  	
 	$this->load_page('ecomerce/produk_detail', $data);	 
+	
+ }
+  function lihat_toko($id){
+ 	$data['cari_produk']= $this->produk_model->lihat_toko($id);
+ 	
+	$this->load_page_produk('ecomerce/kategori_grid', $data);	 
 	
  }
 
@@ -39,6 +45,7 @@ public function index(){
  	}
 	
  }
+
 
 function input_keluhan(){
 	$this->load->view("ecomerce/header");

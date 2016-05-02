@@ -28,19 +28,10 @@
 								<div class="thumbSetting">
 									<div class="thumbTitle">
 										<a href="#" class="invarseColor">
-											Foliomania the title here
+											Space Iklan
 										</a>
 									</div>
-									<div class="thumbPrice">
-										<span>$150.00</span>
-									</div>
-									<ul class="rating">
-										<li><i class="star-off"></i></li>
-										<li><i class="star-off"></i></li>
-										<li><i class="star-off"></i></li>
-										<li><i class="star-off"></i></li>
-										<li><i class="star-off"></i></li>
-									</ul>
+									
 								</div>
 							</li>
 							<li class="span4 clearfix">
@@ -50,19 +41,10 @@
 								<div class="thumbSetting">
 									<div class="thumbTitle">
 										<a href="#" class="invarseColor">
-											Foliomania the designer portfolio
+											Space Iklan
 										</a>
 									</div>
-									<div class="thumbPrice">
-										<span>$150.00</span>
-									</div>
-									<ul class="rating">
-										<li><i class="star-on"></i></li>
-										<li><i class="star-on"></i></li>
-										<li><i class="star-on"></i></li>
-										<li><i class="star-off"></i></li>
-										<li><i class="star-off"></i></li>
-									</ul>
+									
 								</div>
 							</li>
 							<li class="span4 clearfix">
@@ -72,36 +54,13 @@
 								<div class="thumbSetting">
 									<div class="thumbTitle">
 										<a href="#" class="invarseColor">
-											Foliomania the designer portfolio
+											Space Iklan
 										</a>
 									</div>
-									<div class="thumbPrice">
-										<span>$150.00</span>
-									</div>
-									<ul class="rating">
-										<li><i class="star-on"></i></li>
-										<li><i class="star-on"></i></li>
-										<li><i class="star-on"></i></li>
-										<li><i class="star-off"></i></li>
-										<li><i class="star-off"></i></li>
-									</ul>
+									
 								</div>
 							</li>
-							<li class="span4 clearfix">
-								<div class="thumbImage">
-									<a href="#"><img src="<?php echo base_url(); ?>ecom/img/92x92.jpg" alt=""></a>
-								</div>
-								<div class="thumbSetting">
-									<div class="thumbTitle">
-										<a href="#" class="invarseColor">
-											Foliomania the designer portfolio
-										</a>
-									</div>
-									<div class="thumbPrice">
-										<span>$150.00</span>
-									</div>
-								</div>
-							</li>
+							
 						</ul>
 					</div><!--end special-->
 
@@ -153,7 +112,9 @@
 						</div><!--end sortBy-->
 
 						<div class="compareItem inline pull-left">
-							<button class="btn">Product Compare (4)</button>
+							<a href="<?php echo base_url()?>ecomerce/compare_produk">
+							<button class="btn">Bandingkan Produk</button>
+							</a>
 						</div><!--end compareItem-->
 
 						<div class="displaytBy inline pull-right">
@@ -172,11 +133,11 @@
 							<?php foreach($cari_produk as $p){	?>
 							<li class="span3 clearfix">
 								<div class="thumbnail">
-									<a href="#"><img src="<?php echo base_url(); ?>ecom/img/212x192.jpg" alt=""></a>
+									<a href="<?php echo base_url()?>ecomerce/produk/detail/<?php echo $p->id_produk; ?>"><img src="<?php echo base_url(); ?>ecom/img/212x192.jpg" alt=""></a>
 								</div>
 								<div class="thumbSetting">
 									<div class="thumbTitle">
-										<a href="#" class="invarseColor">
+										<a href="<?php echo base_url()?>ecomerce/produk/detail/<?php echo $p->id_produk; ?>" class="invarseColor">
 											<?php echo $p->nama_produk; ?>
 										</a>
 									</div>
@@ -194,10 +155,11 @@
 											<button class="btn btn-small" data-title="+To WishList" data-placement="top" data-toggle="tooltip">
 												<i class="icon-heart"></i>
 											</button>
-										
+											<a href="<?php echo base_url(); ?>ecomerce/compare_produk/com/<?php echo $p->id_produk; ?>">
 											<button class="btn btn-small" data-title="+To Compare" data-placement="top" data-toggle="tooltip">
 												<i class="icon-refresh"></i>
 											</button>
+											</a>
 										</div>
 
 

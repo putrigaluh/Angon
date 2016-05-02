@@ -26,7 +26,6 @@
 
 
 				<div class="span4">
-
 					<div id="homeSpecial">
 						<div class="titleHeader clearfix">
 							<h3>Special</h3>
@@ -57,19 +56,10 @@
 								<div class="thumbSetting">
 									<div class="thumbTitle">
 										<a href="#" class="invarseColor">
-											hahaha
+											Space Iklan
 										</a>
 									</div>
-									<div class="thumbPrice">
-										<span>$150.00</span>
-									</div>
-									<ul class="rating">
-										<li><i class="star-off"></i></li>
-										<li><i class="star-off"></i></li>
-										<li><i class="star-off"></i></li>
-										<li><i class="star-off"></i></li>
-										<li><i class="star-off"></i></li>
-									</ul>
+									
 								</div>
 							</li>
 							<li class="span4 clearfix">
@@ -79,19 +69,10 @@
 								<div class="thumbSetting">
 									<div class="thumbTitle">
 										<a href="#" class="invarseColor">
-											Foliomania the designer portfolio
+											Space Iklan
 										</a>
 									</div>
-									<div class="thumbPrice">
-										<span>$150.00</span>
-									</div>
-									<ul class="rating">
-										<li><i class="star-on"></i></li>
-										<li><i class="star-on"></i></li>
-										<li><i class="star-on"></i></li>
-										<li><i class="star-off"></i></li>
-										<li><i class="star-off"></i></li>
-									</ul>
+									
 								</div>
 							</li>
 							<li class="span4 clearfix">
@@ -101,19 +82,10 @@
 								<div class="thumbSetting">
 									<div class="thumbTitle">
 										<a href="#" class="invarseColor">
-											Foliomania the designer portfolio
+											Space Iklan
 										</a>
 									</div>
-									<div class="thumbPrice">
-										<span>$150.00</span>
-									</div>
-									<ul class="rating">
-										<li><i class="star-on"></i></li>
-										<li><i class="star-on"></i></li>
-										<li><i class="star-on"></i></li>
-										<li><i class="star-off"></i></li>
-										<li><i class="star-off"></i></li>
-									</ul>
+									
 								</div>
 							</li>
 						</ul>
@@ -144,11 +116,11 @@
 								<?php foreach($daftar_produk as $p){	?>
 								<li class="span3 clearfix">
 									<div class="thumbnail">
-										<a href="#"><img src="<?php echo base_url($p->gbr_produk);?>" alt=""></a>
+										<a href="<?php echo base_url()?>ecomerce/produk/detail/<?php echo $p->id_produk; ?>"><img src="<?php echo base_url($p->gbr_produk);?>" alt=""></a>
 									</div>
 									<div class="thumbSetting">
 										<div class="thumbTitle">
-											<a href="#" class="invarseColor">
+											<a href="<?php echo base_url()?>ecomerce/produk/detail/<?php echo $p->id_produk; ?>" class="invarseColor">
 												<?php echo $p->nama_produk; ?>
 											</a>
 										</div>
@@ -167,9 +139,11 @@
 												<i class="icon-heart"></i>
 											</button>
 										
-											<button class="btn btn-small" data-title="+To Compare" data-placement="top" data-toggle="tooltip">
-												<i class="icon-refresh"></i>
-											</button>
+											<a href="<?php echo base_url(); ?>ecomerce/compare_produk/com/<?php echo $p->id_produk; ?>">
+												<button class="btn btn-small" data-title="+ Bandingkan" data-placement="top" data-toggle="tooltip">
+													<i class="icon-refresh"></i>
+												</button>
+											</a>
 
 										</div>
 

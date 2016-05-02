@@ -62,7 +62,7 @@
 							<h3>Buat Akun Baru</h3>
 						</div><!--end titleHeader-->
 
-						<form method="post" action="regis" class="form-horizontal">
+						<form method="post" action="regis" class="form-horizontal" autocomplete="off">
 
 							<h4>&nbsp;&nbsp;&nbsp;&nbsp;1. Informasi Personal</h4>
 							<input  type="hidden" placeholder="" name="id"/>
@@ -160,8 +160,9 @@
 							    <label class="control-label" for="inputPass">Username: <span class="text-error">*</span></label>
 							    <div class="controls">
 							      <input type="text" id="input-username" name="username" placeholder="budi" required>
-							      <span class="help-inline"><i class="icon-ok"></i> Username tersedia</span>
-							      <span class="help-inline"><i class="icon-remove"></i> Username sudah ada</span>
+							      <span class="help-inline" style="display: none" id="status-kosong"> Silahkan isi</span>
+							      <span class="help-inline" style="display: none" id="status-tersedia"><i class="icon-ok"></i> Username tersedia</span>
+							      <span class="help-inline" style="display: none" id="status-sudahada"><i class="icon-remove"></i> Username sudah ada</span>
 							    </div>
 							</div><!--end control-group-->
 
@@ -173,8 +174,6 @@
 							</div><!--end control-group-->
 
 							<hr>
-
-							
 
 							<div class="control-group">
 							    <div class="controls">
@@ -266,7 +265,7 @@
     <!-- custom function-->
     <script src="<?php echo base_url(); ?>ecom/js/custom.js"></script>
 
-    <script src="<?php echo base_url() ?>ecom/js/cek_username.js"></script>
+    <script src="<?php echo base_url() ?>js/cek_username.js"></script>
 
 
     <script type="text/javascript">

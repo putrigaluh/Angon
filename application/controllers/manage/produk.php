@@ -10,7 +10,8 @@ public function index()
  {
 
     $this->load->model('m_produk');
-    $data['kat'] = $this->m_produk->kategori();
+    $this->load->model('kategori_model');
+    $data['kat'] = $this->kategori_model->drop();
   $this->load->view('manage/input_produk', $data);
  }
  
