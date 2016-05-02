@@ -1,43 +1,25 @@
 $("#input-username").on('focus change keyup', function(event){
-     var serializedData = $("#form-username").serialize();
+     var value = $("#input-username").val();
 
 // Fire off the request to /form.php
      request = $.ajax({
           url: window.location.origin + "/Angon/regis/do_username_check",
           type: "post",
-          data: serializedData
+          data: 'username='+value
      });
 
      if($("#input-username").val() != ""){
+          document.getElementById("status-kosong").style.display = 'none';
           request.done(function (response){
-               if(response != ''){
-                    if(response == '1'){
-                         $("#status-username").html('Sudah digunakan');
-                         $("#form-group-username").removeClass("has-success");
-                         $("#form-group-username").addClass("has-error");
-                    } else {
-                         $("#status-username").html('');
-                         $("#form-group-username").removeClass("has-success");
-                         $("#form-group-username").removeClass("has-error");
-                    }
-                    $("#button-username-submit").prop("disabled", true);
-                    $("#status-username").removeClass("text-green");
-                    $("#status-username").addClass("text-red");
-               } else if(response == ''){
-                    $("#status-username").html('Tersedia');
-                    $("#status-username").removeClass("text-red");
-                    $("#status-username").addClass("text-green");
-                    $("#button-username-submit").prop("disabled", false);
-                    $("#form-group-username").removeClass("has-error");
-                    $("#form-group-username").addClass("has-success");
-               }
+               if(parseInt(response) >= 1){ //udah ada yg pake
+                    document.getElementById("status-tersedia").style.display = 'none';
+                    document.getElementById("status-sudahada").style.display = 'block';
+               } else if(response == '0'){
+                    document.getElementById("status-tersedia").style.display = 'block';
+                    document.getElementById("status-sudahada").style.display = 'none';
+               }  
          });
      } else {
-          $("#status-username").html('silahkan isi');
-          $("#status-username").removeClass("text-green");
-          $("#status-username").addClass("text-red");
-          $("#button-username-submit").prop("disabled", true);
-          $("#form-group-username").removeClass("has-success");
-          $("#form-group-username").addClass("has-error");
+          document.getElementById("status-kosong").style.display = 'block';
      }
 });

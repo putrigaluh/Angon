@@ -1,6 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Regis extends MY_Controller {
+
 	public function index(){
 		$this->load->model('user_model');
 		$this->load->model('kota_model');
@@ -16,11 +17,12 @@ class Regis extends MY_Controller {
 			$this->load_page('register', $data);
 		}
 	}
+	
 	public function do_username_check(){
+		$this->load->model('user_model');
 		$username= $this->input->post('username');
-		 $this->user_model->select_username($username);
-		echo isset($user);
-
+		$user = $this->user_model->select_username($username);
+		echo $user;
 	}
 
 }

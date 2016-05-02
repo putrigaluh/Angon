@@ -7,7 +7,7 @@
 
 					<div class="span6">
 						<div class="titleHeader clearfix">
-							<h3>Usefull Links</h3>
+							<h3>Link Terkait</h3>
 						</div>
 
 						
@@ -35,7 +35,7 @@
 
 					</div><!--end span6-->
 
-					<div class="span3">
+					<div class="span6">
 						<div class="titleHeader clearfix">
 							<h3>Contact Info</h3>
 						</div>
@@ -46,39 +46,26 @@
 									<button class="btn btn-small">
 										<i class="icon-volume-up"></i>
 									</button>
-									Call Us: <a class="invarseColor" href="#">5246-4697-891</a>
+									Hubungi Kami: <a class="invarseColor" href="#">08123456789</a>
 								</li>
 								<li>
 									<button class="btn btn-small">
 										<i class="icon-envelope-alt"></i>
 									</button>
-									<a class="invarseColor" href="#">shopfine@shopfine.com</a>
+									<a class="invarseColor" href="#">angon@gmail.com</a>
 								</li>
 								<li>
 									<button class="btn btn-small">
 										<i class="icon-map-marker"></i>
 									</button>
-									22 Avenue Park, Los Angeles
+									Jalan Telekomunikasi, Bandung
 								</li>
 							</ul>
 						</div>
 
 					</div><!--end span3-->
 
-					<div class="span3">
-						<div class="titleHeader clearfix">
-							<h3>Newslatter</h3>
-						</div>
-
-						<div class="newslatter">
-							<form method="get" action="http://ahmedsaeed.me/shopfine/page">
-								<input class="input-block-level" type="text" name="email" value="" placeholder="Your Name...">
-								<input class="input-block-level" type="text" name="email" value="" placeholder="Your E-Mail...">
-								<button class="btn btn-block" type="submit" name="">Join Us Now</button>
-							</form>
-						</div>
-
-					</div><!--end span3-->
+					
 
 				</div><!--end row-fluid-->
 
@@ -88,12 +75,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="span12">
-					<ul class="payments inline pull-right">
-						<li class="visia"></li>
-						<li class="paypal"></li>
-						<li class="electron"></li>
-						<li class="discover"></li>
-					</ul>
+					
 					<p>© Copyrights 2012 for shopfine.com</p>
 				</div>
 			</div>

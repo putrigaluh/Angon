@@ -11,12 +11,8 @@ class User_Model extends CI_Model {
     public $password;
 
     function select_username($username){
-
-        $this->db->select('username');
-        $this->db->from($this->table);
-        $this->db->where('username',$username);
-        $result = $this->db->get()->result(); 
-        return $result;
+        $this->db->where('username',$username); 
+        return $this->db->count_all_results($this->table);
     }
 
     function registrasi() {

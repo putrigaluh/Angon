@@ -22,7 +22,6 @@
 							}
 							else if($this->session->userdata('kategori_user') =='Peternak'){
 							  foreach($kat as $row) { 
-								 	
               						echo "<li value=''><a class='invarseColor' href='". base_url()."ecomerce/produk/cari_by_kategori/".$row->id_kategori_produk."'>".
               								$row->kategori_produk.
               								'</a></li>';
@@ -37,8 +36,7 @@
 									}
 								echo "</ul>
 								</li>";
-							 	foreach($kat as $row) { 
-								 	
+							 	foreach($kat as $row) {  	
               						echo "<li value=''><a class='invarseColor' href='". base_url()."ecomerce/produk/cari_by_kategori/".$row->id_kategori_produk."'>".
               								$row->kategori_produk.
               								'</a></li>';

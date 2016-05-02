@@ -34,6 +34,9 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo base_url(); ?>ecom/images/apple-touch-icon-72x72.html">
 	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo base_url(); ?>ecom/images/apple-touch-icon-114x114.html">
 </head>
+<body>
+
+	<div id="mainContainer" class="clearfix">
 <header>
 			<div class="upperHeader">
 				<div class="container">
@@ -43,10 +46,6 @@
 						<li><a class="invarseColor" href="<?php echo base_url();?>ecomerce/konfirmasi">Pesanan Saya</a></li>
 						<li class="divider-vertical"></li>
 
-						<li><a class="invarseColor" href="#">Shoping Cart</a></li>
-						<li class="divider-vertical"></li>
-						<li><a class="invarseColor" href="#">Checkout</a></li>
-						<li class="divider-vertical"></li>
 						<li><a class="invarseColor" href="<?php echo base_url(); ?>ecomerce/produk/input_keluhan">Customer Care</a></li>
 
 					</ul>
@@ -54,11 +53,11 @@
 					
 					<?php if($this->session->userdata('is_logged_in') == true){ 
 						echo "Selamat datang di ANGON, ". $this->session->userdata('username');
-									echo "<h4><a href='". base_url()."logout'><i class='fa fa-lock'></i> Logout</a></h4>";
-								}else{
-									echo "<h4><a href='". base_url()."login'><i class='fa fa-lock'></i> Login</a></h4> Atau <a href='". base_url()."regis'><i class='fa fa-lock'></i> Buat Akun Baru</a>";
-								}
-								?> 
+						echo "<h4><a href='". base_url()."logout'><i class='fa fa-lock'></i> Logout</a></h4>";
+						}else{
+						echo "<h4><a href='". base_url()."login'><i class='fa fa-lock'></i> Login</a></h4> Atau <a href='". base_url()."regis'><i class='fa fa-lock'></i> Buat Akun Baru</a>";
+						}
+					?> 
 					</p>
 				</div><!--end container-->
 			</div><!--end upperHeader-->
@@ -85,7 +84,7 @@
 						
 						<div class="btn-group">
 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-							    <i class="icon-shopping-cart"></i> 2 Produk
+							    <i class="icon-shopping-cart"></i> <?php //echo count($this->cart->contens()); ?> Produk
 							    <span class="caret"></span>
 							</a>
 							<div class="dropdown-menu cart-content pull-right">
@@ -174,7 +173,7 @@
 						     	<div>
 						     		<ul>";
 					     		
-					     		  foreach($dr as $rw) { 
+					     		 foreach($dr as $rw) { 
 								 	
               						echo "<li><a href='". base_url()."ecomerce/produk/cari_by_kategori/".$rw->id_kategori_produk."'>".
               								$rw->kategori_produk.

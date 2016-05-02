@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class pesanan extends CI_Controller {
+class pesanan extends MY_Controller {
 
 public function __construct() {
     parent::__construct();
@@ -17,7 +17,7 @@ public function __construct() {
  	$data['daftar_transaksi'] = $this->transaksi_model->showTransaksi();
   //$this->load->view('manage/header');
    //$this->load->view('manage/sidebar');
-	$this->load->view('manage/lihat_pesanan', $data);
+	$this->manage_page('manage/lihat_pesanan', $data);
 
  }
 
@@ -33,14 +33,14 @@ public function __construct() {
   $details = $this->transaksi_model->details($id);
   
   $this->load->vars('p', $details);
-  $this->load->view('manage/detail_pesanan');
+  $this->manage_page('manage/detail_pesanan');
  }
 
  public function detail_notifikasi($id_transaksi){                      //notif
   $this->load->model('notifikasi_model');
   $detail_notifikasi = $this->notifikasi_model->select_detail_notif($id_transaksi);
   $this->load->vars('daftar_transaksi', $detail_notifikasi);
-  $this->load->view('manage/lihat_pesanan');
+  $this->manage_page('manage/lihat_pesanan');
  }
 
 }
