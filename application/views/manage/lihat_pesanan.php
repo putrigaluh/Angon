@@ -271,17 +271,7 @@
 		           						 		<td><?php echo $order->tgl_transaksi; ?></td>
 		            							<td><?php echo $order->nama_user; ?></td>
 		          						  		<td><?php echo $order->alamat_pengiriman; ?></td>
-		           						 		<td>
-		           						 			<form action="<?php echo base_url(); ?>manage/pesanan/update_data/<?php echo $order->id_transaksi; ?>" method="post">
-
-			           						 			<select name="order_status" class="form-control form-filter input-sm" onchange="this.form.submit()">
-															<!-- <option value="<?php echo $order->status; ?>"><?php echo $order->status; ?></option> -->
-															<option value="Pending" <?php if($order->status == "Pending") echo "selected"; ?>>Pending</option>
-															<option value="Terbayar" <?php if($order->status == "Terbayar") echo "selected"; ?>>Terbayar</option>
-															<option value="Terkirim" <?php if($order->status == "Terkirim") echo "selected"; ?>>Terkirim</option>
-														</select>
-													</form>
-		           						 		</td>
+		           						 		<td><?php echo $order->status; ?></td>
 												<td>
 													<div class="margin-bottom-5">
 														

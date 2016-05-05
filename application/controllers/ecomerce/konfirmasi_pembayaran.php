@@ -6,16 +6,19 @@ public function __construct() {
     parent::__construct();
     $this->load->model('konfirmasi_model');
     $this->load->model('rekening_model');
+    $this->load->model('transaksi_model');
  }
  public function index(){
     $this->lihat_konfirmasi_pembayaran();
  }
  public function lihat_konfirmasi_pembayaran(){
     
-    $rekening = $this->rekening_model->menampilkan_rekening();
-    
-    $this->load->vars('r', $rekening);
-    $this->load_page('ecomerce/konfirmasi_pembayaran');
+    $data['rek'] = $this->rekening_model->menampilkan_rekening();
+    $data['id_trans'] = $this->transaksi_model->get_id_transaksi();
+    $data['konfirmasi'] = $this->konfirmasi_model->get_pembayaran();
+    // $this->load->vars('id_trans', $data);
+    // $this->load->vars('rek', $data);
+    $this->load_page('ecomerce/konfirmasi_pembayaran',$data);
  }
 
  public function konfirm_pembayaran(){

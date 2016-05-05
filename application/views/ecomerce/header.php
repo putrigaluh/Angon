@@ -33,6 +33,15 @@
 	<link rel="apple-touch-icon" href="<?php echo base_url(); ?>ecom/images/apple-touch-icon.html">
 	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo base_url(); ?>ecom/images/apple-touch-icon-72x72.html">
 	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo base_url(); ?>ecom/images/apple-touch-icon-114x114.html">
+
+
+	<script src="<?php echo base_url(); ?>ecom/ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="<?php echo base_url(); ?>ecom/ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
+	
+	<script src="<?php echo base_url(); ?>ecom/js/jquery.cookie.js"></script>
+	<!-- bootstrap -->
+    <script src="<?php echo base_url(); ?>ecom/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 
@@ -84,7 +93,7 @@
 						
 						<div class="btn-group">
 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-							    <i class="icon-shopping-cart"></i> <?php //echo count($this->cart->contens()); ?> Produk
+							    <i class="icon-shopping-cart"></i> <?php //	echo count($this->cart->contens()); ?> Produk
 							    <span class="caret"></span>
 							</a>
 							<div class="dropdown-menu cart-content pull-right">
@@ -115,7 +124,7 @@
 								<tfoot>
 									<tr>
 										<td class="cart-product-info">
-											<a href="<?php echo base_url();?>ecomerce/shoppingcart" class="btn btn-small">Vew cart</a>
+											<a href="<?php echo base_url();?>ecomerce/shoppingcart" class="btn btn-small">View cart</a>
 											<a href="#" class="btn btn-small btn-primary">Checkout</a>
 										</td>
 										<td>

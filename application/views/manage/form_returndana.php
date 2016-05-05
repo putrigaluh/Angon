@@ -48,7 +48,7 @@
 		<div class="container">
 
 			<div class="row">
-				<div class="span12">
+				<div class="span9">
 					<?php if($this->session->userdata('is_logged_in') == false) {
 					echo
 					"<div class='checkout-outer'>
@@ -183,8 +183,20 @@
 					</div><!--end checkout-outer-->
 
 
-</form>
-				</div><!--end span12-->
+					</form>
+				</div><!--end span9-->
+				<div class="span3">
+					<div class="titleHeader clearfix">
+						<h3>Pesanan Saya</h3>
+					</div><!--end titleHeader-->
+					<ul class="unstyled my-account">
+						<li><a class="invarseColor" href="<?php echo base_url();?>ecomerce/konfirmasi"><i class="icon-caret-right"></i> Status Pemesanan</a></li>
+						<li><a class="invarseColor" href="<?php echo base_url();?>ecomerce/konfirmasi_pembayaran"><i class="icon-caret-right"></i> Konfirmasi Pembayaran</a></li>
+						<li><a class="invarseColor" href="<?php echo base_url();?>ecomerce/konfirmasi/konfirmasi_penerimaan"><i class="icon-caret-right"></i> Konfirmasi Penerimaan</a></li>
+						<li><a class="invarseColor" href="<?php echo base_url();?>ecomerce/konfirmasi/histori_pemesanan"><i class="icon-caret-right"></i> Histori Pemesanan</a></li>
+						<li><a class="invarseColor" href="<?php echo base_url();?>manage/return_dana"><i class="icon-caret-right"></i> Pengembalian Dana</a></li>
+					</ul>
+				</div>
 			</div><!--end row-->
 
 		</div><!--end conatiner-->

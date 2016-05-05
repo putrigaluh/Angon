@@ -65,19 +65,17 @@
 							<table class="table">
 										<thead>
 										<tr>
-											<th>Image</th>
+											
 											<th>ID Transaksi</th>
 											<th>Tanggal</th>
 											<th>Total Pembayaran</th>
-											<th>Satus</th>
+											<th>Status</th>
 										</tr>
 										</thead>
 										<tbody>
 											<?php foreach ($pesanan_pembeli as $pp){ ?>
 											<tr>
-												<td>
-													<a href="#"><img src="<?php echo base_url(); ?>ecom/img/92x92.jpg" alt=""></a>
-												</td>
+												
 												<td>
 													<h3><?php echo $pp->id_transaksi ?></h3>
 												</td>

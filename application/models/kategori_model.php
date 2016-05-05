@@ -25,6 +25,7 @@ function kategori(){
 
  public function cari_kategori($kat){
  	$this->db->where('id_kategori_jenis',$kat);
+    $this->db->where('stok > 0');
     return $this->db->get('produk')->result();
 }
 }
