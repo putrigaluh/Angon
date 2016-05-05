@@ -25,30 +25,41 @@
 						</div><!--end titleHeader--><!--end checkout-header-->
 
 						<div class="checkout-content">
+							 <form method='post' action='<?php echo base_url(); ?>ecomerce/konfirmasi/konfirmasi_penerimaan' class='form-horizontal'>
+							<?php
+							foreach ($id_detail_transaksi as $dt) {
+							 if($dt->status_kirim == "Terkirim") { 
+								
 
-							<form method="post" action="<?php echo base_url();?>ecomerce/konfirmasi/konfirmasi_penerimaan" class="form-horizontal">
-
-								<div class="control-group success">
-							    <label class="control-label" for="inputFirstName">No Order: <span class="text-error">*</span></label>
-							    <div class="controls">
-							      <input type="text" id="inputFirstName" name="id" placeholder="Budi">
-							      <!--<span class="help-inline"><i class="icon-ok"></i> Avaliable input!</span>-->
-							    </div>
-								</div><!--end control-group-->
-								<div class="control-group success">
-								    <label class="control-label" for="inputFirstName">Nomor Order<span class="text-error">*</span></label>
-								    <div class="controls">
-								      <label class="control-label" for="inputFirstName">blablabla<span class="text-error">*</span></label>
-								      <!--<span class="help-inline"><i class="icon-ok"></i> Avaliable input!</span>-->
-								    </div>
-								</div><!--end control-group-->
-								<div class="control-group" align="center">
-							    <div class="controls">
-								    <input type="submit" class="btn btn-primary" name="submit" value="Diterima">
-								    <a href="#" class="btn btn-primary" name="submit" value="">Komplain</a>
-								    <?php echo $this->session->flashdata('message');?>
-							    </div>
-								</div><!--end control-group-->
+										echo"<div class='control-group'>
+									    <label class='control-label' for='inputFirstName'>No Order Produk: <span class='text-error'>*</span></label>
+									    <div class='controls'>
+									      <select class='form-control' name='id_detail_trans'>
+												<option value=''>Pilih No Order Produk</option> ";
+												
+													
+													 	echo "<option value='".$dt->id_det_transaksi."'>".$dt->id_det_transaksi." - ".$dt->nama_produk." dari toko ".$dt->nama_toko."</option>";
+													 
+												
+											echo "</select>
+									    </div>
+										</div>
+										<div class='control-group' align='center'>
+							    		<div class='controls'>
+								    		<input type='submit' class='btn btn-primary' name='submit' value='Diterima'>
+								    		<a href='#' class='btn btn-primary' name='submit' value=''>Komplain</a>
+								    	
+									    </div>
+										</div>";
+								} 
+								else if($dt->status_kirim == "Pending") {
+									echo "<div align='center'>Pesanan dalam proses</div>";
+								}else{
+										echo "<div align='center'>Anda belum melaakukan pemesanan</div>";
+								}
+							}
+							?>
+								
 
 							</form>
 						</div>

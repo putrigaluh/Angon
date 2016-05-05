@@ -255,10 +255,10 @@
 															<div class="col-md-5 name">
 																 Order #:
 															</div>
-															<?php if (is_array($p) || is_object($p)) { ?>
+															<?php  ?>
 															<div class="col-md-7 value">
 																 <?php 
-																echo $p->row_array()['id_transaksi']; ?> 
+																 echo $transaksi->id_transaksi; ?> 
 															</div>
 														</div>
 														<div class="row static-info">
@@ -266,7 +266,7 @@
 																 Order Date & Time:
 															</div>
 															<div class="col-md-7 value">
-																 <?php echo $p->row('tgl_transaksi'); ?> 
+																 <?php echo $transaksi->tgl_transaksi; ?> 
 															</div>
 														</div>
 														<div class="row static-info">
@@ -275,7 +275,7 @@
 															</div>
 															<div class="col-md-7 value">
 																<span class="label label-success">
-																<?php echo $p->row('status'); ?>  </span>
+																<?php echo $transaksi->status; ?>  </span>
 															</div>
 														</div>
 														<div class="row static-info">
@@ -283,7 +283,7 @@
 																 Grand Total:
 															</div>
 															<div class="col-md-7 value">
-																 <?php //echo $p->row('total_harga'); total hargae takbusek sepurane?> 
+																 <?php //echo $transaksi->total_harga; ?> 
 															</div>
 														</div>
 														<div class="row static-info">
@@ -293,7 +293,6 @@
 															<div class="col-md-7 value">
 																 Credit Card
 															</div>
-															<?php } ?>
 														</div>
 													</div>
 												</div>
@@ -302,7 +301,7 @@
 												<div class="portlet blue-hoki box">
 													<div class="portlet-title">
 														<div class="caption">
-															<i class="fa fa-cogs"></i>Customer Information
+															<i class="fa fa-cogs"></i>Informasi Pengiriman
 														</div>
 														<!--<div class="actions">
 															<a href="javascript:;" class="btn btn-default btn-sm">
@@ -312,28 +311,45 @@
 													<div class="portlet-body">
 														<div class="row static-info">
 															<div class="col-md-5 name">
-																 Customer Name:
+																 Nama Pembeli:
 															</div>
 															<div class="col-md-7 value">
-																 <?php echo $p->row('nama_user'); ?> 
+																 <?php echo $transaksi->nama_pengiriman; ?> 
 															</div>
 														</div>
 														<div class="row static-info">
 															<div class="col-md-5 name">
-																 State:
+																 Alamat Pengiriman
 															</div>
 															<div class="col-md-7 value">
-																 New York
+																 <?php echo $transaksi->alamat_pengiriman; ?> 
 															</div>
 														</div>
 														<div class="row static-info">
 															<div class="col-md-5 name">
-																 Phone Number:
+																 Kota:
 															</div>
 															<div class="col-md-7 value">
-																 <?php echo $p->row('no_telp'); ?> 
+																 <?php echo $transaksi->nama_kota; ?> 
 															</div>
 														</div>
+														<div class="row static-info">
+															<div class="col-md-5 name">
+																 Kode pos:
+															</div>
+															<div class="col-md-7 value">
+																 <?php echo $transaksi->kodepos; ?> 
+															</div>
+														</div>
+														<div class="row static-info">
+															<div class="col-md-5 name">
+																 Nomor Telephone:
+															</div>
+															<div class="col-md-7 value">
+																 <?php echo $transaksi->no_telp; ?> 
+															</div>
+														</div>
+
 													</div>
 													
 												</div>
@@ -354,10 +370,6 @@
 													<div class="portlet-body">
 														<div class="row static-info">
 															<div class="col-md-12 value">
-																 <?php foreach ($p as $d){
-																 echo print_r($d);
-																	}
-																	?>
 															</div>
 														</div>
 													</div>
@@ -395,7 +407,7 @@
 												<div class="portlet grey-cascade box">
 													<div class="portlet-title">
 														<div class="caption">
-															<i class="fa fa-cogs"></i>Shopping Cart
+															<i class="fa fa-cogs"></i>Produk Yang Dipesan
 														</div>
 														<!--<div class="actions">
 															<a href="javascript:;" class="btn btn-default btn-sm">
@@ -408,159 +420,62 @@
 															<thead>
 															<tr>
 																<th>
-																	 Product
+																	 Nama Produk
 																</th>
 																<th>
-																	 Item Status
+																	 Harga
 																</th>
 																<th>
-																	 Original Price
-																</th>
-																<th>
-																	 Price
-																</th>
-																<th>
-																	 Quantity
-																</th>
-																<th>
-																	 Tax Amount
-																</th>
-																<th>
-																	 Tax Percent
-																</th>
-																<th>
-																	 Discount Amount
+																	 Jumlah Beli
 																</th>
 																<th>
 																	 Total
 																</th>
+																<th>
+																	 Status
+																</th>
 															</tr>
 															</thead>
 															<tbody>
+															<?php foreach ($details as $detail){ ?>
+
 															<tr>
 																<td>
 																	<a href="javascript:;">
-																	Product 1 </a>
+																		<?php echo $detail->nama_produk; ?>
+																	</a>
 																</td>
 																<td>
-																	<span class="label label-sm label-success">
-																	Available
+																	<?php echo $detail->harga_produk; ?>
 																</td>
 																<td>
-																	 345.50$
+																	 <?php echo $detail->jumlah; ?>
 																</td>
 																<td>
-																	 345.50$
+																	 <?php echo $detail->sub_total; ?>
 																</td>
+																
 																<td>
-																	 2
-																</td>
-																<td>
-																	 2.00$
-																</td>
-																<td>
-																	 4%
-																</td>
-																<td>
-																	 0.00$
-																</td>
-																<td>
-																	 691.00$
+																	<?php if($detail->status_kirim == "Pending") {
+																	 echo "<form action='". base_url()."manage/pesanan/update_data/".$detail->id_det_transaksi."' method='post'>
+
+							           						 			<select name='order_status' class='form-control form-filter input-sm' onchange='this.form.submit()''>
+																			
+																			<option value='Pending' selected>Pending</option>
+																			
+																			<option value='Terkirim' >Terkirim</option>
+																		</select>
+																	</form>";
+																	} else if ($detail->status_kirim == "Terkirim"){
+																		echo $detail->status_kirim;
+
+																	}?>
+
+
 																</td>
 															</tr>
-															<tr>
-																<td>
-																	<a href="javascript:;">
-																	Product 1 </a>
-																</td>
-																<td>
-																	<span class="label label-sm label-success">
-																	Available
-																</td>
-																<td>
-																	 345.50$
-																</td>
-																<td>
-																	 345.50$
-																</td>
-																<td>
-																	 2
-																</td>
-																<td>
-																	 2.00$
-																</td>
-																<td>
-																	 4%
-																</td>
-																<td>
-																	 0.00$
-																</td>
-																<td>
-																	 691.00$
-																</td>
-															</tr>
-															<tr>
-																<td>
-																	<a href="javascript:;">
-																	Product 1 </a>
-																</td>
-																<td>
-																	<span class="label label-sm label-success">
-																	Available
-																</td>
-																<td>
-																	 345.50$
-																</td>
-																<td>
-																	 345.50$
-																</td>
-																<td>
-																	 2
-																</td>
-																<td>
-																	 2.00$
-																</td>
-																<td>
-																	 4%
-																</td>
-																<td>
-																	 0.00$
-																</td>
-																<td>
-																	 691.00$
-																</td>
-															</tr>
-															<tr>
-																<td>
-																	<a href="javascript:;">
-																	Product 1 </a>
-																</td>
-																<td>
-																	<span class="label label-sm label-success">
-																	Available
-																</td>
-																<td>
-																	 345.50$
-																</td>
-																<td>
-																	 345.50$
-																</td>
-																<td>
-																	 2
-																</td>
-																<td>
-																	 2.00$
-																</td>
-																<td>
-																	 4%
-																</td>
-																<td>
-																	 0.00$
-																</td>
-																<td>
-																	 691.00$
-																</td>
-															</tr>
+															<?php } ?>
+															
 															</tbody>
 															</table>
 														</div>

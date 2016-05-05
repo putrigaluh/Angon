@@ -28,62 +28,78 @@
 						<tbody>
 
 						<?php $i = 1; ?>
-						<?php foreach ($this->cart->contents() as $items): ?>
-						<?php echo form_hidden($i.'[rowid]', $items['rowid']); ?>
-							<tr>
-								<td>
-								<li class="span3 clearfix">
-									<a href="#"><img src="<?php echo base_url($items['image']);?>" alt=""></a>
-								</li>
-								</td>
-								<td class="desc">
-									<h4><a href="#" class="invarseColor">
-										<?php echo $items['name']; ?>
-										</a></h4>
-									<ul class="rating clearfix">
-										<li><i class="star-on"></i></li>
-										<li><i class="star-on"></i></li>
-										<li><i class="star-on"></i></li>
-										<li><i class="star-off"></i></li>
-										<li><i class="star-off"></i></li>
-									</ul>
-									<ul class="unstyled">
-										<?php 
+						<?php
+						$cart_contents = array();
 
-										echo "<li>".$items['stok']."</li>";
-										echo "<li>".$items['deskripsi']."</li>";
-										?>
-									</ul>
-								</td>
-								<td class="quantity">
-									<div class="input-prepend input-append">
-										
-										
-										<?php echo form_input(array('name' => 'qty'.$i, 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5')); ?>
-										<?php if ($this->cart->has_options($items['rowid']) == TRUE): ?>
-										<p>
-											<?php foreach ($this->cart->product_options($items['rowid']) as $option_name => $option_value): ?>
-											<strong><?php echo $option_name; ?>:</strong> <?php echo $option_value; ?><br />
-										<?php endforeach; ?>
-										<?php endif; ?>
-										
-										</p>
-									</div>
-								</td>
-								<td class="sub-price">
-									<h2><?php echo $this->cart->format_number($items['price']); ?></h2>
-								</td>
-								<td class="total-price">
-									<h2>Rp. <?php echo $this->cart->format_number($items['subtotal']); ?></h2>
-									
-								</td>
-								<td>
-									<button class="btn btn-small" type="submit" data-title="Refresh" data-placement="top" data-toggle="tooltip"><i class="icon-refresh"></i></button>
-									<button class="btn btn-small btn-success" data-title="Edit" data-placement="top" data-toggle="tooltip"><i class="icon-pencil"></i></button>
-									<a href="<?php echo base_url(); ?>ecomerce/shoppingcart/delete/<?php echo $items['rowid'] ?>" class="btn btn-small" data-title="Remove"><i class="icon-trash"></i></a>
-								</td>
+						foreach ($this->cart->contents() as $items) {
+							$cart_contents[$items['id_user']]['id_user'] = $items['id_user'];
+							$cart_contents[$items['id_user']][$items['id']] = $items;
+						}
+						?>
+						<?php foreach ($cart_contents as $items): ?>
+							<tr>
+								<td colspan='7'><?php echo $items['id_user'] ?></td>
 							</tr>
-							<?php $i++; ?>
+							<?php 
+							$j = 0;
+							foreach ($items as $item):
+								if ($j == 0) {
+									$j++; 
+									continue;
+								}
+								?>
+								<?php echo form_hidden($i.'[rowid]', $item['name']); ?>
+									<tr>
+										<td>
+										<li class="span2 clearfix">
+											<a href="#"><img src="<?php echo base_url($item['image']);?>" alt=""></a>
+										</li>
+										</td>
+										<td class="desc">
+											<h4><a href="#" class="invarseColor">
+												<?php echo $item['name']; ?>
+												</a></h4>
+											<ul class="rating clearfix">
+												<li><i class="star-on"></i></li>
+												<li><i class="star-on"></i></li>
+												<li><i class="star-on"></i></li>
+												<li><i class="star-off"></i></li>
+												<li><i class="star-off"></i></li>
+											</ul>
+											<ul class="unstyled">
+												<?php 
+												echo "<li>".$item['stok']."</li>";
+												echo "<li>".$item['deskripsi']."</li>";
+												?>
+											</ul>
+										</td>
+										<td class="quantity">
+											<div class="input-prepend input-append">
+												<?php echo form_input(array('name' => 'qty'.$i, 'value' => $item['qty'], 'maxlength' => '3', 'size' => '5')); ?>
+												<?php if ($this->cart->has_options($item['rowid']) == TRUE): ?>
+													<p>
+														<?php foreach ($this->cart->product_options($item['rowid']) as $option_name => $option_value): ?>
+															<strong><?php echo $option_name; ?>:</strong> <?php echo $option_value; ?><br />
+														<?php endforeach; ?>
+													</p>
+												<?php endif; ?>
+											</div>
+										</td>
+										<td class="sub-price">
+											<h2><?php echo $this->cart->format_number($item['price']); ?></h2>
+										</td>
+										<td class="total-price">
+											<h2>Rp. <?php echo $this->cart->format_number($item['subtotal']); ?></h2>
+										</td>
+										<td>
+											<button class="btn btn-small" type="submit" data-title="Refresh" data-placement="top" data-toggle="tooltip"><i class="icon-refresh"></i></button>
+											<button class="btn btn-small btn-success" data-title="Edit" data-placement="top" data-toggle="tooltip"><i class="icon-pencil"></i></button>
+											<a href="<?php echo base_url(); ?>ecomerce/shoppingcart/delete/<?php echo $item['rowid'] ?>" class="btn btn-small" data-title="Remove"><i class="icon-trash"></i></a>
+										</td>
+										
+									</tr>
+									<?php $i++;?>
+								<?php endforeach; ?>
 							<?php endforeach; ?>
 
 							
@@ -104,10 +120,7 @@
 							<div id="estimate" class="accordion-body collapse in">
 								<div class="accordion-inner">
 									<form class="form-horizontal" method="post" >
-										<input type="text" name="from" id="from">
-										<input type="text" name="to" id="to">
-										<input type="text" name="weight" id="weight" />
-									  <div class="control-group">
+										<div class="control-group">
 									    <div class="control-label">
 									    	<strong>Provinsi</strong>
 									    </div>
@@ -128,22 +141,14 @@
 									    	<strong>Kota</strong>
 									    </div>
 									    <div class="controls">
-									       <select name="">
+									       <select name="kota">
 								      		<option value="">-- Pilih Kota --</option>
 											<?php
 												foreach ($daftar_kota as $k) {
-												 	echo "<option value='".$k->id_kota."'>".$k->nama_kota."</option>";
+												 	echo "<option value='".$k->nama_kota."'>".$k->nama_kota."</option>";
 												 } 
 											?>
 								      </select>
-									    </div>
-									  </div><!--end control-group-->
-									  <div class="control-group">
-									    <label class="control-label" for="inputpostCode">
-									    	<strong>Kodepos</strong>
-									    </label>
-									    <div class="controls">
-									      <input type="text" id="inputpostCode" placeholder="Post Code...">
 									    </div>
 									  </div><!--end control-group-->
 									  <div class="control-group">

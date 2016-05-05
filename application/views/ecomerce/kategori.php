@@ -14,7 +14,7 @@
 							echo "<li><a class='invarseColor active' href='#'>Ternak</a>
 								<ul class='submenu'>";
 									 foreach($dr as $rw) { 
-										echo "<li><a class='invarseColor' href='". base_url()."ecomerce/produk/pencarian/".$rw->id_kategori_produk."'>".
+										echo "<li><a class='invarseColor' href='". base_url()."ecomerce/produk/cari_by_kategori/".$rw->id_kategori_produk."'>".
 										$rw->kategori_produk."</a></li>";
 									}
 							echo "</ul>
@@ -31,7 +31,7 @@
 					        	echo "<li><a class='invarseColor active' href='#'>Ternak</a>
 								<ul class='submenu'>";
 									 foreach($dr as $rw) { 
-										echo "<li><a class='invarseColor' href='". base_url()."ecomerce/produk/pencarian/".$rw->id_kategori_produk."'>".
+										echo "<li><a class='invarseColor' href='". base_url()."ecomerce/produk/cari_by_kategori/".$rw->id_kategori_produk."'>".
 										$rw->kategori_produk."</a></li>";
 									}
 								echo "</ul>
