@@ -27,6 +27,23 @@ class m_produk extends CI_Model {
         return $query->result();
     }
 
+    function get_stok($id_det_trans){
+        $id_user = $this->session->userdata('id_user');
+        $this->db->join('produk', 'detail_transaksi.id_produk = produk.id_produk');
+        $this->db->where('id_user',$id_user);
+        $this->db->where('id_det_transaksi',$id_det_trans);
+        $query = $this->db->get('detail_transaksi');
+        return $query->row();
+    }
+
+    function update_stok($id,$hasil){
+         
+        $this->db->set('stok',$hasil);
+        $this->db->where('id_produk', $id);
+        $this->db->update('produk');
+
+    }
+
     
     
 

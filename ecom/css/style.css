@@ -1559,7 +1559,21 @@ footer {margin:82px 0 0 0;}
 	margin-top:24px;
 }
 
-
+.status {
+	padding: 3px;
+	width:80px;
+	height:20px;
+	background:#F16325;
+	color:#fff;
+	margin-left:100px;
+	text-align: center;
+	-webkit-border-radius: 4px;
+	  	-moz-border-radius: 4px;
+	  	-o-border-radius: 4px;
+	-moz-box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.05);
+	  	-webkit-box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.05);
+	  	box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.05);
+}
 
 /*# 6- side panel styling
 ============================================================================*/
@@ -1858,6 +1872,8 @@ footer {margin:82px 0 0 0;}
 		margin-left:14px;
 		float: left;
 	}
+
+
 
 }
 

@@ -27,12 +27,27 @@
 
 						<div class="checkout-content">
 
-							<form method="post" action="<?php echo base_url();?>ecomerce/konfirmasi/konfirmasi_penerimaan" class="form-horizontal">
-
-								<div align="center">Pending ------ Memproses ------- Telah Dikirim</div>
-
+							<form method="post" action="<?php echo base_url();?>ecomerce/konfirmasi" class="form-horizontal">
+								<select id='pilih-id-transaksi' name='id_trans' class='form-control form-filter input-sm'>
+									<option value=''>Pilih Nomor Order</option>
+									<?php foreach($id_transaksi as $tr){
+										echo "<option value='".$tr->id_transaksi."'>".$tr->id_transaksi."--".$tr->tgl_transaksi."</option>";
+									}?>
+								</select>
+								<br>
+								<br>
+								<table>
+									<tr>
+										<td><div class='status stat-pending' style='display: none;'></div></td>
+										<td><div class='status stat-terbayar' style='display: none;'></div>	</td>
+										<td><div class='status stat-proses' style='display: none;'></div>	</td>
+										<td><div class='status stat-dikirim' style='display: none;'></div>		</td>
+									</tr>
+								</table>
 							</form>
+
 						</div>
+
 					</div>
 				</div><!--end span9-->
 
@@ -117,6 +132,43 @@
     <!-- custom function-->
     <script src="<?php echo base_url(); ?>ecom/js/custom.js"></script>
     
+    <script type="text/javascript">
+
+	$(document).ready(function(){
+		$('#pilih-id-transaksi').change(function() {
+			value = $(this).val();
+		    if (value !== null ) {
+		        request = $.ajax({
+			        url: "<?php echo base_url('ecomerce/konfirmasi/lihat_status') ?>",
+			        type: "post",
+			        data: 'id_trans=' + value
+			    });
+			    request.done(function (response){
+			    	if(response == 'Pending'){
+			        $('.stat-pending').css({'display': 'block'});
+			        $('.stat-pending').html(response);
+			    	}
+			    	else if(response == 'Terbayar'){
+			        $('.stat-terbayar').css({'display': 'block'});
+			        $('.stat-terbayar').html(response);
+			    	}
+			    	else if(response == 'Proses'){
+			        $('.stat-proses').css({'display': 'block'});
+			        $('.stat-proses').html(response);
+			    	}
+			    	else if(response == 'Proses'){
+			        $('.stat-dikirim').css({'display': 'block'});
+			        $('.stat-dikirim').html(response);
+			    	}
+         		});
+		    } else {
+		    	$('.stat').css({'display': 'none'});
+		    	
+		    }
+		});
+	});
+	
+	</script>
 </body>
 
 

@@ -31,5 +31,13 @@
 		return $this->db->get('detail_transaksi')->result();
     }
 
+    function get_pembayaran(){
+        $id_user=$this->session->userdata('id_user');
+        $this->db->from('konfirmasi_pembayaran');
+        $this->db->join('transaksi', 'konfirmasi_pembayaran.id_transaksi = transaksi.id_transaksi');
+        $this->db->where('id_user',$id_user);
+        return $this->db->get()->row();
+    }
+
 }
 ?>

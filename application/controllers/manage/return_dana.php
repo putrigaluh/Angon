@@ -8,9 +8,9 @@ public function __construct() {
  }
 
  public function index(){
-    $this->load->view('ecomerce/header');
-    $this->load->view('manage/form_returndana');
-    $this->load->view('ecomerce/footer');
+    
+    $this->load_page('manage/form_returndana');
+    
  }
 
  public function insert(){

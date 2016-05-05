@@ -28,59 +28,80 @@
 
 							<form method="post" action="<?php echo base_url();?>ecomerce/konfirmasi_pembayaran/konfirm_pembayaran" class="form-horizontal">
 
-								<div class="control-group ">
-							    <label class="control-label" for="inputFirstName">Nomor Order : </label>
-							    <div class="controls">
-							      <input type="text" id="inputFirstName" name="id_transaksi" placeholder="25">
-							      <!--<span class="help-inline"><i class="icon-ok"></i> Avaliable input!</span>-->
-							    </div>
+								<?php
+									foreach ($id_trans as $id_trans) {
+									 if($id_trans->status == "Pending" && $konfirmasi->id_transaksi == null ) { 
+										
+
+												echo"<div class='control-group'>
+											    <label class='control-label' for='inputFirstName'>No Order Produk: <span class='text-error'>*</span></label>
+											    <div class='controls'>
+											      <select class='form-control' name='id_transaksi'>
+														<option value=''>Pilih No Order</option> ";
+														 	echo "<option value='".$id_trans->id_transaksi."'>".$id_trans->id_transaksi." - ".$id_trans->tgl_transaksi."</option>";
+													echo "</select>
+											    </div>
+												</div>";
+												echo "
+													<div class='control-group'>
+												    <label class='control-label' for='inputFirstName'>Pilih Bank : <span class='text-error'>*</span></label>
+												    <div class='controls'>
+												    	<select class='form-control' name='selectbank' id='selectboxbank'>
+																<option value=''>Pilih Bank</option>";
+												      			foreach ($rek as $rekening) { 
+																	echo "<option value='". $rekening->id_rekening ."'>". $rekening->no_rekening." a/n ".$rekening->nama_akun." -- ".$rekening->nama_bank ."</option>";
+																} 
+															echo "<option value='tambah'>*Tambah No. Rekening</option>
+														</select>";
+													echo "
+												    </div>
+													</div>
+													<div class='control-group tambah' style='display: none'>
+													    <label class='control-label' for='inputFirstName'>Nama Akun Bank : <span class='text-error'>*</span></label>
+													    <div class='controls'>
+													      <input type='text' id='inputFirstName' name='nama_akun' placeholder='Masukkan Nama'>
+													     
+													    </div>
+													</div>
+													<div class='control-group tambah' style='display: none'>
+													    <label class='control-label' for='inputFirstName'>Nama Bank : <span class='text-error'>*</span></label>
+													    <div class='controls'>
+													      <select class='form-control' name='nama_bank'>
+																	<option value=''>Pilih Bank</option>
+																	<option value='Bank Mandiri'>Bank Mandiri</option>
+																	<option value='Bank Central Asia'>Bank Central Asia</option>
+																	<option value='Bank Nasional Indonesia'>Bank Nasional Indonesia</option>
+																	<option value='Bank Rakyat Indonesia'>Bank Rakyat Indonesia</option>
+																</select>
+													    </div>
+													</div>
+													<div class='control-group tambah' style='display: none'>
+													    <label class='control-label' for='inputFirstName'>Nomor Rekening : <span class='text-error'>*</span></label>
+													    <div class='controls'>
+													      <input type='text' id='inputFirstName' name='no_rekening' placeholder='321234'>
+													      
+													    </div>
+													</div>
+													<div class='control-group' align='center'>
+												    <div class='controls'>
+													    <input type='submit' name='submit' class='btn btn-primary' value='Bayar'>
+												    </div>
+													</div>"; 
+										} 
+										else if($id_trans->status == "Pending" && $konfirmasi->id_transaksi != null ) {
+											echo "<div align='center'>Pesanan Anda dalam proses verifikasi Admin</div>";
+										}
+										else if($id_trans->status == "Terbayar") {
+											echo "<div align='center'>Pesanan Anda dalam proses dari penjual</div>";
+										}
+										else{
+												echo "<div align='center'>Anda belum melaakukan pemesanan</div>";
+										}
+									}
+								?>
 							    
-								</div><!--end control-group-->
-								<div class="control-group ">
-								    <label class="control-label" for="inputFirstName">Pilih Bank : <span class="text-error">*</span></label>
-								    <div class="controls">
-								    	<select class="form-control" name="selectbank" id="selectboxbank">
-												<option value="">Pilih Bank</option>
-								      			<?php foreach ($r as $rekening) { ?>
-													<option value="<?php echo $rekening->id_rekening ?>"><?php echo $rekening->no_rekening.' a/n '.$rekening->nama_akun.' -- '.$rekening->nama_bank ?></option>
-												<?php } ?>
-												<option value="tambah">*Tambah No. Rekening</option>
-										</select>
-								    </div>
-								</div><!--end control-group-->
-								<div class="control-group tambah" style="display: none;">
-								    <label class="control-label" for="inputFirstName">Nama Akun Bank : <span class="text-error">*</span></label>
-								    <div class="controls">
-								      <input type="text" id="inputFirstName" name="nama_akun" placeholder="Budi">
-								      <!--<span class="help-inline"><i class="icon-ok"></i> Avaliable input!</span>-->
-								    </div>
-								</div><!--end control-group-->
-								<div class="control-group tambah" style="display: none;">
-								    <label class="control-label" for="inputFirstName">Nama Bank : <span class="text-error">*</span></label>
-								    <div class="controls">
-								      <select class="form-control" name="nama_bank">
-												<option value="">Pilih Bank</option>
-												<option value="Bank Mandiri">Bank Mandiri</option>
-												<option value="Bank Central Asia">Bank Central Asia</option>
-												<option value="Bank Nasional Indonesia">Bank Nasional Indonesia</option>
-												<option value="Bank Rakyat Indonesia">Bank Rakyat Indonesia</option>
-											</select>
-								    </div>
-								</div>
-								<div class="control-group tambah" style="display: none;">
-								    <label class="control-label" for="inputFirstName">Nomor Rekening : <span class="text-error">*</span></label>
-								    <div class="controls">
-								      <input type="text" id="inputFirstName" name="no_rekening" placeholder="321234">
-								      <!--<span class="help-inline"><i class="icon-ok"></i> Avaliable input!</span>-->
-								    </div>
-								</div><!--end control-group-->
 								
-								<!--end control-group-->
-								<div class="control-group" align="center">
-							    <div class="controls">
-								    <input type="submit" name="submit" class="btn btn-primary" value="Bayar">
-							    </div>
-								</div><!--end control-group-->
+								
 
 							</form>
 						</div>

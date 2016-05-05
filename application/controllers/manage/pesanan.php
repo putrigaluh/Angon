@@ -20,21 +20,32 @@ public function __construct() {
 
  }
 
- function update_data($id) {
+ function update_data($id_det_trans) {
     $status = $this->input->post('order_status');
-    $this->transaksi_model->update($id, $status);
-    redirect('manage/pesanan');
+
+    $this->load->model('m_produk');
+    $this->transaksi_model->update_status_pemesanan($id_det_trans, $status);
+
+    // die($this->db->last_query());
+    
+    $det_trans_produk = $this->m_produk->get_stok($id_det_trans);
+    
+    if($status == 'Terkirim'){
+      $det_trans = $this->transaksi_model->get_jumlahbeli($id_det_trans);
+      $hasil = $det_trans_produk->stok - $det_trans->jumlah;
+      $this->m_produk->update_stok($det_trans_produk->id_produk,$hasil);
+    }
+    redirect('manage/pesanan/detail_pesanan/'.$det_trans_produk->id_transaksi);
  }
 
-  public function detail_pesanan($id = ''){
-  //$this->load->view('header');
-  //$this->load->view('sidebar');
-  if ($id='') {
-      $id=$this->uri->segment(4);
-    }  
+
+  public function detail_pesanan($id){
+  $transaksi = $this->transaksi_model->showTransaksi_by_id($id);
+  
   $details = $this->transaksi_model->details($id);
   
-  $this->load->vars('p', $details);
+  $this->load->vars('transaksi', $transaksi);
+  $this->load->vars('details', $details);
   $this->manage_page('manage/detail_pesanan');
  }
 
