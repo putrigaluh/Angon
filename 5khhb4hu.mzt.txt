@@ -1,0 +1,39 @@
+﻿Merge remote-tracking branch 'refs/remotes/origin/master' into paramanisa/master
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Thu May 5 18:41:30 2016 +0700
+#
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 1 different commit each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# Changes to be committed:
+#	modified:   application/controllers/ecomerce/checkout.php
+#	modified:   application/controllers/ecomerce/konfirmasi.php
+#	modified:   application/controllers/ecomerce/konfirmasi_pembayaran.php
+#	modified:   application/controllers/ecomerce/shoppingcart.php
+#	modified:   application/controllers/manage/pesanan.php
+#	modified:   application/controllers/manage/return_dana.php
+#	new file:   application/models/detail_transaksi_model.php
+#	modified:   application/models/kategori_model.php
+#	modified:   application/models/konfirmasi_model.php
+#	modified:   application/models/m_produk.php
+#	modified:   application/models/produk_model.php
+#	modified:   application/models/transaksi_model.php
+#	modified:   application/views/ecomerce/cart.php
+#	modified:   application/views/ecomerce/header.php
+#	modified:   application/views/ecomerce/histori_pesanan.php
+#	modified:   application/views/ecomerce/index.php
+#	modified:   application/views/ecomerce/kategori.php
+#	modified:   application/views/ecomerce/konfirmasi_pembayaran.php
+#	modified:   application/views/ecomerce/konfirmasi_penerimaan.php
+#	modified:   application/views/ecomerce/pesanan_saya.php
+#	modified:   application/views/manage/detail_pesanan.php
+#	modified:   application/views/manage/form_returndana.php
+#	modified:   application/views/manage/lihat_pesanan.php
+#	modified:   ecom/css/style.css
+#
+
